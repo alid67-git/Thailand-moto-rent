@@ -1,10 +1,5 @@
 import type { AddonOption } from "@/types";
 
-export interface TopcaseOption extends AddonOption {
-  image?: string;
-  capacity?: string;
-}
-
 export const INSURANCE_OPTIONS: AddonOption[] = [
   {
     id: "ins-basic",
@@ -34,7 +29,7 @@ export const INSURANCE_OPTIONS: AddonOption[] = [
   },
 ];
 
-export const TOPCASE_OPTIONS: TopcaseOption[] = [
+export const TOPCASE_OPTIONS: AddonOption[] = [
   {
     id: "top-none",
     category: "topcase",
@@ -43,7 +38,6 @@ export const TOPCASE_OPTIONS: TopcaseOption[] = [
     pricePerDayThb: 0,
     priceFlatThb: 0,
     included: true,
-    capacity: "Yerleşik",
   },
   {
     id: "top-35l",
@@ -53,8 +47,6 @@ export const TOPCASE_OPTIONS: TopcaseOption[] = [
     pricePerDayThb: 60,
     priceFlatThb: 0,
     recommended: true,
-    capacity: "35L",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=90&crop=entropy&cs=tinysrgb&fit=max",
   },
   {
     id: "top-45l",
@@ -63,8 +55,6 @@ export const TOPCASE_OPTIONS: TopcaseOption[] = [
     descriptionKey: "addons.topcase.large.description",
     pricePerDayThb: 90,
     priceFlatThb: 0,
-    capacity: "45L",
-    image: "https://images.unsplash.com/photo-1606664515524-2ddc6298996f?w=400&q=90&crop=entropy&cs=tinysrgb&fit=max",
   },
 ];
 

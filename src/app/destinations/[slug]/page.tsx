@@ -2,7 +2,9 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { IslandAccessSection } from "@/components/IslandAccessSection";
 import { DESTINATION_SPOTS } from "@/lib/destinations";
+import { getIslandAccess } from "@/lib/island-access";
 
 export function generateStaticParams() {
   return DESTINATION_SPOTS.map((spot) => ({
@@ -48,6 +50,8 @@ export default async function DestinationPage({
   if (!destination) {
     notFound();
   }
+
+  const islandAccess = getIslandAccess(slug);
 
   // BreadcrumbList Schema
   const breadcrumbSchema = {
@@ -174,10 +178,14 @@ export default async function DestinationPage({
                 Hakkında
               </h2>
               <p className="mt-4 leading-relaxed text-neutral-600 dark:text-neutral-400">
-                {destination.description} - Phuket'in en güzel gezilecek yerlerinden biridir.
-                Motosikletinizle bu noktaya ulaşmak unutulmaz bir deneyim olacaktır.
+                {destination.description}
+                {islandAccess
+                  ? " Bu destinasyona motosikletle iskele noktasına kadar gidilir; adaya veya körfeze tekne ile geçilir."
+                  : " Phuket'in en güzel gezilecek yerlerinden biridir — motosikletle doğrudan ulaşılabilir."}
               </p>
             </div>
+
+            {islandAccess && <IslandAccessSection guide={islandAccess} />}
 
             <div>
               <h2 className="font-heading text-2xl font-bold text-ink-950 dark:text-white">

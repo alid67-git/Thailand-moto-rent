@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "@/context/LocaleContext";
 import { DESTINATION_SPOTS } from "@/lib/destinations";
+import { hasIslandAccess } from "@/lib/island-access";
 
 export default function DestinationsPage() {
   const { t } = useLocale();
@@ -41,6 +42,11 @@ export default function DestinationsPage() {
                     <div className={`absolute inset-0 bg-gradient-to-br ${spot.gradient} opacity-25 mix-blend-multiply`} />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-transparent to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-4">
+                      {hasIslandAccess(spot.slug) && (
+                        <span className="mb-2 inline-block rounded-full bg-cyan-500/90 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
+                          Moto + tekne
+                        </span>
+                      )}
                       <h2 className="font-heading text-lg font-extrabold text-white">{spot.name}</h2>
                     </div>
                   </div>
