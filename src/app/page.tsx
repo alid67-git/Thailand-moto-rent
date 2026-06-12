@@ -1,12 +1,19 @@
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { ComingSoonPage } from "@/components/ComingSoonPage";
 import { HomeContent } from "@/components/HomeContent";
 import { SiteFooter } from "@/components/SiteFooter";
-import { isSitePreview, PREVIEW_BYPASS_COOKIE } from "@/lib/site-mode";
+import {
+  isSitePreview,
+  PREVIEW_BYPASS_COOKIE,
+  PREVIEW_BYPASS_HEADER,
+} from "@/lib/site-mode";
 
 export default async function HomePage() {
   const cookieStore = await cookies();
-  const bypass = cookieStore.get(PREVIEW_BYPASS_COOKIE)?.value;
+  const headerStore = await headers();
+  const bypass =
+    cookieStore.get(PREVIEW_BYPASS_COOKIE)?.value ??
+    (headerStore.get(PREVIEW_BYPASS_HEADER) === "1" ? "1" : undefined);
 
   if (isSitePreview(bypass)) {
     return <ComingSoonPage />;
