@@ -3,15 +3,15 @@ import { DESTINATION_WIKIMEDIA, PHUKET_FALLBACK_IMAGES } from "@/lib/destination
 
 const galleries = destinationGalleries as Record<string, string[]>;
 
-/** Yerel dosya veya Wikimedia — Pexels yerine gerçek yer fotoğrafları */
+/** Yerel dosya veya Wikimedia — gerçek yer fotoğrafları (Pexels son çare) */
 export function getDestinationImageSet(
   slug: string,
   fallbackImage: string,
   fallbackImages: string[] = [],
 ): { hero: string; gallery: string[] } {
   const local = galleries[slug]?.filter(Boolean) ?? [];
-  const wikimedia = DESTINATION_WIKIMEDIA[slug] ?? PHUKET_FALLBACK_IMAGES;
-  const pool = [...local, ...wikimedia, ...fallbackImages].filter(Boolean);
+  const wikimedia = DESTINATION_WIKIMEDIA[slug] ?? [];
+  const pool = [...wikimedia, ...local, ...PHUKET_FALLBACK_IMAGES, fallbackImage, ...fallbackImages].filter(Boolean);
 
   const unique = [...new Set(pool)];
   const hero = unique[0] ?? fallbackImage;

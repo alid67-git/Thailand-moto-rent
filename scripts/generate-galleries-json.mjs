@@ -36,6 +36,9 @@ if (fs.existsSync(DEST_ROOT)) {
         .sort();
     }
 
+    // Yalnızca diskte gerçekten var olan dosyalar
+    files = files.filter((f) => fs.existsSync(path.join(dir, f)));
+
     galleries[slug] = files.map((f) => `/images/destinations/${slug}/${f}`);
   }
 }

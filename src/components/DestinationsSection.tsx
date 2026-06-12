@@ -4,18 +4,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "@/context/LocaleContext";
 import { useDestinationLabel } from "@/hooks/useDestinationLabel";
+import { useDestinationImage } from "@/hooks/useDestinationImage";
 import { DESTINATION_SPOTS } from "@/lib/destinations";
 
 function HomeDestinationCard({ spot }: { spot: (typeof DESTINATION_SPOTS)[number] }) {
   const { t } = useLocale();
   const { name, description, distance, duration, bestFor } = useDestinationLabel(spot);
+  const heroImage = useDestinationImage(spot);
 
   return (
     <Link href={`/destinations/${spot.slug}`} className="group">
       <article className="relative overflow-hidden rounded-2xl shadow-lift transition-all duration-300 hover:-translate-y-1 hover:shadow-lift-lg">
         <div className="relative h-48 overflow-hidden sm:h-56">
           <Image
-            src={spot.image}
+            src={heroImage}
             alt={name}
             fill
             className="object-cover transition-all duration-700 group-hover:scale-110"

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AppealScore } from "@/components/AppealScore";
 import { useLocale } from "@/context/LocaleContext";
 import { useDestinationLabel } from "@/hooks/useDestinationLabel";
+import { useDestinationImage } from "@/hooks/useDestinationImage";
 import { getAppealScore } from "@/lib/destination-scores";
 import { DESTINATION_SPOTS } from "@/lib/destinations";
 import { hasIslandAccess } from "@/lib/island-access";
@@ -12,6 +13,7 @@ import { hasIslandAccess } from "@/lib/island-access";
 function DestinationCard({ spot }: { spot: (typeof DESTINATION_SPOTS)[number] }) {
   const { t } = useLocale();
   const { name, description, distance, duration } = useDestinationLabel(spot);
+  const heroImage = useDestinationImage(spot);
   const appeal = getAppealScore(spot.slug);
 
   return (
@@ -19,7 +21,7 @@ function DestinationCard({ spot }: { spot: (typeof DESTINATION_SPOTS)[number] })
       <article className="relative overflow-hidden rounded-2xl shadow-lift transition-all duration-300 hover:-translate-y-1 hover:shadow-lift-lg">
         <div className="relative h-56 overflow-hidden sm:h-64">
           <Image
-            src={spot.image}
+            src={heroImage}
             alt={name}
             fill
             className="object-cover transition-all duration-700 group-hover:scale-110"
