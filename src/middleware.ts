@@ -9,6 +9,14 @@ import {
 const PREVIEW = process.env.NEXT_PUBLIC_SITE_PREVIEW !== "false";
 
 export function middleware(request: NextRequest) {
+  const hostname = request.nextUrl.hostname;
+
+  if (hostname === "www.thailand-moto-rent.com") {
+    const url = request.nextUrl.clone();
+    url.hostname = "thailand-moto-rent.com";
+    return NextResponse.redirect(url, 308);
+  }
+
   const { pathname } = request.nextUrl;
 
   if (pathname === "/1") {

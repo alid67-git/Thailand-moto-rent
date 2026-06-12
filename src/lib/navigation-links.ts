@@ -1,7 +1,10 @@
 import type { RouteWaypoint } from "./route-maps";
+import { getMotoWaypoints } from "./route-maps";
 
 export function buildGoogleMapsRouteUrl(waypoints: RouteWaypoint[]): string | null {
-  if (waypoints.length < 2) return null;
+  const moto = getMotoWaypoints(waypoints);
+  if (moto.length < 2) return null;
+  waypoints = moto;
   const origin = `${waypoints[0].lat},${waypoints[0].lng}`;
   const destination = `${waypoints[waypoints.length - 1].lat},${waypoints[waypoints.length - 1].lng}`;
   const middle = waypoints
@@ -14,9 +17,10 @@ export function buildGoogleMapsRouteUrl(waypoints: RouteWaypoint[]): string | nu
 }
 
 export function buildAppleMapsRouteUrl(waypoints: RouteWaypoint[]): string | null {
-  if (waypoints.length < 2) return null;
-  const start = waypoints[0];
-  const end = waypoints[waypoints.length - 1];
+  const moto = getMotoWaypoints(waypoints);
+  if (moto.length < 2) return null;
+  const start = moto[0];
+  const end = moto[moto.length - 1];
   return `https://maps.apple.com/?saddr=${start.lat},${start.lng}&daddr=${end.lat},${end.lng}&dirflg=d`;
 }
 

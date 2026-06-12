@@ -226,6 +226,8 @@ const en: Messages = {
     appleMaps: "Apple Maps",
     waze: "Waze",
     mapLoading: "Loading map…",
+    mapStopCount: "{count} stops",
+    mapLegendBoat: "⛵ boat stop",
   },
   routesPage: {
     eyebrow: "Riding routes",

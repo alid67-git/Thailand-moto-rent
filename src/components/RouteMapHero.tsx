@@ -32,6 +32,7 @@ export function RouteMapHero({
 }: RouteMapHeroProps) {
   const { t } = useLocale();
   const hasMap = waypoints.length >= 2;
+  const boatCount = waypoints.filter((w) => w.access === "boat").length;
   const googleUrl = buildGoogleMapsRouteUrl(waypoints);
   const appleUrl = buildAppleMapsRouteUrl(waypoints);
   const wazeUrl = waypoints[0] ? buildWazeUrl(waypoints[0]) : null;
@@ -65,9 +66,19 @@ export function RouteMapHero({
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div className="pointer-events-none max-w-2xl">
               {hasMap && (
-                <span className="mb-2 inline-flex rounded-full bg-jungle-600/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
-                  {t("routeDetail.mapLabel")}
-                </span>
+                <div className="mb-2 flex flex-wrap items-center gap-2">
+                  <span className="inline-flex rounded-full bg-jungle-600/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
+                    {t("routeDetail.mapLabel")}
+                  </span>
+                  <span className="inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-white/90 backdrop-blur-sm">
+                    {t("routeDetail.mapStopCount", { count: waypoints.length })}
+                  </span>
+                  {boatCount > 0 && (
+                    <span className="inline-flex rounded-full bg-orange-500/80 px-3 py-1 text-xs font-semibold text-white">
+                      {t("routeDetail.mapLegendBoat")}
+                    </span>
+                  )}
+                </div>
               )}
               <h1 className="font-heading text-3xl font-extrabold text-white drop-shadow md:text-4xl lg:text-5xl">
                 {routeName}
@@ -125,9 +136,14 @@ export function RouteMapHero({
                   href={buildGoogleMapsStopUrl(wp)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex shrink-0 items-center gap-2 rounded-full border border-white/25 bg-white/15 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-sm transition hover:bg-white/25"
+                  className={`inline-flex shrink-0 items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold backdrop-blur-sm transition hover:bg-white/25 ${
+                    wp.access === "boat"
+                      ? "border-orange-300/40 bg-orange-500/25 text-white"
+                      : "border-white/25 bg-white/15 text-white"
+                  }`}
                 >
                   <span>
+                    {wp.access === "boat" ? "⛵ " : ""}
                     {i + 1}. {wp.name}
                   </span>
                   <span className="rounded-full bg-white/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide">

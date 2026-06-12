@@ -226,6 +226,8 @@ const th: Messages = {
     appleMaps: "Apple Maps",
     waze: "Waze",
     mapLoading: "กำลังโหลดแผนที่…",
+    mapStopCount: "{count} จุดแวะ",
+    mapLegendBoat: "⛵ จุดเรือ",
   },
   routesPage: {
     eyebrow: "เส้นทางขี่",

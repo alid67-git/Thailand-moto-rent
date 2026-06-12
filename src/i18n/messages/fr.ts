@@ -227,6 +227,8 @@ const fr: Messages = {
     appleMaps: "Plans Apple",
     waze: "Waze",
     mapLoading: "Chargement de la carte…",
+    mapStopCount: "{count} arrêts",
+    mapLegendBoat: "⛵ arrêt bateau",
   },
   routesPage: {
     eyebrow: "Itinéraires",

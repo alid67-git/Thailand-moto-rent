@@ -226,6 +226,8 @@ const zh: Messages = {
     appleMaps: "Apple 地图",
     waze: "Waze",
     mapLoading: "地图加载中…",
+    mapStopCount: "{count} 个站点",
+    mapLegendBoat: "⛵ 船站",
   },
   routesPage: {
     eyebrow: "骑行路线",

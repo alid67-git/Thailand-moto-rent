@@ -229,6 +229,8 @@ const tr = {
     appleMaps: "Apple Haritalar",
     waze: "Waze",
     mapLoading: "Harita yükleniyor…",
+    mapStopCount: "{count} durak",
+    mapLegendBoat: "⛵ tekne durağı",
   },
   routesPage: {
     eyebrow: "Sürüş rotaları",

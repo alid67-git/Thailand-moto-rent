@@ -227,6 +227,8 @@ const ar: Messages = {
     appleMaps: "خرائط Apple",
     waze: "Waze",
     mapLoading: "جاري تحميل الخريطة…",
+    mapStopCount: "{count} محطة",
+    mapLegendBoat: "⛵ محطة قارب",
   },
   routesPage: {
     eyebrow: "مسارات القيادة",
