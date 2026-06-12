@@ -47,8 +47,9 @@ export function HomeContent() {
   const featuredMotorcycles = [
     { id: "click160", name: "Honda Click 160", image: "/images/motorcycles/click-160.jpg" },
     { id: "adv160", name: "Honda ADV 160", image: "/images/motorcycles/adv-160.jpg" },
+    { id: "adv350", name: "Honda ADV 350", image: "/images/motorcycles/adv-350.jpg" },
     { id: "forza350", name: "Honda Forza 350", image: "/images/motorcycles/forza-350.jpg" },
-    { id: "cb500x", name: "Honda CB500X", image: "/images/motorcycles/cb500x.jpg" },
+    { id: "xmax300", name: "Yamaha XMAX 300", image: "/images/motorcycles/xmax-300.jpg" },
   ] as const;
 
   const featuredRoutes = [

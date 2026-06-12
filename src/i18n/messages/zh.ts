@@ -156,8 +156,9 @@ const zh: Messages = {
     motos: {
       click160: { category: "自动挡踏板", highlights: "经济 · 易上手", price: "฿350/天" },
       adv160: { category: "探险踏板", highlights: "多功能 · 舒适", price: "฿490/天" },
+      adv350: { category: "ADV 350", highlights: "一日游 · 双人", price: "฿690/天" },
       forza350: { category: "大型踏板", highlights: "强劲 · 高速", price: "฿790/天" },
-      cb500x: { category: "探险摩托车", highlights: "越野 · 高端", price: "฿1290/天" },
+      xmax300: { category: "Yamaha 大型踏板", highlights: "运动 · 舒适", price: "฿750/天" },
     },
     routes: {
       south: { name: "普吉岛南部环线", highlights: "大佛 · 蓬贴海角 · 风车观景台" },
@@ -300,6 +301,18 @@ const zh: Messages = {
       tag1: "公路旅行",
       tag2: "双人",
       tag3: "长期租赁",
+    },
+    adv350: {
+      description: "更大排量 ADV，适合双人一日游与山路。",
+      tag1: "一日游",
+      tag2: "双人",
+      tag3: "山路与公路",
+    },
+    xmax300: {
+      description: "运动型 Yamaha 大型踏板，操控稳定。",
+      tag1: "大型踏板",
+      tag2: "公路",
+      tag3: "单人或双人",
     },
   },
   extras: {

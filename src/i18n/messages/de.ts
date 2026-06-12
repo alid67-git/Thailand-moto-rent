@@ -157,8 +157,9 @@ const de: Messages = {
     motos: {
       click160: { category: "Automatik-Scooter", highlights: "Günstig · Einfach", price: "฿350/Tag" },
       adv160: { category: "Adventure-Scooter", highlights: "Vielseitig · Komfortabel", price: "฿490/Tag" },
+      adv350: { category: "ADV 350", highlights: "Touren · Zwei Personen", price: "฿690/Tag" },
       forza350: { category: "Maxi-Scooter", highlights: "Stark · Hohe Geschwindigkeit", price: "฿790/Tag" },
-      cb500x: { category: "Adventure-Motorrad", highlights: "Off-road · Premium", price: "฿1290/Tag" },
+      xmax300: { category: "Yamaha Maxi", highlights: "Sport · Komfort", price: "฿750/Tag" },
     },
     routes: {
       south: { name: "Süd-Phuket-Runde", highlights: "Big Buddha · Promthep Cape · Windmühle" },
@@ -301,6 +302,18 @@ const de: Messages = {
       tag1: "Autobahn",
       tag2: "Zwei Personen",
       tag3: "Langzeitmiete",
+    },
+    adv350: {
+      description: "Größere ADV-Plattform für Touren und Hügel.",
+      tag1: "Tagesausflüge",
+      tag2: "Zwei Personen",
+      tag3: "Hügel & Autobahn",
+    },
+    xmax300: {
+      description: "Sportlicher Yamaha-Maxi-Roller.",
+      tag1: "Maxi-Komfort",
+      tag2: "Autobahn",
+      tag3: "Solo & Paare",
     },
   },
   extras: {

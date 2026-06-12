@@ -157,8 +157,9 @@ const fr: Messages = {
     motos: {
       click160: { category: "Scooter automatique", highlights: "Économique · Facile", price: "฿350/jour" },
       adv160: { category: "Scooter adventure", highlights: "Polyvalent · Confortable", price: "฿490/jour" },
+      adv350: { category: "ADV 350", highlights: "Excursions · Deux", price: "฿690/jour" },
       forza350: { category: "Maxi-scooter", highlights: "Puissant · Grande vitesse", price: "฿790/jour" },
-      cb500x: { category: "Moto adventure", highlights: "Tout-terrain · Premium", price: "฿1290/jour" },
+      xmax300: { category: "Yamaha maxi", highlights: "Sport · Confort", price: "฿750/jour" },
     },
     routes: {
       south: { name: "Boucle sud de Phuket", highlights: "Big Buddha · Promthep Cape · Moulin" },
@@ -301,6 +302,18 @@ const fr: Messages = {
       tag1: "Autoroute",
       tag2: "Deux personnes",
       tag3: "Location longue",
+    },
+    adv350: {
+      description: "ADV plus grand pour excursions et collines.",
+      tag1: "Excursions",
+      tag2: "Deux personnes",
+      tag3: "Collines & autoroute",
+    },
+    xmax300: {
+      description: "Maxi Yamaha sportif et confortable.",
+      tag1: "Confort maxi",
+      tag2: "Autoroute",
+      tag3: "Solo & couple",
     },
   },
   extras: {

@@ -9,6 +9,7 @@ import { GoogleReviewsSection } from "@/components/GoogleReviewsSection";
 import { IslandAccessSection } from "@/components/IslandAccessSection";
 import { useDestinationLabel } from "@/hooks/useDestinationLabel";
 import { getAppealScore } from "@/lib/destination-scores";
+import { getDestinationTiming } from "@/lib/destination-timing";
 import { getDestinationPlace } from "@/lib/destination-places";
 import type { DestinationSpot } from "@/lib/destinations";
 import type { IslandAccessGuide } from "@/lib/island-access";
@@ -31,6 +32,7 @@ export function DestinationDetailView({
   const place = getDestinationPlace(spot.slug, spot.image, spot.images);
   const heroImage = place.heroImage ?? spot.image;
   const appeal = getAppealScore(spot.slug);
+  const timing = getDestinationTiming(spot.slug, spot.duration);
 
   return (
     <main>
@@ -81,14 +83,20 @@ export function DestinationDetailView({
 
       <section className="panel-section">
         <div className="mx-auto max-w-4xl">
-          <div className="panel grid gap-5 p-6 sm:grid-cols-3">
+          <div className="panel grid gap-5 p-6 sm:grid-cols-2 lg:grid-cols-4">
             <div>
               <p className="text-label">{t("destinations.distance")}</p>
               <p className="mt-2 text-lg font-bold text-ink-950 dark:text-neutral-100">{spot.distance}</p>
             </div>
             <div>
-              <p className="text-label">{t("destinations.duration")}</p>
-              <p className="mt-2 text-lg font-bold text-ink-950 dark:text-neutral-100">{spot.duration}</p>
+              <p className="text-label">{t("destinations.driveTime")}</p>
+              <p className="mt-2 text-lg font-bold text-ink-950 dark:text-neutral-100">{timing.driveTime}</p>
+              <p className="mt-1 text-xs text-muted">{t("destinations.driveTimeHint")}</p>
+            </div>
+            <div>
+              <p className="text-label">{t("destinations.totalTime")}</p>
+              <p className="mt-2 text-lg font-bold text-ink-950 dark:text-neutral-100">{timing.totalTime}</p>
+              <p className="mt-1 text-xs text-muted">{t("destinations.totalTimeHint")}</p>
             </div>
             <div>
               <p className="text-label">{t("destinations.appealShort")}</p>

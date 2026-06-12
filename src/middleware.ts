@@ -5,7 +5,8 @@ import {
   previewBypassCookieOptions,
 } from "@/lib/site-mode";
 
-const PREVIEW = process.env.NEXT_PUBLIC_SITE_PREVIEW !== "false";
+/** Yalnızca NEXT_PUBLIC_SITE_PREVIEW=true iken “yapım aşaması” — canlıda varsayılan tam site */
+const PREVIEW = process.env.NEXT_PUBLIC_SITE_PREVIEW === "true";
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -36,6 +37,7 @@ export function middleware(request: NextRequest) {
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
+    pathname.startsWith("/admin") ||
     /\.[a-z0-9]+$/i.test(pathname)
   ) {
     return NextResponse.next();

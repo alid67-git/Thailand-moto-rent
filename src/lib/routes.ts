@@ -4,6 +4,8 @@ export interface RouteStop {
   distance: string;
   duration: string;
   description: string;
+  /** Gezilecek yer detay sayfasına bağlantı */
+  destinationSlug?: string;
 }
 
 export interface SafetyTip {
@@ -318,7 +320,7 @@ export const MOTORCYCLE_ROUTES: MotorcycleRoute[] = [
     image: "https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?w=1200&q=90",
     description: "Khao Sok Macerası, engebeli yollarda sürüş ve orman deneyiminin en yoğun halini sunmaktadır. Bu 130 kilometrelik rota 6-7 saat sürer ve zorluk seviyesi yüksektir. Patong Beach'ten başladığınızda, Phang Nga üzerinden orman yollarına gireceğiniz ve dağlık bölgelerde ilerleyeceğiniz. Khao Sok Milli Parkı, Tayland'ın en eski ve büyük milli parkıdır ve 175 milyon yıl öncesine dayanan jura dönemine ait taş kaplaması barındırır. Cheow Lan Gölü, yapay bir su deposu olup, kireçtaşı tepeleri arasında türkuaz mavi rengiyle harikulade görünmektedir. Gölün çevresinde limestone kayaları yer almakta ve tüm manzara karanlık ormandan birden açılan gözlerimi şaşırtan bir kontrast oluşturur. Orman yolları çok dönüşlü ve dar olabilir, bu nedenle yavaş ve dikkatli bir şekilde ilerlemelisiniz. Yağmur riski oldukça yüksektir ve ormandaki görünürlük sınırlı olabilir. Tekne turu seçeneği mevcuttur ve gölü keşfetmek için mükemmel bir yoldur. Benzin tüketimi 8-10 litre olup maliyet 400-500 THB'dir.",
     highlights: "Cheow Lan Lake, Jungle Rides, Karst Mountains, National Park",
-    recommendedBike: "Honda CB500X / BMW GS 310",
+    recommendedBike: "Honda ADV 350 / Forza 350",
     startPoint: "Patong Beach Roundabout",
     parkingInfo: "Park giriş noktasında otopark",
     stops: [
@@ -808,31 +810,39 @@ export const MOTORCYCLE_ROUTES: MotorcycleRoute[] = [
     stops: [
       {
         order: 1,
-        name: "Samet Nangshe",
+        name: "Samet Nangshe Viewpoint",
         distance: "22 km",
-        duration: "50 min",
-        description: "İlk fotoğraf noktası.",
+        duration: "50 dk sürüş",
+        description:
+          "Phang Nga körfezinin en ünlü panoraması — çiftler için gün doğumu veya gün batımı fotoğrafı. Viewpoint yakınında kafe ve otopark mevcut.",
+        destinationSlug: "samet-nangshe",
       },
       {
         order: 2,
-        name: "Beachfront Restaurant",
+        name: "Karon Beach — Sahil Restoranları",
         distance: "26 km",
-        duration: "120 min",
-        description: "Öğle yemeği yap.",
+        duration: "90–120 dk (yemek)",
+        description:
+          "Karon sahil şeridinde deniz manzaralı öğle yemeği. The Deck, On the Rock veya sahil boyu restoranlardan biri tercih edilebilir.",
+        destinationSlug: "karon-beach",
       },
       {
         order: 3,
         name: "Promthep Cape",
-        distance: "26 km",
-        duration: "60 min",
-        description: "Günbatışı fotoğrafları.",
+        distance: "12 km",
+        duration: "60–90 dk",
+        description:
+          "Phuket'in en güzel gün batımı noktası. Fener ve seyir terası; akşamüstü kalabalık olabilir — 45 dk önce gelin.",
+        destinationSlug: "promthep-cape",
       },
       {
         order: 4,
-        name: "Romantic Dinner",
-        distance: "12 km",
-        duration: "120 min",
-        description: "Akşam yemeği.",
+        name: "Rawai Beach — Akşam Yemeği",
+        distance: "8 km",
+        duration: "90–120 dk",
+        description:
+          "Balıkçı limanı manzarasında akşam yemeği. Taze deniz ürünleri seçip pişirtebilirsiniz.",
+        destinationSlug: "rawai-beach",
       },
     ],
     safetyTips: [
@@ -865,7 +875,7 @@ export const MOTORCYCLE_ROUTES: MotorcycleRoute[] = [
     image: "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?w=1200&q=90",
     description: "Macera Severler İçin Extreme Rota, dört tekerlekli araçların gittiği yollara motosikletle çıkma macerasını sunmaktadır. Bu 140 kilometrelik rota 7 saat sürer ve zorluk seviyesi çok yüksektir. Jungle Trail'de ormanlık engebeli yollarda sürüş yaparsınız; bu yollar çoğu zaman tek şeritli ve dar olabilir. River Crossing, nehir geçişini içermekte ve motor/teker su içine girmektedir. Mountain Peak'te Phuket'in en yüksek noktalarına ulaşırsınız ve panoramik manzara göreceksiniz. Off-road yollarda motosikletin stabilite ve kontrol yeteneği çok önem taşır. Koruyucu ekipman (koruyucu ceket, eldiven, başlık ek koruma) mutlaktır. Alet kutusu ve harita/GPS taşımanız gerekmektedir. Hiçbir zaman yalnız gitmeyin, grup ile sürünüz. Araç bakım ve teknik bilgi gereklidir. Benzin tüketimi 10-12 litre olup maliyet 500-600 THB'dir. Bu rota sadece deneyimli sürücüler ve extreme spor meraklıları için tasarlanmıştır.",
     highlights: "Jungle Trails, Mountain Roads, River Crossings, Off-Road Sections",
-    recommendedBike: "Honda CB500X / BMW GS 310",
+    recommendedBike: "Honda ADV 350 / Forza 350",
     startPoint: "Patong Beach",
     parkingInfo: "Off-road park giriş",
     stops: [

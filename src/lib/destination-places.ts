@@ -1,3 +1,5 @@
+import { getDestinationImageSet } from "@/lib/destination-images";
+
 export interface GoogleReview {
   author: string;
   rating: number;
@@ -171,19 +173,23 @@ export const DESTINATION_PLACES: Record<string, DestinationPlace> = {
 };
 
 export function getDestinationPlace(slug: string, fallbackImage: string, fallbackImages: string[]): DestinationPlace {
+  const images = getDestinationImageSet(slug, fallbackImage, fallbackImages);
   const known = DESTINATION_PLACES[slug];
-  if (known) return known;
 
-  const pool = fallbackImages.length > 0 ? fallbackImages : [fallbackImage];
-  const gallery = [...pool.slice(0, 5)];
-  while (gallery.length < 5) gallery.push(fallbackImage);
+  if (known) {
+    return {
+      ...known,
+      heroImage: images.hero,
+      gallery: images.gallery,
+    };
+  }
 
   return {
     lat: 7.88,
     lng: 98.39,
     googleMapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(slug.replace(/-/g, " ") + " Phuket Thailand")}`,
-    heroImage: fallbackImage,
-    gallery,
+    heroImage: images.hero,
+    gallery: images.gallery,
     reviews: DEFAULT_REVIEWS,
   };
 }

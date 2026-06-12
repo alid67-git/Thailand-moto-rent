@@ -156,8 +156,9 @@ const en: Messages = {
     motos: {
       click160: { category: "Automatic scooter", highlights: "Economical · Easy", price: "฿350/day" },
       adv160: { category: "Adventure scooter", highlights: "Versatile · Comfortable", price: "฿490/day" },
+      adv350: { category: "ADV 350", highlights: "Tours · Two-up", price: "฿690/day" },
       forza350: { category: "Maxi scooter", highlights: "Powerful · High speed", price: "฿790/day" },
-      cb500x: { category: "Adventure motorcycle", highlights: "Off-road · Premium", price: "฿1290/day" },
+      xmax300: { category: "Yamaha maxi", highlights: "Sport · Comfort", price: "฿750/day" },
     },
     routes: {
       south: { name: "South Phuket loop", highlights: "Big Buddha · Promthep Cape · Windmill" },
@@ -300,6 +301,18 @@ const en: Messages = {
       tag1: "Highway trips",
       tag2: "Two riders",
       tag3: "Long rentals",
+    },
+    adv350: {
+      description: "Larger ADV platform for two-up touring and hills. More power than ADV 160 for Krabi and Phang Nga days.",
+      tag1: "Day trips",
+      tag2: "Two riders",
+      tag3: "Hills & highways",
+    },
+    xmax300: {
+      description: "Sporty Yamaha maxi with stable handling and generous under-seat storage.",
+      tag1: "Maxi comfort",
+      tag2: "Highway",
+      tag3: "Solo & couples",
     },
   },
   extras: {

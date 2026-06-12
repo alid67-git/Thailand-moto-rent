@@ -159,8 +159,9 @@ const tr = {
     motos: {
       click160: { category: "Scooter otomatiği", highlights: "Ekonomik · Kolay", price: "฿350/gün" },
       adv160: { category: "Adventure scooter", highlights: "Çok amaçlı · Konforlu", price: "฿490/gün" },
+      adv350: { category: "ADV 350", highlights: "Tur · İki kişi", price: "฿690/gün" },
       forza350: { category: "Maxi scooter", highlights: "Güçlü · Yüksek hız", price: "฿790/gün" },
-      cb500x: { category: "Adventure motosiklet", highlights: "Off-road · Premium", price: "฿1290/gün" },
+      xmax300: { category: "Yamaha maxi", highlights: "Sport · Konfor", price: "฿750/gün" },
     },
     routes: {
       south: { name: "Güney Phuket loop", highlights: "Big Buddha · Promthep Cape · Windmill" },
@@ -181,8 +182,8 @@ const tr = {
       s4: { title: "Keşfet & sür", description: "Phuket'i kendi temponuzda keşfedin." },
     },
     faq: {
-      q1: "Uluslararası ehliyet ile motosiklet kiralayabilir miyim?",
-      a1: "Evet, uluslararası ehliyetle kiralayabilirsiniz. Ancak resepsiyonda sunmanız gerekir.",
+      q1: "IDP (uluslararası ehliyet) şart mı?",
+      a1: "Evet. Tayland'a gelmeden önce IDP almalısınız; ülkenizdeki motosiklet ehliyetinizle birlikte sunulmalıdır. Pasaport veya sadece otomobil ehliyeti yeterli değildir.",
       q2: "Kasko ve sigorta dahil mi?",
       a2: "Evet, tüm motosikletler temel sorumluluk sigortası ve kask ile gelir.",
       q3: "Kiralamadan önce test sürüşü yapabilir miyim?",
@@ -310,6 +311,18 @@ const tr = {
       tag1: "Otoyol",
       tag2: "İki kişi",
       tag3: "Uzun kiralama",
+    },
+    adv350: {
+      description: "Daha güçlü ADV — iki kişi ve uzun tur için. Krabi ve Phang Nga günübirlik rotalarda ideal.",
+      tag1: "Günübirlik tur",
+      tag2: "İki kişi",
+      tag3: "Tepeli yollar",
+    },
+    xmax300: {
+      description: "Yamaha maxi scooter — sportif sürüş, geniş depolama ve otoyol stabilitesi.",
+      tag1: "Maxi konfor",
+      tag2: "Otoyol",
+      tag3: "Çift / tek",
     },
   },
   extras: {

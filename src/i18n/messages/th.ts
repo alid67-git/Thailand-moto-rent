@@ -156,8 +156,9 @@ const th: Messages = {
     motos: {
       click160: { category: "สกู๊ตเตอร์อัตโนมัติ", highlights: "ประหยัด · ง่าย", price: "฿350/วัน" },
       adv160: { category: "สกู๊ตเตอร์แอดเวนเจอร์", highlights: "อเนกประสงค์ · สบาย", price: "฿490/วัน" },
+      adv350: { category: "ADV 350", highlights: "ทัวร์ · สองคน", price: "฿690/วัน" },
       forza350: { category: "แม็กซี่สกู๊ตเตอร์", highlights: "ทรงพลัง · ความเร็วสูง", price: "฿790/วัน" },
-      cb500x: { category: "มอเตอร์ไซค์แอดเวนเจอร์", highlights: "ออฟโรด · พรีเมียม", price: "฿1290/วัน" },
+      xmax300: { category: "Yamaha maxi", highlights: "สปอร์ต · สบาย", price: "฿750/วัน" },
     },
     routes: {
       south: { name: "ลูปภูเก็ตใต้", highlights: "พระใหญ่ · แหลมพรหมเทพ · กังหันลม" },
@@ -300,6 +301,18 @@ const th: Messages = {
       tag1: "ทางด่วน",
       tag2: "สองคน",
       tag3: "เช่าระยะยาว",
+    },
+    adv350: {
+      description: "ADV ขนาดใหญ่สำหรับทัวร์และเนินเขา",
+      tag1: "ทริปวันเดียว",
+      tag2: "สองคน",
+      tag3: "เนินเขาและทางด่วน",
+    },
+    xmax300: {
+      description: "แม็กซี่ Yamaha สปอร์ตและสบาย",
+      tag1: "แม็กซี่",
+      tag2: "ทางด่วน",
+      tag3: "เดี่ยวและคู่",
     },
   },
   extras: {

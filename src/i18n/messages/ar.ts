@@ -157,8 +157,9 @@ const ar: Messages = {
     motos: {
       click160: { category: "سكوتر أوتوماتيك", highlights: "اقتصادي · سهل", price: "฿350/يوم" },
       adv160: { category: "سكوتر مغامرات", highlights: "متعدد الاستخدام · مريح", price: "฿490/يوم" },
+      adv350: { category: "ADV 350", highlights: "جولات · راكبان", price: "฿690/يوم" },
       forza350: { category: "ماكسي سكوتر", highlights: "قوي · سرعة عالية", price: "฿790/يوم" },
-      cb500x: { category: "دراجة مغامرات", highlights: "طرق وعرة · بريميوم", price: "฿1290/يوم" },
+      xmax300: { category: "Yamaha maxi", highlights: "رياضي · مريح", price: "฿750/يوم" },
     },
     routes: {
       south: { name: "جولة جنوب بوكيت", highlights: "البوذا الكبير · كيب برومثيب · طاحونة" },
@@ -301,6 +302,18 @@ const ar: Messages = {
       tag1: "الطرق السريعة",
       tag2: "راكبان",
       tag3: "إيجار طويل",
+    },
+    adv350: {
+      description: "ADV أكبر للجولات والتلال مع راكبين.",
+      tag1: "رحلات يومية",
+      tag2: "راكبان",
+      tag3: "تلال وطرق سريعة",
+    },
+    xmax300: {
+      description: "ماكسي ياماها رياضي ومريح.",
+      tag1: "ماكسي",
+      tag2: "طرق سريعة",
+      tag3: "فردي وزوجي",
     },
   },
   extras: {

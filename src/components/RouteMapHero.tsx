@@ -33,7 +33,7 @@ export function RouteMapHero({
   return (
     <section className="relative h-[28rem] overflow-hidden bg-ink-950 md:h-[32rem] lg:h-[36rem]">
       {hasMap ? (
-        <div className="absolute inset-0 z-0 bg-brand-50">
+        <div className="absolute inset-0 z-0 bg-ink-900 dark:bg-ink-950">
           <RouteMap waypoints={waypoints} />
         </div>
       ) : (
