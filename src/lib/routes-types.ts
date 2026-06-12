@@ -10,7 +10,8 @@ export interface RouteStop {
   order: number;
   name: string;
   description: string;
-  /** Gezilecek yer detay sayfası */
+  /** Çok günlük rotalarda gün numarası */
+  day?: number;
   destinationSlug?: string;
   /** Önceki duraktan bu noktaya km (Patong çıkışı için Patong merkezinden) */
   driveKm: number;

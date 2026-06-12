@@ -126,51 +126,7 @@ export default async function RoutePage({
         </div>
       </section>
 
-      {tourMeta.multiDayItinerary && tourMeta.multiDayItinerary.length > 0 && (
-        <section className="panel-section bg-surface">
-          <div className="mx-auto max-w-4xl">
-            <div className="mb-2 inline-flex rounded-full bg-brand-600 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
-              {tourMeta.tourDays} günlük tur
-            </div>
-            <h2 className="font-heading text-2xl font-bold text-ink-950 dark:text-neutral-50">Günlük program</h2>
-            <p className="mt-2 text-sm text-body">
-              Konaklama ve yakıt planını önceden yapın; motosiklet otoparkı çoğu otelde mevcut.
-            </p>
-            <div className="mt-8 space-y-4">
-              {tourMeta.multiDayItinerary.map((leg) => (
-                <div key={leg.day} className="panel p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-thai-gradient text-sm font-bold text-white">
-                      G{leg.day}
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <h3 className="font-heading text-lg font-bold text-ink-950 dark:text-neutral-50">{leg.title}</h3>
-                      <p className="mt-2 text-body">{leg.description}</p>
-                      {leg.stayOptions && leg.stayOptions.length > 0 && (
-                        <div className="mt-4 rounded-xl border border-brand-200 bg-brand-50/80 p-4 dark:border-brand-700 dark:bg-ink-700/60">
-                          <p className="text-label text-brand-800 dark:text-brand-300">Nerede kalınabilir?</p>
-                          <ul className="mt-2 space-y-1.5">
-                            {leg.stayOptions.map((stay) => (
-                              <li key={stay} className="flex items-start gap-2 text-sm text-body">
-                                <span className="mt-0.5 text-brand-600 dark:text-brand-400" aria-hidden>
-                                  🏨
-                                </span>
-                                {stay}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      <RouteStopsSection route={route} />
+      <RouteStopsSection route={route} tourMeta={tourMeta} />
 
       <section className="panel-section">
         <div className="mx-auto max-w-4xl">

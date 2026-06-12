@@ -128,8 +128,39 @@ export const ROUTE_WAYPOINTS: Record<string, RouteWaypoint[]> = {
   ],
 };
 
+const _PATONG_WP = { name: "Patong", lat: 7.8961, lng: 98.2953 };
+const _PATONG_RET = { name: "Patong (Dönüş)", lat: 7.8963, lng: 98.2955 };
+
+const MULTI_ROUTE_WAYPOINTS: Record<string, RouteWaypoint[]> = {
+  "khao-sok-adventure": [_PATONG_WP, { name: "Takua Pa", lat: 8.867, lng: 98.343 }, { name: "Khao Sok", lat: 8.912, lng: 98.526 }, { name: "Cheow Lan Gölü", lat: 8.972, lng: 98.805, access: "boat" }, _PATONG_RET],
+  "krabi-highlights": [_PATONG_WP, { name: "Ao Nang", lat: 8.045, lng: 98.81 }, { name: "Railay", lat: 8.012, lng: 98.838, access: "boat" }, { name: "Tiger Cave", lat: 8.123, lng: 98.925 }, { name: "Emerald Pool", lat: 8.134, lng: 98.938 }, _PATONG_RET],
+  "phang-nga-bay-explorer": [_PATONG_WP, { name: "Sarasin Bridge", lat: 8.265, lng: 98.342 }, { name: "Samet Nangshe", lat: 8.245, lng: 98.402 }, { name: "Maymun Mağarası", lat: 8.424, lng: 98.758 }, { name: "James Bond", lat: 8.275, lng: 98.501, access: "boat" }, _PATONG_RET],
+  "andaman-coast-discovery": [_PATONG_WP, { name: "Ao Nang", lat: 8.045, lng: 98.81 }, { name: "Railay", lat: 8.012, lng: 98.838, access: "boat" }, { name: "Phang Nga Bay", lat: 8.25, lng: 98.5 }, { name: "Samet Nangshe", lat: 8.245, lng: 98.402 }, _PATONG_RET],
+  "samet-nangshe-sunrise": [_PATONG_WP, { name: "Bang Rong", lat: 8.075, lng: 98.42 }, { name: "Samet Nangshe", lat: 8.245, lng: 98.402 }, { name: "Phang Nga Bay", lat: 8.25, lng: 98.5, access: "boat" }, _PATONG_RET],
+  "khao-lak-coastal": [_PATONG_WP, { name: "Mai Khao", lat: 8.095, lng: 98.298 }, { name: "Khao Lak", lat: 8.67, lng: 98.25 }, { name: "Lam Ru Park", lat: 8.64, lng: 98.28 }, _PATONG_RET],
+  "khao-sok-krabi-adventure": [_PATONG_WP, { name: "Khao Sok", lat: 8.912, lng: 98.526 }, { name: "Cheow Lan", lat: 8.972, lng: 98.805 }, { name: "Krabi / Ao Nang", lat: 8.045, lng: 98.81 }, { name: "Tiger Cave", lat: 8.123, lng: 98.925 }, _PATONG_RET],
+  "andaman-coast-explorer-3d": [_PATONG_WP, { name: "Khao Lak", lat: 8.67, lng: 98.25 }, { name: "Krabi", lat: 8.086, lng: 98.906 }, { name: "Railay", lat: 8.012, lng: 98.838, access: "boat" }, _PATONG_RET],
+  "phang-nga-khao-sok-discovery": [_PATONG_WP, { name: "Samet Nangshe", lat: 8.245, lng: 98.402 }, { name: "Phang Nga", lat: 8.451, lng: 98.53 }, { name: "Khao Sok", lat: 8.912, lng: 98.526 }, _PATONG_RET],
+  "krabi-ultimate-explorer": [_PATONG_WP, { name: "Ao Nang", lat: 8.045, lng: 98.81 }, { name: "Railay", lat: 8.012, lng: 98.838, access: "boat" }, { name: "Emerald Pool", lat: 8.134, lng: 98.938 }, { name: "Hot Springs", lat: 7.905, lng: 99.107 }, _PATONG_RET],
+  "ultimate-south-adventure": [_PATONG_WP, { name: "Krabi", lat: 8.086, lng: 98.906 }, { name: "Khao Sok", lat: 8.912, lng: 98.526 }, { name: "Samet Nangshe", lat: 8.245, lng: 98.402 }, _PATONG_RET],
+  "ultimate-phuket-loop": [_PATONG_WP, { name: "Samet Nangshe", lat: 8.245, lng: 98.402 }, { name: "Phang Nga", lat: 8.451, lng: 98.53 }, { name: "Khao Sok", lat: 8.912, lng: 98.526 }, { name: "Krabi", lat: 8.086, lng: 98.906 }, _PATONG_RET],
+  "andaman-coast-grand-tour": [_PATONG_WP, { name: "Khao Lak", lat: 8.67, lng: 98.25 }, { name: "Krabi", lat: 8.086, lng: 98.906 }, { name: "Trang", lat: 7.556, lng: 99.611 }, { name: "Phang Nga", lat: 8.451, lng: 98.53 }, _PATONG_RET],
+  "khao-sok-gulf-coast": [_PATONG_WP, { name: "Khao Sok", lat: 8.912, lng: 98.526 }, { name: "Surat Thani", lat: 9.138, lng: 99.333 }, { name: "Khanom", lat: 9.183, lng: 99.867 }, _PATONG_RET],
+  "southern-thailand-discovery": [_PATONG_WP, { name: "Phang Nga", lat: 8.451, lng: 98.53 }, { name: "Khao Sok", lat: 8.912, lng: 98.526 }, { name: "Khanom", lat: 9.183, lng: 99.867 }, _PATONG_RET],
+  "southern-thailand-grand-tour": [_PATONG_WP, { name: "Khao Sok", lat: 8.912, lng: 98.526 }, { name: "Krabi", lat: 8.086, lng: 98.906 }, { name: "Trang", lat: 7.556, lng: 99.611 }, { name: "Phang Nga", lat: 8.451, lng: 98.53 }, _PATONG_RET],
+  "andaman-coast-complete": [_PATONG_WP, { name: "Khao Lak", lat: 8.67, lng: 98.25 }, { name: "Krabi", lat: 8.086, lng: 98.906 }, { name: "Trang", lat: 7.556, lng: 99.611 }, { name: "Satun", lat: 6.623, lng: 100.067 }, _PATONG_RET],
+  "khao-sok-gulf-expedition": [_PATONG_WP, { name: "Khao Sok", lat: 8.912, lng: 98.526 }, { name: "Surat Thani", lat: 9.138, lng: 99.333 }, { name: "Khanom", lat: 9.183, lng: 99.867 }, { name: "Chumphon", lat: 10.493, lng: 99.18 }, _PATONG_RET],
+  "luxury-south-thailand": [_PATONG_WP, { name: "Khao Lak", lat: 8.67, lng: 98.25 }, { name: "Krabi", lat: 8.086, lng: 98.906 }, { name: "Koh Lanta", lat: 7.565, lng: 99.042, access: "boat" }, _PATONG_RET],
+  "phuket-to-satun": [_PATONG_WP, { name: "Krabi", lat: 8.086, lng: 98.906 }, { name: "Trang", lat: 7.556, lng: 99.611 }, { name: "Satun", lat: 6.623, lng: 100.067 }, _PATONG_RET],
+  "ultimate-andaman-tour": [_PATONG_WP, { name: "Krabi", lat: 8.086, lng: 98.906 }, { name: "Koh Lanta", lat: 7.565, lng: 99.042 }, { name: "Trang", lat: 7.556, lng: 99.611 }, { name: "Satun", lat: 6.623, lng: 100.067 }, _PATONG_RET],
+  "southern-thailand-loop-7d": [_PATONG_WP, { name: "Khao Sok", lat: 8.912, lng: 98.526 }, { name: "Surat Thani", lat: 9.138, lng: 99.333 }, { name: "Khanom", lat: 9.183, lng: 99.867 }, { name: "Chumphon", lat: 10.493, lng: 99.18 }, { name: "Ranong", lat: 9.965, lng: 98.635 }, _PATONG_RET],
+  "koh-samui-adventure": [_PATONG_WP, { name: "Khao Sok", lat: 8.912, lng: 98.526 }, { name: "Donsak Feribot", lat: 9.317, lng: 99.731 }, { name: "Koh Samui", lat: 9.512, lng: 100.013, access: "boat" }, _PATONG_RET],
+  "deep-south-explorer": [_PATONG_WP, { name: "Krabi", lat: 8.086, lng: 98.906 }, { name: "Trang", lat: 7.556, lng: 99.611 }, { name: "Hat Yai", lat: 7.008, lng: 100.475 }, { name: "Nakhon Si Thammarat", lat: 8.432, lng: 99.963 }, _PATONG_RET],
+  "south-thailand-expedition": [_PATONG_WP, { name: "Krabi", lat: 8.086, lng: 98.906 }, { name: "Hat Yai", lat: 7.008, lng: 100.475 }, { name: "Songkhla", lat: 7.198, lng: 100.595 }, { name: "Surat Thani", lat: 9.138, lng: 99.333 }, _PATONG_RET],
+};
+
 export function getRouteWaypoints(routeId: string): RouteWaypoint[] {
-  return ROUTE_WAYPOINTS[routeId] ?? [];
+  return ROUTE_WAYPOINTS[routeId] ?? MULTI_ROUTE_WAYPOINTS[routeId] ?? [];
 }
 
 export function getMotoWaypoints(waypoints: RouteWaypoint[]): RouteWaypoint[] {

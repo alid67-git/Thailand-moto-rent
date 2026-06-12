@@ -7,6 +7,7 @@ type StopInput = {
   order: number;
   name: string;
   description: string;
+  day?: number;
   driveKm: number;
   driveMin: number;
   visitMin: number;
