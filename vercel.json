@@ -2,13 +2,5 @@
   "framework": "nextjs",
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
-  "installCommand": "npm install",
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.thailand-moto-rent.com" }],
-      "destination": "https://thailand-moto-rent.com/:path*",
-      "permanent": true
-    }
-  ]
+  "installCommand": "npm install"
 }

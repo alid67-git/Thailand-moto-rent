@@ -65,10 +65,11 @@ export const ROUTE_WAYPOINTS: Record<string, RouteWaypoint[]> = {
     { name: "Patong (Dönüş)", lat: 7.8963, lng: 98.2955 },
   ],
   "phang-nga-scenic": [
-    { name: "Patong", lat: 7.8961, lng: 98.2953 },
-    { name: "Phang Nga Town", lat: 8.4509, lng: 98.5298 },
+    { name: "Patong (Başlangıç)", lat: 7.8961, lng: 98.2953 },
     { name: "Samet Nangshe Viewpoint", lat: 8.2453, lng: 98.4025 },
     { name: "Ban Pak Khok (körfez manzarası)", lat: 8.268, lng: 98.425 },
+    { name: "Maymun Mağarası (Wat Suwan Kuha)", lat: 8.4722, lng: 98.5319 },
+    { name: "Phang Nga Town", lat: 8.4509, lng: 98.5298 },
     { name: "Surakul İskelesi (moto park)", lat: 8.2755, lng: 98.512 },
     {
       name: "James Bond Adası (tekne)",
