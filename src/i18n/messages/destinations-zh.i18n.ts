@@ -15,9 +15,13 @@ export const destinationMessagesZh: typeof destinationMessagesTr = {
   listSubtitle: "可骑摩托到达的 {count} 个目的地——海滩、观景点、寺庙等。",
   accessGuideNote: "岛屿与海湾景点请打开详情页，查看码头、船程与分步交通指南。",
   accessGuideCta: "详情页交通指南 →",
+  appealLabel: "吸引力 {score}/10",
+  appealShort: "评分",
   page: {
     back: "景点",
     gallery: "照片相册",
+    galleryHint: "点击缩略图放大并左右滑动",
+    googleReviews: "Google 评价",
     about: "简介",
     tips: "实用建议",
     bookCta: "租摩托车",

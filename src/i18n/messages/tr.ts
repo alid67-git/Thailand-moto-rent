@@ -248,6 +248,10 @@ const tr = {
     tipWeather: { title: "Hava durumu", description: "Mayıs–Ekim yağmur sezonunda erken başlayın" },
     tipSafety: { title: "Güvenlik", description: "Her zaman kask ve koruyucu giysi giyin" },
     tipBreaks: { title: "Mola noktaları", description: "Her 1-2 saatte bir mola verin" },
+    tourDayLabel: "{days} günlük turlar",
+    tourDayBadge: "{days} gün",
+    multiDayTitle: "Günlük program",
+    multiDayNote: "Çok günlük turlarda konaklama ve yakıt planını önceden yapın.",
   },
   guidePage: {
     title: "Phuket motosiklet sürüş rehberi",

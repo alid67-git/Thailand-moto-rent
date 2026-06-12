@@ -246,6 +246,10 @@ const de: Messages = {
     tipWeather: { title: "Wetter", description: "In der Regenzeit (Mai–Okt.) früh starten" },
     tipSafety: { title: "Sicherheit", description: "Immer Helm und Schutzkleidung tragen" },
     tipBreaks: { title: "Pausen", description: "Alle 1–2 Stunden eine Pause einlegen" },
+    tourDayLabel: "{days}-Tage-Touren",
+    tourDayBadge: "{days} Tage",
+    multiDayTitle: "Tagesplan",
+    multiDayNote: "Bei Mehrtagestouren Unterkunft und Treibstoff im Voraus planen.",
   },
   guidePage: {
     title: "Motorrad-Fahrguide für Phuket",

@@ -246,6 +246,10 @@ const ar: Messages = {
     tipWeather: { title: "الطقس", description: "انطلق مبكراً في موسم الأمطار (مايو–أكتوبر)" },
     tipSafety: { title: "السلامة", description: "ارتدِ الخوذة ومعدات الحماية دائماً" },
     tipBreaks: { title: "استراحات", description: "توقف كل 1–2 ساعة" },
+    tourDayLabel: "جولات {days} أيام",
+    tourDayBadge: "{days} أيام",
+    multiDayTitle: "البرنامج اليومي",
+    multiDayNote: "خطط للإقامة والوقود مسبقاً في الجولات متعددة الأيام.",
   },
   guidePage: {
     title: "دليل قيادة الدراجات في بوكيت",

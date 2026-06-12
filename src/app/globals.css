@@ -189,4 +189,27 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   .nav-details > summary::-webkit-details-marker {
     display: none;
   }
+
+  /* Readable panels — dark mode keeps dark surfaces + light text */
+  .panel-section {
+    @apply px-4 py-16 lg:px-6;
+  }
+  .panel {
+    @apply rounded-2xl border border-neutral-200 bg-white shadow-lift dark:border-ink-600 dark:bg-ink-800;
+  }
+  .panel-accent {
+    @apply rounded-2xl border-2 border-brand-300 bg-brand-50 dark:border-brand-600 dark:bg-ink-800;
+  }
+  .text-body {
+    @apply text-neutral-700 dark:text-neutral-200;
+  }
+  .text-muted {
+    @apply text-neutral-500 dark:text-neutral-400;
+  }
+  .text-label {
+    @apply text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400;
+  }
+  .bg-surface {
+    @apply bg-neutral-50 dark:bg-ink-900;
+  }
 }

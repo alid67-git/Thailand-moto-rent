@@ -10,17 +10,22 @@ const PREVIEW = process.env.NEXT_PUBLIC_SITE_PREVIEW !== "false";
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // /1 → ana sayfaya yönlendir + önizleme çerezi (mobilde rewrite'tan daha güvenilir)
+  const cookieOpts = previewBypassCookieOptions(
+    request.nextUrl.hostname,
+    request.nextUrl.protocol === "https:",
+  );
+
+  // /0 → önizleme kilidini kapat (yapım aşamasına dön)
+  if (pathname === "/0") {
+    const res = NextResponse.redirect(new URL("/", request.url), 302);
+    res.cookies.set(PREVIEW_BYPASS_COOKIE, "", { ...cookieOpts, maxAge: 0 });
+    return res;
+  }
+
+  // /1 → ana sayfaya yönlendir + önizleme çerezi
   if (pathname === "/1") {
     const res = NextResponse.redirect(new URL("/", request.url), 302);
-    res.cookies.set(
-      PREVIEW_BYPASS_COOKIE,
-      "1",
-      previewBypassCookieOptions(
-        request.nextUrl.hostname,
-        request.nextUrl.protocol === "https:",
-      ),
-    );
+    res.cookies.set(PREVIEW_BYPASS_COOKIE, "1", cookieOpts);
     return res;
   }
 

@@ -245,6 +245,10 @@ const th: Messages = {
     tipWeather: { title: "สภาพอากาศ", description: "ออกเดินทางเช้าในฤดูฝน (พ.ค.–ต.ค.)" },
     tipSafety: { title: "ความปลอดภัย", description: "สวมหมวกกันน็อคและอุปกรณ์ป้องกันเสมอ" },
     tipBreaks: { title: "จุดพัก", description: "พักทุก 1–2 ชั่วโมง" },
+    tourDayLabel: "ทัวร์ {days} วัน",
+    tourDayBadge: "{days} วัน",
+    multiDayTitle: "แผนรายวัน",
+    multiDayNote: "ทัวร์หลายวัน วางแผนที่พักและน้ำมันล่วงหน้า",
   },
   guidePage: {
     title: "คู่มือขี่มอเตอร์ไซค์ในภูเก็ต",

@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { MOTORCYCLE_ROUTES } from "@/lib/routes";
 import { getRouteWaypoints } from "@/lib/route-maps";
+import { getRouteTourMeta } from "@/lib/route-tours";
 import { RouteMapHero } from "@/components/RouteMapHero";
 
 export function generateStaticParams() {
@@ -34,6 +35,8 @@ export default async function RoutePage({
   if (!route) {
     notFound();
   }
+
+  const tourMeta = getRouteTourMeta(id);
 
   const breadcrumbSchema = {
     "@context": "https://schema.org/",
@@ -130,6 +133,50 @@ export default async function RoutePage({
         </div>
       </section>
 
+      {tourMeta.multiDayItinerary && tourMeta.multiDayItinerary.length > 0 && (
+        <section className="panel-section bg-surface">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-2 inline-flex rounded-full bg-brand-600 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
+              {tourMeta.tourDays} günlük tur
+            </div>
+            <h2 className="font-heading text-2xl font-bold text-ink-950 dark:text-neutral-50">Günlük program</h2>
+            <p className="mt-2 text-sm text-body">
+              Konaklama ve yakıt planını önceden yapın; motosiklet otoparkı çoğu otelde mevcut.
+            </p>
+            <div className="mt-8 space-y-4">
+              {tourMeta.multiDayItinerary.map((leg) => (
+                <div key={leg.day} className="panel p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-thai-gradient text-sm font-bold text-white">
+                      G{leg.day}
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="font-heading text-lg font-bold text-ink-950 dark:text-neutral-50">{leg.title}</h3>
+                      <p className="mt-2 text-body">{leg.description}</p>
+                      {leg.stayOptions && leg.stayOptions.length > 0 && (
+                        <div className="mt-4 rounded-xl border border-brand-200 bg-brand-50/80 p-4 dark:border-brand-700 dark:bg-ink-700/60">
+                          <p className="text-label text-brand-800 dark:text-brand-300">Nerede kalınabilir?</p>
+                          <ul className="mt-2 space-y-1.5">
+                            {leg.stayOptions.map((stay) => (
+                              <li key={stay} className="flex items-start gap-2 text-sm text-body">
+                                <span className="mt-0.5 text-brand-600 dark:text-brand-400" aria-hidden>
+                                  🏨
+                                </span>
+                                {stay}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="px-4 py-16 lg:px-6">
         <div className="mx-auto max-w-4xl">
             <h2 className="mb-8 font-heading text-2xl font-bold text-ink-950 dark:text-white">Duraklar</h2>
@@ -168,7 +215,7 @@ export default async function RoutePage({
             {route.safetyTips.map((tip, i) => (
               <div
                 key={i}
-                className="rounded-2xl border border-brand-200 bg-brand-50 p-6 dark:border-brand-900 dark:bg-brand-950/20"
+                className="panel-accent p-6"
               >
                 <div className="text-3xl">{tip.icon}</div>
                   <h3 className="mt-3 font-heading font-bold text-ink-950 dark:text-white">{tip.title}</h3>
@@ -181,8 +228,8 @@ export default async function RoutePage({
 
       <section className="bg-neutral-50 px-4 py-12 dark:bg-ink-900 lg:px-6">
         <div className="mx-auto max-w-4xl">
-          <div className="rounded-2xl border-2 border-brand-200 bg-brand-50 p-6 dark:border-brand-900 dark:bg-brand-950/20">
-            <p className="text-sm font-semibold text-brand-900 dark:text-brand-100">
+          <div className="panel-accent p-6">
+            <p className="text-sm font-semibold text-brand-800 dark:text-brand-200">
                 Bu rota için önerilen motosiklet:
             </p>
               <div className="mt-4 flex flex-col items-center justify-between gap-4 sm:flex-row">

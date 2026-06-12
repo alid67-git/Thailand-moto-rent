@@ -245,6 +245,10 @@ const zh: Messages = {
     tipWeather: { title: "天气", description: "雨季（5–10月）建议早出" },
     tipSafety: { title: "安全", description: "始终佩戴头盔和防护装备" },
     tipBreaks: { title: "休息点", description: "每1–2小时休息一次" },
+    tourDayLabel: "{days}日游",
+    tourDayBadge: "{days}天",
+    multiDayTitle: "每日行程",
+    multiDayNote: "多日游请提前规划住宿和燃油。",
   },
   guidePage: {
     title: "普吉岛摩托车骑行指南",

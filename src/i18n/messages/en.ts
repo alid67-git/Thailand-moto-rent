@@ -245,6 +245,10 @@ const en: Messages = {
     tipWeather: { title: "Weather", description: "Start early during rainy season (May–October)" },
     tipSafety: { title: "Safety", description: "Always wear a helmet and protective gear" },
     tipBreaks: { title: "Break points", description: "Take a break every 1–2 hours" },
+    tourDayLabel: "{days}-day tours",
+    tourDayBadge: "{days} days",
+    multiDayTitle: "Day-by-day plan",
+    multiDayNote: "For multi-day tours, plan accommodation and fuel in advance.",
   },
   guidePage: {
     title: "Phuket motorcycle riding guide",

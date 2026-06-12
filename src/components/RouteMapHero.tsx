@@ -5,12 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLocale } from "@/context/LocaleContext";
 import type { RouteWaypoint } from "@/lib/route-maps";
-import {
-  buildAppleMapsRouteUrl,
-  buildGoogleMapsRouteUrl,
-  buildGoogleMapsStopUrl,
-  buildWazeUrl,
-} from "@/lib/navigation-links";
+import { buildGoogleMapsRouteUrl, buildGoogleMapsStopUrl } from "@/lib/navigation-links";
 
 const RouteMap = dynamic(() => import("@/components/RouteMap").then((m) => m.RouteMap), {
   ssr: false,
@@ -34,8 +29,6 @@ export function RouteMapHero({
   const hasMap = waypoints.length >= 2;
   const boatCount = waypoints.filter((w) => w.access === "boat").length;
   const googleUrl = buildGoogleMapsRouteUrl(waypoints);
-  const appleUrl = buildAppleMapsRouteUrl(waypoints);
-  const wazeUrl = waypoints[0] ? buildWazeUrl(waypoints[0]) : null;
 
   return (
     <section className="relative h-[28rem] overflow-hidden bg-ink-950 md:h-[32rem] lg:h-[36rem]">
@@ -101,28 +94,6 @@ export function RouteMapHero({
                     <span aria-hidden>🗺️</span>
                     {t("routeDetail.googleMaps")}
                   </a>
-                  {appleUrl && (
-                    <a
-                      href={appleUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex min-h-[44px] items-center gap-2 rounded-xl bg-white/95 px-4 py-2.5 text-sm font-bold text-ink-950 shadow-lift hover:bg-white"
-                    >
-                      <span aria-hidden>🍎</span>
-                      {t("routeDetail.appleMaps")}
-                    </a>
-                  )}
-                  {wazeUrl && (
-                    <a
-                      href={wazeUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex min-h-[44px] items-center gap-2 rounded-xl bg-[#33ccff] px-4 py-2.5 text-sm font-bold text-white shadow-lift hover:opacity-95"
-                    >
-                      <span aria-hidden>🚗</span>
-                      {t("routeDetail.waze")}
-                    </a>
-                  )}
                 </div>
               </div>
             )}

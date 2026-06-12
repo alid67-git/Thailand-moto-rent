@@ -16,9 +16,13 @@ export const destinationMessagesTr = {
   accessGuideNote:
     "Ada ve körfez yerlerinde karta tıklayın — detay sayfasında motosikletle hangi iskeleye kadar gidileceği ve tekne bilgisi yer alır.",
   accessGuideCta: "Detayda ulaşım rehberi →",
+  appealLabel: "{score}/10 çekicilik",
+  appealShort: "Çekicilik",
   page: {
     back: "Gezilecek yerler",
     gallery: "Fotoğraf galerisi",
+    galleryHint: "Küçük resimlere tıklayın — büyütün ve yanlara kaydırın",
+    googleReviews: "Google yorumları",
     about: "Hakkında",
     tips: "Pratik ipuçları",
     bookCta: "Motosiklet kirala",
@@ -346,9 +350,13 @@ export const destinationMessagesEn: typeof destinationMessagesTr = {
   accessGuideNote:
     "For islands and bays, open the detail page — pier endpoints, boat times and step-by-step access guides are there.",
   accessGuideCta: "Access guide on detail page →",
+  appealLabel: "{score}/10 appeal",
+  appealShort: "Appeal",
   page: {
     back: "Destinations",
     gallery: "Photo gallery",
+    galleryHint: "Tap thumbnails to enlarge and swipe sideways",
+    googleReviews: "Google reviews",
     about: "About",
     tips: "Practical tips",
     bookCta: "Rent a motorcycle",

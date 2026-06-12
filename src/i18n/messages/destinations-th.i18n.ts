@@ -16,9 +16,13 @@ export const destinationMessagesTh: typeof destinationMessagesTr = {
   accessGuideNote:
     "เกาะและอ่าว — เปิดหน้ารายละเอียดเพื่อดูท่าเรือ เรือ และขั้นตอนการเดินทาง",
   accessGuideCta: "คู่มือการเดินทางในหน้ารายละเอียด →",
+  appealLabel: "ความน่าสนใจ {score}/10",
+  appealShort: "คะแนน",
   page: {
     back: "สถานที่ท่องเที่ยว",
     gallery: "แกลเลอรีรูปภาพ",
+    galleryHint: "แตะรูปย่อเพื่อขยายและเลื่อนดู",
+    googleReviews: "รีวิวจาก Google",
     about: "เกี่ยวกับ",
     tips: "เคล็ดลับที่เป็นประโยชน์",
     bookCta: "เช่ามอเตอร์ไซค์",

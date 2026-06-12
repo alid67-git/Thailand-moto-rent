@@ -246,6 +246,10 @@ const fr: Messages = {
     tipWeather: { title: "Météo", description: "Partir tôt en saison des pluies (mai–oct.)" },
     tipSafety: { title: "Sécurité", description: "Toujours porter casque et équipement" },
     tipBreaks: { title: "Pauses", description: "Pause toutes les 1 à 2 heures" },
+    tourDayLabel: "Circuits {days} jours",
+    tourDayBadge: "{days} jours",
+    multiDayTitle: "Programme jour par jour",
+    multiDayNote: "Pour les circuits multi-jours, prévoyez hébergement et carburant.",
   },
   guidePage: {
     title: "Guide moto à Phuket",
