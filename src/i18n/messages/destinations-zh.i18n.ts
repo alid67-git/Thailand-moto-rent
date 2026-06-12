@@ -28,6 +28,7 @@ export const destinationMessagesZh: typeof destinationMessagesTr = {
   durationMinutes: "{min} 分钟",
   durationMinutesRange: "{from}–{to} 分钟",
   durationHours: "{h} 小时",
+  durationHoursDecimal: "{h} 小时",
   durationHoursRange: "{from}–{to} 小时",
   durationHoursPlus: "{h}+ 小时",
   timing: {

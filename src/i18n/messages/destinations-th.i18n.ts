@@ -29,6 +29,7 @@ export const destinationMessagesTh: typeof destinationMessagesTr = {
   durationMinutes: "{min} นาที",
   durationMinutesRange: "{from}–{to} นาที",
   durationHours: "{h} ชม.",
+  durationHoursDecimal: "{h} ชม.",
   durationHoursRange: "{from}–{to} ชม.",
   durationHoursPlus: "{h}+ ชม.",
   timing: {

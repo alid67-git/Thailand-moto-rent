@@ -141,7 +141,11 @@ export const DESTINATION_WIKIMEDIA: Record<string, string[]> = {
     "https://upload.wikimedia.org/wikipedia/commons/a/a0/Emerald_Pool_at_Khao_Phra_Bang_Khram_Nature_Reserve%2C_near_Krabi_%28Thailand%29_-_panoramio_%283%29.jpg",
   ],
   "hot-springs": [
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Hot_Spring_Waterfall_%28121207107%29.jpeg/1280px-Hot_Spring_Waterfall_%28121207107%29.jpeg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Khlong_Thom_Nuea%2C_Khlong_Thom_District%2C_Krabi%2C_Thailand_-_panoramio.jpg/1280px-Khlong_Thom_Nuea%2C_Khlong_Thom_District%2C_Krabi%2C_Thailand_-_panoramio.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Khlong_Thom_Nuea%2C_Khlong_Thom_District%2C_Krabi%2C_Thailand_-_panoramio_%281%29.jpg/1280px-Khlong_Thom_Nuea%2C_Khlong_Thom_District%2C_Krabi%2C_Thailand_-_panoramio_%281%29.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Khlong_Thom_Nuea%2C_Khlong_Thom_District%2C_Krabi%2C_Thailand_-_panoramio_%282%29.jpg/1280px-Khlong_Thom_Nuea%2C_Khlong_Thom_District%2C_Krabi%2C_Thailand_-_panoramio_%282%29.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Khlong_Thom_Nuea%2C_Khlong_Thom_District%2C_Krabi%2C_Thailand_-_panoramio_%283%29.jpg/1280px-Khlong_Thom_Nuea%2C_Khlong_Thom_District%2C_Krabi%2C_Thailand_-_panoramio_%283%29.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/2016-04-08_Emerald_Pool_%28Sa_Morakot%29_01.jpg/1280px-2016-04-08_Emerald_Pool_%28Sa_Morakot%29_01.jpg",
   ],
   "krabi-town": [
     "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Krabi_town_6.jpg/1280px-Krabi_town_6.jpg",
@@ -218,7 +222,7 @@ export const DESTINATION_WIKIMEDIA: Record<string, string[]> = {
     "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/2016_Prowincja_Krabi%2C_Widoki_ze_statku_p%C5%82yn%C4%85cego_na_trasie_Ao_Nang_-_Ko_Lanta_Yai_%2801%29.jpg/1280px-2016_Prowincja_Krabi%2C_Widoki_ze_statku_p%C5%82yn%C4%85cego_na_trasie_Ao_Nang_-_Ko_Lanta_Yai_%2801%29.jpg",
   ],
   "ton-prai-waterfall": [
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/The_Rand-McNally_guide_to_the_great_northwest.djvu/page1-1280px-The_Rand-McNally_guide_to_the_great_northwest.djvu.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%81%E0%B9%82%E0%B8%95%E0%B8%99%E0%B9%84%E0%B8%9E%E0%B8%A3.jpg/1280px-%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%81%E0%B9%82%E0%B8%95%E0%B8%99%E0%B9%84%E0%B8%9E%E0%B8%A3.jpg",
   ],
   "paradise-beach": [
     "https://upload.wikimedia.org/wikipedia/commons/1/1f/Phuket_Patong_Paradise_beach.JPG",

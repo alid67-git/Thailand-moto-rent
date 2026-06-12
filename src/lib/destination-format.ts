@@ -26,6 +26,16 @@ export function formatDestinationDuration(raw: string, t: TFn): string {
     return t("destinations.durationHours", { h: hoursShort[1] });
   }
 
+  const decimalHour = raw.match(/^(\d+(?:[.,]\d+)?)\s*hours?$/i);
+  if (decimalHour) {
+    return t("destinations.durationHoursDecimal", { h: decimalHour[1].replace(",", ".") });
+  }
+
+  const decimalHourShort = raw.match(/^(\d+(?:[.,]\d+)?)\s*h$/i);
+  if (decimalHourShort) {
+    return t("destinations.durationHoursDecimal", { h: decimalHourShort[1].replace(",", ".") });
+  }
+
   const rangeMin = raw.match(/(\d+)\s*[-–]\s*(\d+)\s*min(?:ute)?s?/i);
   if (rangeMin) {
     return t("destinations.durationMinutesRange", { from: rangeMin[1], to: rangeMin[2] });
