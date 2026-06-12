@@ -22,6 +22,9 @@ export default function DestinationsPage() {
           <p className="mt-4 max-w-2xl text-lg text-white/85">
             {t("destinations.listSubtitle", { count: DESTINATION_SPOTS.length })}
           </p>
+          <p className="mt-3 max-w-2xl text-sm text-white/65">
+            {t("destinations.accessGuideNote")}
+          </p>
         </div>
       </section>
 
@@ -81,6 +84,11 @@ export default function DestinationsPage() {
                       </p>
                     </div>
                   </div>
+                  {hasIslandAccess(spot.slug) && (
+                    <p className="border-t border-neutral-100 bg-cyan-50 px-4 py-2.5 text-center text-xs font-semibold text-cyan-800 dark:border-ink-700 dark:bg-cyan-950/30 dark:text-cyan-300">
+                      {t("destinations.accessGuideCta")}
+                    </p>
+                  )}
                 </article>
               </Link>
             ))}

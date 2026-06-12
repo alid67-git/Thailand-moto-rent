@@ -13,6 +13,9 @@ export const destinationMessagesTh: typeof destinationMessagesTr = {
   viewAll: "ดูสถานที่ทั้งหมด →",
   listTitle: "สถานที่ท่องเที่ยวทั้งหมดในภูเก็ต",
   listSubtitle: "จุดหมายที่ขี่มอเตอร์ไซค์ไปได้ {count} แห่ง — หาด จุดชมวิว วัด และอื่นๆ",
+  accessGuideNote:
+    "เกาะและอ่าว — เปิดหน้ารายละเอียดเพื่อดูท่าเรือ เรือ และขั้นตอนการเดินทาง",
+  accessGuideCta: "คู่มือการเดินทางในหน้ารายละเอียด →",
   page: {
     back: "สถานที่ท่องเที่ยว",
     gallery: "แกลเลอรีรูปภาพ",

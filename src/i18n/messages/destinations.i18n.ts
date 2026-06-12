@@ -13,6 +13,9 @@ export const destinationMessagesTr = {
   viewAll: "Tüm yerleri gör →",
   listTitle: "Phuket'te gezilecek tüm yerler",
   listSubtitle: "Motosikletle ulaşabileceğiniz {count} destinasyon — plajlar, viewpoint'ler, tapınaklar ve daha fazlası.",
+  accessGuideNote:
+    "Ada ve körfez yerlerinde karta tıklayın — detay sayfasında motosikletle hangi iskeleye kadar gidileceği ve tekne bilgisi yer alır.",
+  accessGuideCta: "Detayda ulaşım rehberi →",
   page: {
     back: "Gezilecek yerler",
     gallery: "Fotoğraf galerisi",
@@ -340,6 +343,9 @@ export const destinationMessagesEn: typeof destinationMessagesTr = {
   viewAll: "View all places →",
   listTitle: "All places to explore in Phuket",
   listSubtitle: "{count} motorcycle-friendly destinations — beaches, viewpoints, temples and more.",
+  accessGuideNote:
+    "For islands and bays, open the detail page — pier endpoints, boat times and step-by-step access guides are there.",
+  accessGuideCta: "Access guide on detail page →",
   page: {
     back: "Destinations",
     gallery: "Photo gallery",

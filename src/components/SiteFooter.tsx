@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useLocale } from "@/context/LocaleContext";
+import { APP_VERSION_LABEL } from "@/lib/version";
 
 export function SiteFooter() {
   const { t } = useLocale();
@@ -95,7 +96,7 @@ export function SiteFooter() {
       {/* Bottom bar */}
       <div className="border-t border-white/6 py-6">
         <p className="mx-auto max-w-6xl text-center text-xs text-white/25">
-          {t("footer.copyright")}
+          {t("footer.copyright")} · {APP_VERSION_LABEL}
         </p>
       </div>
     </footer>

@@ -13,6 +13,8 @@ export const destinationMessagesZh: typeof destinationMessagesTr = {
   viewAll: "查看全部景点 →",
   listTitle: "普吉岛全部骑行景点",
   listSubtitle: "可骑摩托到达的 {count} 个目的地——海滩、观景点、寺庙等。",
+  accessGuideNote: "岛屿与海湾景点请打开详情页，查看码头、船程与分步交通指南。",
+  accessGuideCta: "详情页交通指南 →",
   page: {
     back: "景点",
     gallery: "照片相册",

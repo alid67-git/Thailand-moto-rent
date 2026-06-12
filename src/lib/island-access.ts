@@ -187,6 +187,47 @@ export const ISLAND_ACCESS_GUIDES: Record<string, IslandAccessGuide> = {
       "Geceleme floating bungalow ise tekne transferi pakete dahil.",
     ],
   },
+  "ao-nang": {
+    motoEndpoint: "Ao Nang Sahili — Krabi (motosikletle doğrudan)",
+    motoFromPatong: "~105 km · 2,5–3 saat (Krabi üzerinden)",
+    boatPier: "Ao Nang sahil şeridi — longtail iskeleleri",
+    boatType: "Longtail tekne (Railay, Poda, Tup Adası)",
+    boatDuration: "Railay: 10–15 dk · Poda: ~25 dk",
+    summary:
+      "Ao Nang Krabi'nin ana sahil kasabası — motosikletle doğrudan gidilir. Railay ve çevre adalara buradan tekne kalkar; Krabi günübirlik veya konaklamalı rotanın üssü.",
+    steps: [
+      "Patong → Krabi Town → Ao Nang (404 / Ao Nang Rd).",
+      "Motosikletle sahil boyunca park; otel ve restoranlar cadde üzerinde.",
+      "Sahil iskelesinden Railay, Poda Adası, Chicken Island, Phra Nang turları.",
+      "Tiger Cave ve Emerald Pool dönüşte motosikletle uğranabilir (~30–45 dk).",
+    ],
+    tips: [
+      "Railay'e karayolu yok — tekne mutlaka Ao Nang veya Nopparat Thara'dan.",
+      "Konaklama Ao Nang'da; Railay günübirlik longtail ile ideal.",
+      "Hafta sonu akşam sahil yürüyüşü ve gece pazarı canlı.",
+    ],
+  },
+  "railay-beach": {
+    motoEndpoint: "Ao Nang — Nopparat Thara Longtail İskelesi",
+    motoFromPatong: "~105 km motosiklet (Krabi) + 10–15 dk tekne",
+    boatPier: "Ao Nang Beach · Ao Nang Nopparat Thara Pier",
+    boatType: "Longtail tekne (sabit tarife panosu)",
+    boatDuration: "10–15 dk (her yön)",
+    summary:
+      "Railay yarımadasına motosikletle gidilemez — kayalıklarla çevrili, karayolu yok. Krabi/Ao Nang'a motosikletle varılır, Railay'e longtail ile geçilir.",
+    steps: [
+      "Patong → Krabi → Ao Nang (Tiger Cave / Emerald Pool ile kombine edilebilir).",
+      "Motosikleti Ao Nang otoparkına bırak; sahil boyu longtail tekneciler.",
+      "10–15 dk tekne → Railay Batı veya Doğu koyu.",
+      "Phra Nang Mağarası, tırmanış rotaları, plajlar; dönüş aynı iskele.",
+    ],
+    tips: [
+      "Motosiklet Railay'e asla götürülemez — tek erişim tekne (veya Tonsai yürüyüş yolu).",
+      "Ao Nang'da kalıp Railay'e günübirlik gitmek en pratik plan.",
+      "Gelgit düşükken bazı koylara yürüyüş mümkün; yine de tekne önerilir.",
+      "Doğu koy (Phra Nang) için Railay Doğu'ya inin.",
+    ],
+  },
   "phang-nga-cave": {
     motoEndpoint: "Phang Nga — Surakul Pier",
     motoFromPatong: "~92 km · 2–2,5 saat",

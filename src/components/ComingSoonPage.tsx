@@ -2,6 +2,7 @@
 
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useLocale } from "@/context/LocaleContext";
+import { APP_VERSION_LABEL } from "@/lib/version";
 
 export function ComingSoonPage() {
   const { t } = useLocale();
@@ -29,7 +30,9 @@ export function ComingSoonPage() {
 
         <p className="mt-6 max-w-md text-sm leading-relaxed text-white/55">{t("preview.note")}</p>
 
-        <p className="mt-10 text-xs text-white/40">{t("footer.copyright")}</p>
+        <p className="mt-10 text-xs text-white/40">
+          {t("footer.copyright")} · {APP_VERSION_LABEL}
+        </p>
       </div>
     </main>
   );
