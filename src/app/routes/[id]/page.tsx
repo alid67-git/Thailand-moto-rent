@@ -5,7 +5,7 @@ import { MOTORCYCLE_ROUTES } from "@/lib/routes";
 import { getRouteWaypoints } from "@/lib/route-maps";
 import { getRouteTourMeta } from "@/lib/route-tours";
 import { RouteMapHero } from "@/components/RouteMapHero";
-import { resolveStopDestinationSlug } from "@/lib/route-stop-links";
+import { RouteStopsSection } from "@/components/RouteStopsSection";
 
 export function generateStaticParams() {
   return MOTORCYCLE_ROUTES.map((route) => ({ id: route.id }));
@@ -170,41 +170,7 @@ export default async function RoutePage({
         </section>
       )}
 
-      <section className="panel-section bg-surface">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="mb-2 font-heading text-2xl font-bold text-ink-950 dark:text-neutral-50">Duraklar</h2>
-          <p className="mb-8 text-sm text-muted">İsme tıklayın — fotoğraflar, harita ve Google yorumları</p>
-          <div className="space-y-4">
-            {route.stops.map((stop) => {
-              const slug = resolveStopDestinationSlug(stop.name, stop.destinationSlug);
-              const inner = (
-                <>
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-thai-gradient font-bold text-white">
-                    {stop.order}
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <h3 className={`font-heading text-lg font-bold ${slug ? "text-brand-700 group-hover:underline dark:text-brand-300" : "text-ink-950 dark:text-neutral-50"}`}>
-                      {stop.name}
-                      {slug && <span className="ml-2 text-sm font-normal text-muted">→ detay</span>}
-                    </h3>
-                    <p className="mt-1 text-sm text-muted">{stop.distance} · {stop.duration}</p>
-                    <p className="mt-3 text-body">{stop.description}</p>
-                  </div>
-                </>
-              );
-              return slug ? (
-                <Link key={stop.order} href={`/destinations/${slug}`} className="panel group flex items-start gap-4 p-6 transition hover:border-brand-500">
-                  {inner}
-                </Link>
-              ) : (
-                <div key={stop.order} className="panel flex items-start gap-4 p-6">
-                  {inner}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <RouteStopsSection route={route} />
 
       <section className="panel-section">
         <div className="mx-auto max-w-4xl">

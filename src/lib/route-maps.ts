@@ -72,6 +72,22 @@ export const ROUTE_WAYPOINTS: Record<string, RouteWaypoint[]> = {
     { name: "Maymun Mağarası (isteğe bağlı)", lat: 8.4722, lng: 98.5319 },
     { name: "Patong (Dönüş)", lat: 7.8963, lng: 98.2955 },
   ],
+  "phang-nga-day": [
+    { name: "Patong (Başlangıç)", lat: 7.8961, lng: 98.2953 },
+    { name: "Samet Nangshe Viewpoint", lat: 8.2453, lng: 98.4025 },
+    { name: "Maymun Mağarası (Wat Suwan Kuha)", lat: 8.4244, lng: 98.7578 },
+    { name: "Surakul İskelesi (moto park)", lat: 8.2755, lng: 98.512 },
+    { name: "James Bond Adası (tekne)", lat: 8.2752, lng: 98.5015, access: "boat" },
+    { name: "Patong (Dönüş)", lat: 7.8963, lng: 98.2955 },
+  ],
+  "culture-town": [
+    { name: "Patong (Başlangıç)", lat: 7.8961, lng: 98.2953 },
+    { name: "Wat Chalong", lat: 7.8467, lng: 98.335 },
+    { name: "Old Phuket Town", lat: 7.8844, lng: 98.3883 },
+    { name: "Khao Rang", lat: 7.895, lng: 98.395 },
+    { name: "Monkey Hill", lat: 7.8844, lng: 98.395 },
+    { name: "Patong (Dönüş)", lat: 7.8963, lng: 98.2955 },
+  ],
   "phang-nga-scenic": [
     { name: "Patong (Başlangıç)", lat: 7.8961, lng: 98.2953 },
     { name: "Samet Nangshe Viewpoint", lat: 8.2453, lng: 98.4025 },
