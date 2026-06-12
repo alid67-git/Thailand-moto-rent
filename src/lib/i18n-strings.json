@@ -1,0 +1,47 @@
+{
+  "whatsapp": {
+    "tr": "Merhaba! 🤖 Thailand Moto Rent AI Asistanı. Size nasıl yardımcı olabilirim?",
+    "en": "Hello! 🤖 Thailand Moto Rent AI Assistant. How can I help?",
+    "th": "สวัสดี! 🤖 ผู้ช่วย AI Thailand Moto Rent. ฉันสามารถช่วยคุณได้อย่างไร",
+    "de": "Hallo! 🤖 AI-Assistent von Thailand Moto Rent. Wie kann ich dir helfen?",
+    "fr": "Bonjour! 🤖 Assistant IA de Thailand Moto Rent. Comment puis-je vous aider?",
+    "ar": "مرحبا! 🤖 مساعد AI في Thailand Moto Rent. كيف يمكنني مساعدتك؟",
+    "zh": "您好！🤖 Thailand Moto Rent AI 助手。有什么可以帮您？"
+  },
+  "whatsapp_placeholder": {
+    "tr": "Bir mesaj yazınız...",
+    "en": "Type a message...",
+    "th": "พิมพ์ข้อความ...",
+    "de": "Nachricht eingeben...",
+    "fr": "Tapez un message...",
+    "ar": "اكتب رسالة...",
+    "zh": "输入消息..."
+  },
+  "whatsapp_send": {
+    "tr": "Gönder",
+    "en": "Send",
+    "th": "ส่ง",
+    "de": "Senden",
+    "fr": "Envoyer",
+    "ar": "إرسال",
+    "zh": "发送"
+  },
+  "whatsapp_online": {
+    "tr": "🟢 Çevrimiçi",
+    "en": "🟢 Online",
+    "th": "🟢 ออนไลน์",
+    "de": "🟢 Online",
+    "fr": "🟢 En ligne",
+    "ar": "🟢 متصل",
+    "zh": "🟢 在线"
+  },
+  "whatsapp_error": {
+    "tr": "Üzgünüm, bir hata oluştu. Lütfen direkt WhatsApp'tan mesaj gönderin.",
+    "en": "Sorry, an error occurred. Please message directly on WhatsApp.",
+    "th": "ขออภัย เกิดข้อผิดพลาด กรุณาส่งข้อความโดยตรงทาง WhatsApp",
+    "de": "Entschuldigung, es ist ein Fehler aufgetreten. Bitte senden Sie eine Nachricht direkt über WhatsApp.",
+    "fr": "Désolé, une erreur s'est produite. Veuillez envoyer un message directement via WhatsApp.",
+    "ar": "عذرا، حدث خطأ. يرجى إرسال رسالة مباشرة عبر WhatsApp.",
+    "zh": "抱歉，出现错误。请直接通过 WhatsApp 联系我们。"
+  }
+}
