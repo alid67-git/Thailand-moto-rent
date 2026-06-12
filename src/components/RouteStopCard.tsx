@@ -3,10 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "@/context/LocaleContext";
+import { useIslandAccessGuide } from "@/hooks/useIslandAccessGuide";
 import type { RouteStop } from "@/lib/routes-types";
 import { buildGoogleMapsStopUrl } from "@/lib/navigation-links";
 import { getDestinationImageSet } from "@/lib/destination-images";
 import { DESTINATION_SPOTS } from "@/lib/destinations";
+import { shouldShowIslandAccess } from "@/lib/island-access-i18n";
+import { IslandAccessCompact } from "@/components/IslandAccessSection";
 
 function stopImage(stop: RouteStop): string | null {
   if (!stop.destinationSlug) return null;
@@ -19,6 +22,9 @@ export function RouteStopCard({ stop }: { stop: RouteStop }) {
   const { t } = useLocale();
   const slug = stop.destinationSlug;
   const image = stopImage(stop);
+  const islandGuide = useIslandAccessGuide(
+    shouldShowIslandAccess(slug, stop.access) ? slug : undefined,
+  );
   const mapsUrl =
     stop.lat != null && stop.lng != null
       ? buildGoogleMapsStopUrl({ name: stop.name, lat: stop.lat, lng: stop.lng })
@@ -75,6 +81,9 @@ export function RouteStopCard({ stop }: { stop: RouteStop }) {
             <p className="mt-3 rounded-lg border border-amber-200 bg-amber-50/80 px-3 py-2 text-xs text-amber-900 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-100">
               💡 {stop.tips}
             </p>
+          )}
+          {islandGuide && (
+            <IslandAccessCompact guide={islandGuide} destinationSlug={slug} />
           )}
           {mapsUrl && (
             <a

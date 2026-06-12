@@ -8,10 +8,10 @@ import { DestinationGallery } from "@/components/DestinationGallery";
 import { GoogleReviewsSection } from "@/components/GoogleReviewsSection";
 import { IslandAccessSection } from "@/components/IslandAccessSection";
 import { useDestinationLabel } from "@/hooks/useDestinationLabel";
+import { useIslandAccessGuide } from "@/hooks/useIslandAccessGuide";
 import { getAppealScore } from "@/lib/destination-scores";
 import { getDestinationPlace } from "@/lib/destination-places";
 import type { DestinationSpot } from "@/lib/destinations";
-import type { IslandAccessGuide } from "@/lib/island-access";
 import { useLocale } from "@/context/LocaleContext";
 
 const DestinationMiniMap = dynamic(
@@ -19,14 +19,9 @@ const DestinationMiniMap = dynamic(
   { ssr: false, loading: () => <div className="min-h-[200px] animate-pulse rounded-2xl bg-neutral-200 dark:bg-ink-700" /> },
 );
 
-export function DestinationDetailView({
-  spot,
-  islandAccess,
-}: {
-  spot: DestinationSpot;
-  islandAccess?: IslandAccessGuide;
-}) {
+export function DestinationDetailView({ spot }: { spot: DestinationSpot }) {
   const { t } = useLocale();
+  const islandAccess = useIslandAccessGuide(spot.slug);
   const { name, description, distance, driveTime, totalTime } = useDestinationLabel(spot);
   const place = getDestinationPlace(spot.slug, spot.image, spot.images);
   const heroImage = place.heroImage ?? spot.image;

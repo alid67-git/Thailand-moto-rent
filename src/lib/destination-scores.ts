@@ -54,6 +54,11 @@ export const DESTINATION_APPEAL: Record<string, number> = {
   "sticky-waterfall": 5,
   "erawan-national-park": 5,
   "mae-sa-waterfall": 5,
+  "monkey-cave": 7,
+  "khao-rang": 7,
+  "mai-khao-plane-spot": 8,
+  "bangla-road": 6,
+  "donsak-samui-ferry": 8,
 };
 
 export function getAppealScore(slug: string): number {

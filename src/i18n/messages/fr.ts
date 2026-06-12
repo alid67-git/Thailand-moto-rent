@@ -1,5 +1,7 @@
 import type { Messages } from "./tr";
 import { destinationMessagesEn } from "./destinations.i18n";
+import { routeCatalogFr } from "./routes-catalog.fr.i18n";
+import { islandAccessGuidesFr } from "./island-access-guides.fr.i18n";
 
 const fr: Messages = {
   meta: {
@@ -66,6 +68,17 @@ const fr: Messages = {
     includes: "Casque inclus · Assurance responsabilité · Support 24h",
   },
   destinations: destinationMessagesEn,
+  routeCatalog: routeCatalogFr,
+  islandAccessGuides: islandAccessGuidesFr,
+  islandAccess: {
+    title: "Comment y aller en moto + bateau",
+    motoEndpoint: "Dernier point en moto",
+    boatPier: "Départ du bateau",
+    stepsTitle: "Étape par étape",
+    tipsTitle: "Conseils pratiques",
+    compactTitle: "Accès moto + île/bateau",
+    viewFullGuide: "Guide complet de l'île",
+  },
   auth: {
     loginTitle: "Connexion",
     registerTitle: "Inscription",
@@ -250,6 +263,22 @@ const fr: Messages = {
     allStopsTitle: "Tous les arrêts (jour par jour)",
     rentalDays: "Durée de location",
     dayHeading: "Jour {day}",
+    aboutTitle: "À propos de cet itinéraire",
+    startPointTitle: "Point de départ",
+    recommendedBikeTitle: "Moto recommandée",
+    parkingTitle: "Informations parking",
+    highlightsTitle: "Points forts",
+    safetyTitle: "Conseils de sécurité",
+    recommendedCta: "Moto recommandée pour cet itinéraire : {bike}",
+    recommendedSubtext: "Optimisée pour confort, sécurité et contrôle",
+    bookNow: "Réserver",
+    readyTitle: "Prêt à rouler cet itinéraire ?",
+    readySubtitle: "Louez une moto aujourd'hui pour explorer {name}.",
+    bookMoto: "Louer une moto",
+    otherRoutes: "Autres itinéraires",
+    travelGuide: "Guide de conduite",
+    elevation: "Altitude",
+    bestTime: "Meilleure période",
   },
   routesPage: {
     eyebrow: "Itinéraires",

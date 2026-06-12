@@ -85,6 +85,15 @@ export const destinationMessagesTr = {
     bestFor: "Forza 350 · ADV 160",
     tips: "Mağara girişinde maymunlar agresif olabilir; yiyecek göstermeyin. Forza 350 ile otoyol konforu ideal.",
   },
+  donsakSamuiFerry: {
+    name: "Donsak Feribot İskelesi (Koh Samui)",
+    description:
+      "Surat Thani — Koh Samui araç feribot terminali. Motosikletinizi feribota bindirip adaya geçersiniz.",
+    distance: "Patong'dan ~280 km",
+    duration: "5–6 saat + feribot 1,5–2 saat",
+    bestFor: "ADV 350 · Forza 350",
+    tips: "Son feribot ~18:00–19:00; saatleri kontrol edin. Moto bileti ~150–250 THB.",
+  },
   centralFestival: {
     name: "Central Phuket Festival",
     description:
@@ -446,6 +455,15 @@ export const destinationMessagesEn: typeof destinationMessagesTr = {
     duration: "2+ hours",
     bestFor: "Forza 350 · ADV 160",
     tips: "Monkeys can be aggressive — don't show food. Highway comfort on Forza 350.",
+  },
+  donsakSamuiFerry: {
+    name: "Donsak Ferry Pier (Koh Samui)",
+    description:
+      "Surat Thani — Koh Samui vehicle ferry terminal. Ride your motorcycle aboard and continue on the island.",
+    distance: "~280 km from Patong",
+    duration: "5–6 h drive + 1.5–2 h ferry",
+    bestFor: "ADV 350 · Forza 350",
+    tips: "Last ferry ~18:00–19:00; check schedule. Motorcycle ticket ~150–250 THB.",
   },
   centralFestival: {
     name: "Central Phuket Festival",

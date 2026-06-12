@@ -65,6 +65,7 @@ export const DESTINATION_COORDINATES: Record<string, { lat: number; lng: number 
   "central-festival-phuket": { lat: 7.891, lng: 98.368 },
   "yanui-beach": { lat: 7.772, lng: 98.308 },
   "bangla-road": { lat: 7.896, lng: 98.298 },
+  "donsak-samui-ferry": { lat: 9.317, lng: 99.731 },
 };
 
 export function getDestinationCoordinates(slug: string): { lat: number; lng: number } {

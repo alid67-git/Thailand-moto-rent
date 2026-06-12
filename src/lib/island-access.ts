@@ -247,6 +247,66 @@ export const ISLAND_ACCESS_GUIDES: Record<string, IslandAccessGuide> = {
       "James Bond + Panak kombine turlar ekonomik.",
     ],
   },
+  "freedom-beach": {
+    motoEndpoint: "Patong / Tri Trang — longtail iskelesi",
+    motoFromPatong: "~3–5 km · 10–15 dk (Patong içi) veya Tri Trang otopark",
+    boatPier: "Patong kuzey ucu · Tri Trang Beach longtail iskeleleri",
+    boatType: "Longtail tekne (sabit tarife ~300 THB gidiş-dönüş)",
+    boatDuration: "Tekne: 5–10 dk",
+    summary:
+      "Freedom Beach karayolu ile ulaşılamaz; motosiklet Patong veya Tri Trang'a kadar, plaja longtail ile geçilir.",
+    steps: [
+      "Patong'dan Tri Trang yönüne sür veya Patong kuzey longtail iskelesine yürü.",
+      "Longtail tekneci ile Freedom Beach'e geç (~300 THB gidiş-dönüş).",
+      "Plajda 2–3 saat kal; dönüş aynı iskele.",
+      "Motosiklet Tri Trang otoparkında veya Patong'da kalır.",
+    ],
+    tips: [
+      "Öğleden sonra dalga artabilir; sabah tercih edin.",
+      "Nakitsiz tekneciler olabilir — THB hazır bulundurun.",
+      "Beach hopping rotasında bu durak tekne erişimli olarak işaretlenir.",
+    ],
+  },
+  "donsak-samui-ferry": {
+    motoEndpoint: "Donsak Pier (Surat Thani — Samui feribot terminali)",
+    motoFromPatong: "~280 km · 5–6 saat (Khao Sok / Surat Thani üzerinden)",
+    boatPier: "Donsak Raja Ferry / Seatran Pier",
+    boatType: "Araç feribotu (motosiklet binişe uygun)",
+    boatDuration: "Feribot: ~1,5–2 saat (Nathon / Lipa Noi)",
+    summary:
+      "Koh Samui'ye motosikletle Donsak iskelesinden feribot ile geçilir; adada scooter ile gezmeye devam edilir.",
+    steps: [
+      "Patong → Khao Sok → Surat Thani → Donsak Pier (402/401 karayolu).",
+      "Donsak'ta motosiklet feribot bileti al (~150–250 THB moto dahil).",
+      "Feribot ile Koh Samui (Nathon veya Lipa Noi) — 1,5–2 saat.",
+      "Adada Chaweng, Lamai, Big Buddha motosikletle gezilir.",
+    ],
+    tips: [
+      "Son feribot genelde 18:00–19:00 civarı; saatleri kontrol edin.",
+      "Muson döneminde açık deniz dalgalı olabilir — sabah seferi tercih edin.",
+      "Samui'den dönüşte aynı feribot hattını kullanın; moto bileti iki yönlü alınabilir.",
+    ],
+  },
+  "koh-samui": {
+    motoEndpoint: "Donsak Pier → Koh Samui (Nathon / Lipa Noi)",
+    motoFromPatong: "~280 km karayolu + 1,5–2 saat feribot",
+    boatPier: "Donsak Raja Ferry · Seatran Donsak",
+    boatType: "Araç feribotu (motosiklet dahil)",
+    boatDuration: "Feribot: ~1,5–2 saat",
+    summary:
+      "Koh Samui adası; Phuket'ten motosikletle Donsak'a kadar sürülür, feribot ile adaya geçilir ve moto adada kullanılır.",
+    steps: [
+      "Patong → Surat Thani bölgesi → Donsak Pier (5–6 saat sürüş, 1 gece mola önerilir).",
+      "Motosiklet feribot bileti — Donsak kalkışlı Samui seferi.",
+      "Samui'ye varış: Nathon veya Lipa Noi iskelesi; adada gezin.",
+      "Dönüş: Samui iskelesinden Donsak → Phuket (2–3 günlük tur planı).",
+    ],
+    tips: [
+      "7–10 günlük Koh Samui adventure rotasında bu ada ana duraklardan biridir.",
+      "Samui'de benzin istasyonları bol; depoyu Lipa Noi çıkışında doldurun.",
+      "Full moon partisi dönemlerinde feribot ve otel rezervasyonu önceden yapın.",
+    ],
+  },
 };
 
 export function getIslandAccess(slug: string): IslandAccessGuide | undefined {

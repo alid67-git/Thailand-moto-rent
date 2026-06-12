@@ -1,5 +1,7 @@
 import type { Messages } from "./tr";
 import { destinationMessagesZh } from "./destinations-zh.i18n";
+import { routeCatalogZh } from "./routes-catalog.zh.i18n";
+import { islandAccessGuidesZh } from "./island-access-guides.zh.i18n";
 
 const zh: Messages = {
   meta: {
@@ -66,6 +68,17 @@ const zh: Messages = {
     includes: "含头盔 · 基本责任险 · 24小时支持",
   },
   destinations: destinationMessagesZh,
+  routeCatalog: routeCatalogZh,
+  islandAccessGuides: islandAccessGuidesZh,
+  islandAccess: {
+    title: "如何骑摩托车+乘船到达",
+    motoEndpoint: "摩托车最后到达点",
+    boatPier: "乘船出发",
+    stepsTitle: "分步指南",
+    tipsTitle: "实用提示",
+    compactTitle: "摩托车+岛屿/乘船交通",
+    viewFullGuide: "完整岛屿指南",
+  },
   auth: {
     loginTitle: "登录",
     registerTitle: "注册",
@@ -249,6 +262,22 @@ const zh: Messages = {
     allStopsTitle: "全部站点（按天）",
     rentalDays: "租期",
     dayHeading: "第 {day} 天",
+    aboutTitle: "关于此路线",
+    startPointTitle: "起点",
+    recommendedBikeTitle: "推荐摩托车",
+    parkingTitle: "停车信息",
+    highlightsTitle: "亮点",
+    safetyTitle: "安全提示",
+    recommendedCta: "此路线推荐摩托车：{bike}",
+    recommendedSubtext: "为舒适、安全和操控而优化",
+    bookNow: "立即预订",
+    readyTitle: "准备好骑行此路线了吗？",
+    readySubtitle: "今天租摩托车探索{name}。",
+    bookMoto: "租摩托车",
+    otherRoutes: "其他路线",
+    travelGuide: "骑行指南",
+    elevation: "海拔",
+    bestTime: "最佳时间",
   },
   routesPage: {
     eyebrow: "骑行路线",

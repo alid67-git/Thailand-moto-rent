@@ -1,5 +1,7 @@
 import type { Messages } from "./tr";
 import { destinationMessagesEn } from "./destinations.i18n";
+import { routeCatalogEn } from "./routes-catalog.en.i18n";
+import { islandAccessGuidesEn } from "./island-access-guides.en.i18n";
 
 const en: Messages = {
   meta: {
@@ -66,6 +68,17 @@ const en: Messages = {
     includes: "Helmet included · Basic liability insurance · 24h support",
   },
   destinations: destinationMessagesEn,
+  routeCatalog: routeCatalogEn,
+  islandAccessGuides: islandAccessGuidesEn,
+  islandAccess: {
+    title: "How to get there by motorcycle + boat",
+    motoEndpoint: "Last point by motorcycle",
+    boatPier: "Boat departure",
+    stepsTitle: "Step by step",
+    tipsTitle: "Practical tips",
+    compactTitle: "Motorcycle + island/boat access",
+    viewFullGuide: "Full island guide",
+  },
   auth: {
     loginTitle: "Sign in",
     registerTitle: "Register",
@@ -249,6 +262,22 @@ const en: Messages = {
     allStopsTitle: "All stops (day by day)",
     rentalDays: "Rental period",
     dayHeading: "Day {day}",
+    aboutTitle: "About this route",
+    startPointTitle: "Starting point",
+    recommendedBikeTitle: "Recommended motorcycle",
+    parkingTitle: "Parking info",
+    highlightsTitle: "Highlights",
+    safetyTitle: "Safety tips",
+    recommendedCta: "Recommended motorcycle for this route: {bike}",
+    recommendedSubtext: "Optimised for comfort, safety and control",
+    bookNow: "Book now",
+    readyTitle: "Ready to ride this route?",
+    readySubtitle: "Rent a motorcycle today to explore {name}.",
+    bookMoto: "Rent a motorcycle",
+    otherRoutes: "Other routes",
+    travelGuide: "Riding guide",
+    elevation: "Elevation",
+    bestTime: "Best time",
   },
   routesPage: {
     eyebrow: "Riding routes",

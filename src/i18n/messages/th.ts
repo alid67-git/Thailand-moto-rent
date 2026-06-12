@@ -1,5 +1,7 @@
 import type { Messages } from "./tr";
 import { destinationMessagesTh } from "./destinations-th.i18n";
+import { routeCatalogTh } from "./routes-catalog.th.i18n";
+import { islandAccessGuidesTh } from "./island-access-guides.th.i18n";
 
 const th: Messages = {
   meta: {
@@ -66,6 +68,17 @@ const th: Messages = {
     includes: "หมวกกันน็อครวม · ประกันความรับผิดพื้นฐาน · สนับสนุน 24 ชม.",
   },
   destinations: destinationMessagesTh,
+  routeCatalog: routeCatalogTh,
+  islandAccessGuides: islandAccessGuidesTh,
+  islandAccess: {
+    title: "ไปด้วยมอเตอร์ไซค์ + เรืออย่างไร",
+    motoEndpoint: "จุดสุดท้ายด้วยมอเตอร์ไซค์",
+    boatPier: "ท่าเรือออกเดินทาง",
+    stepsTitle: "ทีละขั้นตอน",
+    tipsTitle: "เคล็ดลับที่เป็นประโยชน์",
+    compactTitle: "มอเตอร์ไซค์ + การเข้าถึงเกาะ/เรือ",
+    viewFullGuide: "คู่มือเกาะฉบับเต็ม",
+  },
   auth: {
     loginTitle: "เข้าสู่ระบบ",
     registerTitle: "สมัครสมาชิก",
@@ -249,6 +262,22 @@ const th: Messages = {
     allStopsTitle: "จุดแวะทั้งหมด (รายวัน)",
     rentalDays: "ระยะเวลาเช่า",
     dayHeading: "วัน {day}",
+    aboutTitle: "เกี่ยวกับเส้นทางนี้",
+    startPointTitle: "จุดเริ่มต้น",
+    recommendedBikeTitle: "มอเตอร์ไซค์ที่แนะนำ",
+    parkingTitle: "ข้อมูลที่จอดรถ",
+    highlightsTitle: "ไฮไลท์",
+    safetyTitle: "เคล็ดลับความปลอดภัย",
+    recommendedCta: "มอเตอร์ไซค์ที่แนะนำสำหรับเส้นทางนี้: {bike}",
+    recommendedSubtext: "ปรับให้เหมาะกับความสะดวกสบาย ความปลอดภัย และการควบคุม",
+    bookNow: "จองเลย",
+    readyTitle: "พร้อมขี่เส้นทางนี้แล้วหรือยัง?",
+    readySubtitle: "เช่ามอเตอร์ไซค์วันนี้เพื่อสำรวจ {name}",
+    bookMoto: "เช่ามอเตอร์ไซค์",
+    otherRoutes: "เส้นทางอื่น",
+    travelGuide: "คู่มือการขับขี่",
+    elevation: "ความสูง",
+    bestTime: "ช่วงเวลาที่ดีที่สุด",
   },
   routesPage: {
     eyebrow: "เส้นทางขี่",

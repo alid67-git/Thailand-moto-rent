@@ -1,13 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { MOTORCYCLE_ROUTES, FEATURED_ROUTE_IDS } from "@/lib/routes";
+import { FEATURED_ROUTE_IDS } from "@/lib/routes";
 import { getRouteTourMeta, TOUR_DAY_GROUPS } from "@/lib/route-tours";
 import type { TourDays } from "@/lib/route-tours";
 import { getRouteGroupStyle } from "@/lib/route-day-colors";
 import { useLocale } from "@/context/LocaleContext";
+import { useLocalizedRoutes } from "@/hooks/useLocalizedRoute";
+import type { MotorcycleRoute } from "@/lib/routes-types";
 
-function RouteCard({ route, tourDays }: { route: (typeof MOTORCYCLE_ROUTES)[number]; tourDays: TourDays }) {
+function RouteCard({ route, tourDays }: { route: MotorcycleRoute; tourDays: TourDays }) {
   const { t } = useLocale();
   const meta = getRouteTourMeta(route.id);
   const style = getRouteGroupStyle(tourDays);
@@ -73,6 +75,7 @@ function RouteCard({ route, tourDays }: { route: (typeof MOTORCYCLE_ROUTES)[numb
 
 export default function RoutesPage() {
   const { t } = useLocale();
+  const routes = useLocalizedRoutes();
 
   const tips = [
     { title: t("routesPage.tipFuel.title"), description: t("routesPage.tipFuel.description") },
@@ -81,13 +84,13 @@ export default function RoutesPage() {
     { title: t("routesPage.tipBreaks.title"), description: t("routesPage.tipBreaks.description") },
   ];
 
-  const featuredRoutes = FEATURED_ROUTE_IDS.map((id) => MOTORCYCLE_ROUTES.find((r) => r.id === id)).filter(
+  const featuredRoutes = FEATURED_ROUTE_IDS.map((id) => routes.find((r) => r.id === id)).filter(
     Boolean,
-  ) as (typeof MOTORCYCLE_ROUTES)[number][];
+  ) as MotorcycleRoute[];
 
   const groups = TOUR_DAY_GROUPS.map((days) => ({
     days,
-    routes: MOTORCYCLE_ROUTES.filter((r) => getRouteTourMeta(r.id).tourDays === days),
+    routes: routes.filter((r) => getRouteTourMeta(r.id).tourDays === days),
   })).filter((g) => g.routes.length > 0);
 
   return (
@@ -103,7 +106,7 @@ export default function RoutesPage() {
           <h1 className="font-heading text-4xl font-extrabold md:text-5xl">{t("routesPage.title")}</h1>
           <p className="mt-4 max-w-2xl text-lg text-white/80">{t("routesPage.subtitle")}</p>
           <p className="mt-2 text-sm text-white/70">
-            {t("routesPage.count", { count: MOTORCYCLE_ROUTES.length })}
+            {t("routesPage.count", { count: routes.length })}
           </p>
         </div>
       </section>

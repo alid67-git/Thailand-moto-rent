@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { DestinationDetailView } from "@/components/DestinationDetailView";
 import { DESTINATION_SPOTS } from "@/lib/destinations";
-import { getIslandAccess } from "@/lib/island-access";
 
 export function generateStaticParams() {
   return DESTINATION_SPOTS.map((spot) => ({
@@ -49,7 +48,6 @@ export default async function DestinationPage({
     notFound();
   }
 
-  const islandAccess = getIslandAccess(slug);
 
   const breadcrumbSchema = {
     "@context": "https://schema.org/",
@@ -82,7 +80,7 @@ export default async function DestinationPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <DestinationDetailView spot={destination} islandAccess={islandAccess} />
+      <DestinationDetailView spot={destination} />
     </>
   );
 }

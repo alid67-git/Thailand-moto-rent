@@ -4,6 +4,7 @@ import type {
   MultiRouteStopDef,
 } from "@/lib/multi-route-types";
 import type { SafetyTip } from "@/lib/routes-types";
+import { EXTRA_MULTI_ROUTES } from "@/lib/multi-route-extra";
 
 const PATONG = { lat: 7.8961, lng: 98.2953 };
 
@@ -1400,4 +1401,5 @@ export const MULTI_ROUTE_CATALOG: MultiRouteDef[] = [
   ...FIVE_DAY,
   ...SEVEN_DAY,
   ...TEN_DAY,
+  ...EXTRA_MULTI_ROUTES,
 ];

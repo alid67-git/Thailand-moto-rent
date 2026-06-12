@@ -1,5 +1,7 @@
 import type { Messages } from "./tr";
 import { destinationMessagesEn } from "./destinations.i18n";
+import { routeCatalogAr } from "./routes-catalog.ar.i18n";
+import { islandAccessGuidesAr } from "./island-access-guides.ar.i18n";
 
 const ar: Messages = {
   meta: {
@@ -66,6 +68,17 @@ const ar: Messages = {
     includes: "خوذة مشمولة · تأمين مسؤولية · دعم 24 ساعة",
   },
   destinations: destinationMessagesEn,
+  routeCatalog: routeCatalogAr,
+  islandAccessGuides: islandAccessGuidesAr,
+  islandAccess: {
+    title: "كيفية الوصول بالدراجة النارية + القارب",
+    motoEndpoint: "آخر نقطة بالدراجة النارية",
+    boatPier: "انطلاق القارب",
+    stepsTitle: "خطوة بخطوة",
+    tipsTitle: "نصائح عملية",
+    compactTitle: "وصول بالدراجة + جزيرة/قارب",
+    viewFullGuide: "دليل الجزيرة الكامل",
+  },
   auth: {
     loginTitle: "تسجيل الدخول",
     registerTitle: "إنشاء حساب",
@@ -250,6 +263,22 @@ const ar: Messages = {
     allStopsTitle: "جميع المحطات (يومًا بيوم)",
     rentalDays: "مدة الإيجار",
     dayHeading: "اليوم {day}",
+    aboutTitle: "عن هذا المسار",
+    startPointTitle: "نقطة البداية",
+    recommendedBikeTitle: "الدراجة الموصى بها",
+    parkingTitle: "معلومات المواقف",
+    highlightsTitle: "أبرز المعالم",
+    safetyTitle: "نصائح السلامة",
+    recommendedCta: "الدراجة الموصى بها لهذا المسار: {bike}",
+    recommendedSubtext: "محسّنة للراحة والسلامة والتحكم",
+    bookNow: "احجز الآن",
+    readyTitle: "هل أنت مستعد لقيادة هذا المسار؟",
+    readySubtitle: "استأجر دراجة اليوم لاستكشاف {name}.",
+    bookMoto: "استئجار دراجة",
+    otherRoutes: "مسارات أخرى",
+    travelGuide: "دليل القيادة",
+    elevation: "الارتفاع",
+    bestTime: "أفضل وقت",
   },
   routesPage: {
     eyebrow: "مسارات القيادة",

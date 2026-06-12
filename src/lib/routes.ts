@@ -16,6 +16,7 @@ export const FEATURED_ROUTE_IDS = [
   "khao-sok-adventure",
   "krabi-highlights",
   "phang-nga-bay-explorer",
+  "koh-lanta-explorer",
   "khao-sok-krabi-adventure",
   "ultimate-south-adventure",
   "ultimate-phuket-loop",

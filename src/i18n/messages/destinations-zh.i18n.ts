@@ -84,6 +84,15 @@ export const destinationMessagesZh: typeof destinationMessagesTr = {
     bestFor: "Forza 350 · ADV 160",
     tips: "洞口猴子可能较凶，不要手拿食物；长途高速更推荐 Forza 350。",
   },
+  donsakSamuiFerry: {
+    name: "Donsak 渡轮码头（苏梅岛）",
+    description:
+      "素叻他尼至苏梅岛车渡码头，可将摩托车开上渡轮后在岛上继续骑行。",
+    distance: "距 Patong 约 280 公里",
+    duration: "5–6 小时车程 + 渡轮 1.5–2 小时",
+    bestFor: "ADV 350 · Forza 350",
+    tips: "末班渡轮约 18:00–19:00，请提前查时刻表；摩托车票约 150–250 泰铢。",
+  },
   centralFestival: {
     name: "Central Phuket Festival",
     description:

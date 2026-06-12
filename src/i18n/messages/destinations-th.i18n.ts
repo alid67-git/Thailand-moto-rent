@@ -85,6 +85,15 @@ export const destinationMessagesTh: typeof destinationMessagesTr = {
     bestFor: "Forza 350 · ADV 160",
     tips: "ลิงที่ทางเข้าถ้ำอาจดุร้าย อย่าโชว์อาหาร Forza 350 เหมาะกับทางด่วน",
   },
+  donsakSamuiFerry: {
+    name: "ท่าเรือดอนสัก (เกาะสมุย)",
+    description:
+      "ท่าเรือเรือขนส่งรถ Surat Thani — เกาะสมุย ขี่มอเตอร์ไซค์ขึ้นเรือแล้วเที่ยวบนเกาะต่อ",
+    distance: "จากป่าตอง ~280 กม.",
+    duration: "5–6 ชม. + เรือ 1.5–2 ชม.",
+    bestFor: "ADV 350 · Forza 350",
+    tips: "เรือเที่ยวสุดท้าย ~18:00–19:00 ตรวจสอบตาราง ค่ามอไซ ~150–250 THB",
+  },
   centralFestival: {
     name: "Central Phuket Festival",
     description:

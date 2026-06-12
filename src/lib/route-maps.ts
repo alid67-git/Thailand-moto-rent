@@ -157,6 +157,14 @@ const MULTI_ROUTE_WAYPOINTS: Record<string, RouteWaypoint[]> = {
   "koh-samui-adventure": [_PATONG_WP, { name: "Khao Sok", lat: 8.912, lng: 98.526 }, { name: "Donsak Feribot", lat: 9.317, lng: 99.731 }, { name: "Koh Samui", lat: 9.512, lng: 100.013, access: "boat" }, _PATONG_RET],
   "deep-south-explorer": [_PATONG_WP, { name: "Krabi", lat: 8.086, lng: 98.906 }, { name: "Trang", lat: 7.556, lng: 99.611 }, { name: "Hat Yai", lat: 7.008, lng: 100.475 }, { name: "Nakhon Si Thammarat", lat: 8.432, lng: 99.963 }, _PATONG_RET],
   "south-thailand-expedition": [_PATONG_WP, { name: "Krabi", lat: 8.086, lng: 98.906 }, { name: "Hat Yai", lat: 7.008, lng: 100.475 }, { name: "Songkhla", lat: 7.198, lng: 100.595 }, { name: "Surat Thani", lat: 9.138, lng: 99.333 }, _PATONG_RET],
+  "ranong-hot-springs": [_PATONG_WP, { name: "Khao Lak", lat: 8.67, lng: 98.25 }, { name: "Ranong", lat: 9.965, lng: 98.635 }, { name: "Hot Springs", lat: 9.965, lng: 98.635 }, _PATONG_RET],
+  "luxury-coastal-escape": [_PATONG_WP, { name: "Mai Khao", lat: 8.095, lng: 98.298 }, { name: "Baba Beach Club", lat: 8.67, lng: 98.252 }, { name: "Khao Lak", lat: 8.67, lng: 98.25 }, _PATONG_RET],
+  "southern-nature-loop": [_PATONG_WP, { name: "Khao Sok", lat: 8.912, lng: 98.526 }, { name: "Cheow Lan", lat: 8.972, lng: 98.805, access: "boat" }, { name: "Khanom", lat: 9.183, lng: 99.867 }, _PATONG_RET],
+  "ranong-scenic-ride": [_PATONG_WP, { name: "Khao Lak", lat: 8.67, lng: 98.25 }, { name: "Ranong", lat: 9.965, lng: 98.635 }, { name: "Samet Nangshe", lat: 8.245, lng: 98.402 }, _PATONG_RET],
+  "krabi-trang-explorer": [_PATONG_WP, { name: "Ao Nang", lat: 8.045, lng: 98.81 }, { name: "Railay", lat: 8.012, lng: 98.838, access: "boat" }, { name: "Trang", lat: 7.556, lng: 99.611 }, _PATONG_RET],
+  "ranong-andaman-adventure": [_PATONG_WP, { name: "Ranong", lat: 9.965, lng: 98.635 }, { name: "Khao Lak", lat: 8.67, lng: 98.25 }, { name: "Samet Nangshe", lat: 8.245, lng: 98.402 }, _PATONG_RET],
+  "koh-lanta-explorer": [_PATONG_WP, { name: "Ao Nang", lat: 8.045, lng: 98.81 }, { name: "Railay", lat: 8.012, lng: 98.838, access: "boat" }, { name: "Hua Hin Pier", lat: 7.65, lng: 99.05 }, { name: "Koh Lanta", lat: 7.565, lng: 99.042, access: "boat" }, _PATONG_RET],
+  "twin-coast-tour": [_PATONG_WP, { name: "Khao Sok", lat: 8.912, lng: 98.526 }, { name: "Cheow Lan", lat: 8.972, lng: 98.805, access: "boat" }, { name: "Khanom", lat: 9.183, lng: 99.867 }, { name: "Donsak Pier", lat: 9.317, lng: 99.731 }, _PATONG_RET],
 };
 
 export function getRouteWaypoints(routeId: string): RouteWaypoint[] {

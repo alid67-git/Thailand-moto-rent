@@ -1,4 +1,6 @@
 import { destinationMessagesTr } from "./destinations.i18n";
+import { routeCatalogTr } from "./routes-catalog.tr.i18n";
+import { islandAccessGuidesTr } from "./island-access-guides.tr.i18n";
 
 const tr = {
   meta: {
@@ -65,6 +67,17 @@ const tr = {
     includes: "Kask dahil · Temel sorumluluk sigortası · 24 saat destek",
   },
   destinations: destinationMessagesTr,
+  routeCatalog: routeCatalogTr,
+  islandAccessGuides: islandAccessGuidesTr,
+  islandAccess: {
+    title: "Motosiklet + tekne ile nasıl gidilir?",
+    motoEndpoint: "Motosikletle son nokta",
+    boatPier: "Tekne kalkışı",
+    stepsTitle: "Adım adım",
+    tipsTitle: "Pratik ipuçları",
+    compactTitle: "Motosiklet + ada/tekne erişimi",
+    viewFullGuide: "Detaylı ada rehberi",
+  },
   auth: {
     loginTitle: "Giriş yap",
     registerTitle: "Üye ol",
@@ -252,6 +265,22 @@ const tr = {
     allStopsTitle: "Tüm duraklar (gün gün)",
     rentalDays: "Kiralama süresi",
     dayHeading: "Gün {day}",
+    aboutTitle: "Rota hakkında",
+    startPointTitle: "Başlangıç noktası",
+    recommendedBikeTitle: "Tavsiye edilen motosiklet",
+    parkingTitle: "Otopark bilgisi",
+    highlightsTitle: "Vurgular",
+    safetyTitle: "Güvenlik ipuçları",
+    recommendedCta: "Bu rota için önerilen motosiklet: {bike}",
+    recommendedSubtext: "Rahatlık, güvenlik ve kontrol için optimize edilmiş",
+    bookNow: "Hemen Kirala",
+    readyTitle: "Bu Rotayı Sürmeye Hazır mısınız?",
+    readySubtitle: "{name} rotasını keşfetmek için bugün motosiklet kiralayın.",
+    bookMoto: "Motosiklet Kirala",
+    otherRoutes: "Diğer Rotalar",
+    travelGuide: "Sürüş Rehberi",
+    elevation: "Yükseklik",
+    bestTime: "En iyi zaman",
   },
   routesPage: {
     eyebrow: "Sürüş rotaları",
