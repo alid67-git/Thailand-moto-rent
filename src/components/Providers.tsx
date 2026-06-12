@@ -6,18 +6,29 @@ import { ThemeProvider } from "@/context/ThemeContext";
 import { ChunkErrorHandler } from "@/components/ChunkErrorHandler";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Header } from "@/components/Header";
+import { usePreviewBypass } from "@/hooks/usePreviewBypass";
+import { isSitePreviewEnabled } from "@/lib/site-mode";
 
-const isPreview = process.env.NEXT_PUBLIC_SITE_PREVIEW !== "false";
+function SiteChrome({ children }: { children: React.ReactNode }) {
+  const bypass = usePreviewBypass();
+  const gated = isSitePreviewEnabled() && !bypass;
+
+  return (
+    <>
+      <ChunkErrorHandler />
+      {!gated && <Header />}
+      {children}
+      {!gated && <WhatsAppButton />}
+    </>
+  );
+}
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider>
       <LocaleProvider>
         <AuthProvider>
-          <ChunkErrorHandler />
-          {!isPreview && <Header />}
-          {children}
-          {!isPreview && <WhatsAppButton />}
+          <SiteChrome>{children}</SiteChrome>
         </AuthProvider>
       </LocaleProvider>
     </ThemeProvider>
