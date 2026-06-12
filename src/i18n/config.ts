@@ -19,3 +19,5 @@ export function isRtl(locale: Locale): boolean {
 }
 
 export const LOCALE_STORAGE_KEY = "tmr-locale";
+export const LOCALE_CHOSEN_KEY = "tmr-locale-chosen";
+export const LOCALE_COOKIE = "tmr-locale";

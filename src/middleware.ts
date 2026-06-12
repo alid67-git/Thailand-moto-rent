@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import {
   PREVIEW_BYPASS_COOKIE,
-  PREVIEW_BYPASS_HEADER,
   previewBypassCookieOptions,
 } from "@/lib/site-mode";
 
@@ -11,13 +10,9 @@ const PREVIEW = process.env.NEXT_PUBLIC_SITE_PREVIEW !== "false";
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // /1 önce işlenmeli — www ve apex'te aynı önizleme kilidini açar
+  // /1 → ana sayfaya yönlendir + önizleme çerezi (mobilde rewrite'tan daha güvenilir)
   if (pathname === "/1") {
-    const url = request.nextUrl.clone();
-    url.pathname = "/";
-    const requestHeaders = new Headers(request.headers);
-    requestHeaders.set(PREVIEW_BYPASS_HEADER, "1");
-    const res = NextResponse.rewrite(url, { request: { headers: requestHeaders } });
+    const res = NextResponse.redirect(new URL("/", request.url), 302);
     res.cookies.set(
       PREVIEW_BYPASS_COOKIE,
       "1",

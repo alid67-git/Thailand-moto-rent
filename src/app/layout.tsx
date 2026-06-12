@@ -1,8 +1,12 @@
 import type { Metadata, Viewport } from "next";
+import { cookies } from "next/headers";
 import { Plus_Jakarta_Sans, Noto_Sans_SC, Noto_Sans_Thai } from "next/font/google";
 import { Providers } from "@/components/Providers";
-import { isSitePreview } from "@/lib/site-mode";
+import { defaultLocale, LOCALE_COOKIE, locales, type Locale } from "@/i18n/config";
+import { hasPreviewBypass, isSitePreview, PREVIEW_BYPASS_COOKIE } from "@/lib/site-mode";
 import "./globals.css";
+
+export const dynamic = "force-dynamic";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -49,14 +53,29 @@ export const metadata: Metadata = {
     : {}),
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const initialPreviewBypass = hasPreviewBypass(
+    cookieStore.get(PREVIEW_BYPASS_COOKIE)?.value,
+  );
+  const localeCookie = cookieStore.get(LOCALE_COOKIE)?.value;
+  const initialLocale: Locale =
+    localeCookie && locales.includes(localeCookie as Locale)
+      ? (localeCookie as Locale)
+      : defaultLocale;
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={initialLocale} suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var langs=["tr","en","th","de","fr","ar","zh"];var chosen=localStorage.getItem("tmr-locale-chosen");var loc=localStorage.getItem("tmr-locale");var m=document.cookie.match(/(?:^|;\\s*)tmr-locale=([^;]+)/);if(m)loc=m[1];if(chosen!=="1"||!loc||langs.indexOf(loc)<0)loc="en";document.documentElement.lang=loc;document.documentElement.dir=loc==="ar"?"rtl":"ltr";}catch(e){}})();`,
+          }}
+        />
         {/* Theme Script */}
         <script
           dangerouslySetInnerHTML={{
@@ -99,7 +118,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${sans.variable} ${heading.variable} ${thai.variable} ${chinese.variable} min-h-screen bg-[var(--background)] font-sans text-[var(--foreground)] antialiased transition-colors duration-300`}>
-        <Providers>{children}</Providers>
+        <Providers initialPreviewBypass={initialPreviewBypass} initialLocale={initialLocale}>
+          {children}
+        </Providers>
       </body>
     </html>
   );

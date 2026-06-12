@@ -18,12 +18,17 @@ export function LanguageSwitcher({
   const isLight = variant === "light";
 
   useEffect(() => {
-    function onClickOutside(e: MouseEvent) {
+    function onPointerOutside(e: PointerEvent) {
       if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
     }
-    document.addEventListener("mousedown", onClickOutside);
-    return () => document.removeEventListener("mousedown", onClickOutside);
+    document.addEventListener("pointerdown", onPointerOutside);
+    return () => document.removeEventListener("pointerdown", onPointerOutside);
   }, []);
+
+  function pickLocale(loc: Locale) {
+    setLocale(loc);
+    setOpen(false);
+  }
 
   return (
     <div ref={ref} className="relative">
@@ -68,18 +73,19 @@ export function LanguageSwitcher({
                 type="button"
                 role="option"
                 aria-selected={locale === loc}
-                onClick={() => {
-                  setLocale(loc);
-                  setOpen(false);
+                onPointerDown={(e) => {
+                  e.preventDefault();
+                  pickLocale(loc);
                 }}
-                className={`flex min-h-[44px] w-full items-center gap-2.5 px-3 py-2.5 text-left text-sm transition ${
+                onClick={() => pickLocale(loc)}
+                className={`flex min-h-[44px] w-full items-center gap-2.5 px-3 py-2.5 text-left text-sm transition touch-manipulation ${
                   locale === loc
                     ? isLight
                       ? "bg-brand-50 font-semibold text-brand-600"
                       : "bg-brand-500/15 font-semibold text-brand-300"
                     : isLight
-                      ? "text-neutral-600 hover:bg-neutral-50"
-                      : "text-white/80 hover:bg-white/5"
+                      ? "text-neutral-600 hover:bg-neutral-50 active:bg-neutral-100"
+                      : "text-white/80 hover:bg-white/5 active:bg-white/10"
                 }`}
               >
                 <FlagIcon locale={loc} />
