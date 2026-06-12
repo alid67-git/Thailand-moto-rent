@@ -212,4 +212,14 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   .bg-surface {
     @apply bg-neutral-50 dark:bg-ink-900;
   }
+
+  /* Leaflet — destinasyon mini harita taşmasını önle */
+  .destination-mini-map .leaflet-container,
+  .destination-mini-map .leaflet-pane,
+  .destination-mini-map .leaflet-map-pane {
+    z-index: 0 !important;
+  }
+  .destination-mini-map .leaflet-control-container {
+    z-index: 1 !important;
+  }
 }

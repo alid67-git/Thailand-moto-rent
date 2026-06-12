@@ -46,15 +46,15 @@ export function DestinationDetailView({
             {t("destinations.page.back")}
           </Link>
 
-          <div className="grid gap-4 lg:grid-cols-3 lg:gap-6">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lift lg:col-span-2 lg:aspect-auto lg:min-h-[320px]">
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-6">
+            <div className="relative isolate z-0 aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-lift lg:col-span-2 lg:aspect-auto lg:h-[320px]">
               <Image src={heroImage} alt={name} fill className="object-cover" priority sizes="(max-width:1024px) 100vw, 66vw" />
-              <div className="absolute left-4 top-4">
+              <div className="absolute left-4 top-4 z-10">
                 <AppealScore score={appeal} />
               </div>
             </div>
-            <div className="min-h-[200px] lg:min-h-0">
-              <DestinationMiniMap lat={place.lat} lng={place.lng} name={name} />
+            <div className="relative isolate z-0 h-[220px] w-full sm:h-[260px] lg:col-span-1 lg:h-[320px]">
+              <DestinationMiniMap lat={place.lat} lng={place.lng} name={name} className="h-full w-full" />
             </div>
           </div>
 
