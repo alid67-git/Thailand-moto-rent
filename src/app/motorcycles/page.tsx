@@ -59,10 +59,10 @@ export default function MotorcyclesPage() {
         <div className="mx-auto max-w-3xl">
           <h2 className="section-title">Kiralama koşulları</h2>
           <ul className="mt-6 space-y-3 text-body">
-            <li>✓ IDP + ülke motosiklet ehliyeti zorunlu (Tayland&apos;a gelmeden önce alın)</li>
+            <li>✓ IDP (motosiklet sınıfı) zorunlu — Tayland polisinin kabul ettiği tek yabancı belge</li>
+            <li>✓ Kiralama gün bazlı; geç teslimde WhatsApp ile haber verin</li>
+            <li>✓ Test sürüşü yoktur</li>
             <li>✓ Pasaport bırakmıyoruz — kredi kartı bloke, teslimde çözülür</li>
-            <li>✓ Tam kapsamlı sigorta önerilir</li>
-            <li>✓ Outdoor / BMW tipi büyük motosiklet kiralamıyoruz</li>
           </ul>
         </div>
       </section>

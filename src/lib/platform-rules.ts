@@ -6,7 +6,7 @@ export const PLATFORM_RULES: PlatformRule[] = [
     category: "license",
     title: "Valid driving license required",
     description:
-      "Renters must hold a valid motorcycle license. International licenses are accepted only from approved countries.",
+      "Renters must hold a valid motorcycle IDP (International Driving Permit) or Thai licence. Thai police do not accept home licences alone or other international documents.",
     enforced: true,
   },
   {

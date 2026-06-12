@@ -4,43 +4,38 @@ const COMPANY_POLICY = `
 ## Thailand Moto Rent politikası
 
 - **Pasaport bırakma yapmıyoruz.** Depozito için kredi kartınıza **bloke (pre-authorization)** uygulanır; motor tesliminde bloke çözülür.
-- **IDP (Uluslararası Sürücü Belgesi) zorunludur.** Kendi ülkenizde geçerli motosiklet/scooter ehliyetinizi gösteremeyen müşterilere kiralama yapılmaz.
-- **IDP olmadan sürüş** veya polis cezaları müşteri sorumluluğundadır; yenilenebilir cezalar kiracıya yansıtılabilir.
-- **Hasar:** Sigortasız veya kapsam dışı hasarda motor yetkili servise götürülür; onarım bedeli + motorun kullanılamadığı gün sayısı × günlük kira bedeli tahsil edilir. **Tam kapsamlı sigorta** en mantıklı seçenektir.
-- **Alkollü sürüş** Tayland'da çok ağır cezalar içerir; sıfır tolerans yaklaşımıyla kontrol edilir.
+- **IDP (Uluslararası Sürücü Belgesi) zorunludur.** Tayland polisi yabancılar için **Tayland ehliyeti veya IDP dışında hiçbir belgeyi geçerli saymaz** — ülke ehliyeti tek başına, AB ehliyeti tek başına veya pasaport yetmez. IDP, kendi ülkenizdeki **motosiklet/scooter ehliyetinize** bağlı olarak Tayland'a gelmeden önce alınmalıdır.
+- **Kiralama şartımız:** Geçerli **motosiklet IDP** ile kiralama yapılır; bu belge yoksa kiralama yapılmaz.
+- **IDP olmadan sürüş** ve polis cezaları tamamen müşteri sorumluluğundadır.
+- **Kiralama gün bazlıdır.** Geç teslimde mutlaka **WhatsApp ile haber verin** — süreci birlikte yönetelim.
+- **Test sürüşü yoktur.**
+- **Hasar:** Sigortasız hasarda onarım bedeli + kullanılamayan gün × günlük kira. **Tam kapsamlı sigorta** önerilir.
+- **Alkollü sürüş** ağır cezalara tabidir.
 `;
 
 const ARTICLE_BODIES: Record<string, string> = {
   "international-license": `
-Tayland'da motosiklet veya scooter kullanmak için **yalnızca pasaport veya yalnızca uluslararası ehliyet yeterli değildir.**
+Tayland'da motosiklet/scooter için **Tayland ehliyeti** veya **IDP** gerekir.
 
-## IDP neden şart?
+## Polisin kabul ettiği tek yabancı belge: IDP
 
-Tayland trafik polisi turistlere yönelik **çok ciddi ve sık kontroller** yapar. Ülkenize göre değişse de pratikte şunlar istenir:
+- ✅ Tayland motosiklet ehliyeti
+- ✅ **IDP** (motosiklet sınıfı — ülke ehliyetinize bağlı)
+- ❌ Sadece ülke ehliyeti (IDP olmadan)
+- ❌ Sadece pasaport
+- ❌ AB / “uluslararası geçerli” başka belgeler tek başına
 
-- Geçerli **pasaport**
-- Ülkenizde alınmış **motosiklet/scooter sürücü belgesi** (B sınıfı veya yerel eşdeğeri)
-- Bu belgeye bağlı **IDP (International Driving Permit / Uluslararası Sürücü Belgesi)**
-
-**Sadece otomobil ehliyeti** veya **sadece pasaport** ile scooter sürmek yasal değildir ve ceza riski çok yüksektir.
+**IDP, Tayland polisinin yabancılar için geçerli saydığı tek uluslararası ehliyet türüdür** (Tayland ehliyeti hariç).
 
 ## Tayland'a gelmeden önce alın
 
-IDP'yi **Tayland'a varmadan önce** kendi ülkenizde almalısınız (Türkiye'de noter, otomobil kulübü veya yetkili kurumlar). Tayland'da turist olarak IDP çıkarmak pratikte mümkün değildir.
+IDP'yi kendi ülkenizde, **motosiklet/scooter sınıfı** ile alın. Tayland'da turist olarak IDP çıkarmak pratikte mümkün değildir.
 
-## Ceza riski
+## Thailand Moto Rent
 
-IDP veya uygun ehliyet olmadan yakalanırsanız:
-
-- Anında para cezası (çoğu zaman **1.000–2.000+ THB**)
-- Motosikletin trafikten men edilmesi
-- Sigorta geçersiz sayılabilir — kaza durumunda tüm masraf sizde kalır
+Geçerli **motosiklet IDP** ile kiralama yapılır; belge yoksa kiralama yapılmaz.
 
 ${COMPANY_POLICY}
-
-## Kiralama şartımız
-
-Kendi ülkesinde geçerli **yerel motosiklet ehliyetini** ve **IDP**'yi birlikte gösteremeyen müşterilere **motosiklet kiralanmaz.** Bu kural hem sizin hem bizim güvenliğimiz içindir.
 `,
 
   "thai-laws": `
@@ -48,8 +43,8 @@ Tayland'da motosiklet kullanırken bilmeniz gereken temel kurallar ve cezalar.
 
 ## Ehliyet ve belgeler
 
-- **IDP + ülke ehliyeti** taşıyın (motosiklet sınıfı)
-- Pasaport veya fotokopisi yanınızda olsun
+- **IDP (motosiklet)** veya **Tayland ehliyeti** — başka belge poliste geçmez
+- Pasaport yanınızda olsun
 - Kiralama sözleşmesi ve sigorta belgesi
 
 ## Sık uygulanan cezalar

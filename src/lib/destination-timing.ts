@@ -1,29 +1,77 @@
-/** Patong çıkışlı — sadece yol süresi ve ziyaret dahil toplam süre */
-export const DESTINATION_TIMING: Record<string, { driveTime: string; totalTime: string }> = {
-  "big-buddha": { driveTime: "25–35 dk", totalTime: "1–1,5 saat" },
-  "promthep-cape": { driveTime: "45–55 dk", totalTime: "2–3 saat (gün batımı)" },
-  "samet-nangshe": { driveTime: "50–60 dk", totalTime: "3–5 saat (gün doğumu)" },
-  "wat-chalong": { driveTime: "20–30 dk", totalTime: "1–1,5 saat" },
-  "karon-viewpoint": { driveTime: "25–35 dk", totalTime: "45–60 dk" },
-  "windmill-viewpoint": { driveTime: "40–50 dk", totalTime: "1–1,5 saat" },
-  "freedom-beach": { driveTime: "15–20 dk", totalTime: "3–5 saat (tekne/yürüyüş)" },
-  "monkey-cave": { driveTime: "1,5–2 saat", totalTime: "4–5 saat" },
-  "monkey-hill": { driveTime: "30–40 dk", totalTime: "1–1,5 saat" },
-  "khao-sok-national-park": { driveTime: "2,5–3 saat", totalTime: "2 gün önerilir" },
-  "phang-nga-bay": { driveTime: "1–1,5 saat", totalTime: "5–7 saat (tekne turu)" },
-  "mai-khao-plane-spot": { driveTime: "40–50 dk", totalTime: "2–3 saat" },
-  "old-phuket-town": { driveTime: "25–35 dk", totalTime: "2–4 saat" },
-  "kata-beach": { driveTime: "25–35 dk", totalTime: "2–4 saat" },
-  "karon-beach": { driveTime: "20–30 dk", totalTime: "2–4 saat" },
-  "rawai-beach": { driveTime: "40–50 dk", totalTime: "2–3 saat" },
-  "nai-harn-beach": { driveTime: "40–50 dk", totalTime: "2–4 saat" },
+/** Patong çıkışlı — yol ve toplam süre i18n anahtarları */
+const TIMING_BY_I18N_BASE: Record<string, { driveKey: string; totalKey: string }> = {
+  bigBuddha: {
+    driveKey: "destinations.timing.bigBuddha.drive",
+    totalKey: "destinations.timing.bigBuddha.total",
+  },
+  promthep: {
+    driveKey: "destinations.timing.promthep.drive",
+    totalKey: "destinations.timing.promthep.total",
+  },
+  sametNangshe: {
+    driveKey: "destinations.timing.sametNangshe.drive",
+    totalKey: "destinations.timing.sametNangshe.total",
+  },
+  chalong: {
+    driveKey: "destinations.timing.chalong.drive",
+    totalKey: "destinations.timing.chalong.total",
+  },
+  karonViewpoint: {
+    driveKey: "destinations.timing.karonViewpoint.drive",
+    totalKey: "destinations.timing.karonViewpoint.total",
+  },
+  windmillViewpoint: {
+    driveKey: "destinations.timing.windmillViewpoint.drive",
+    totalKey: "destinations.timing.windmillViewpoint.total",
+  },
+  freedomBeach: {
+    driveKey: "destinations.timing.freedomBeach.drive",
+    totalKey: "destinations.timing.freedomBeach.total",
+  },
+  monkeyHill: {
+    driveKey: "destinations.timing.monkeyHill.drive",
+    totalKey: "destinations.timing.monkeyHill.total",
+  },
+  phangNga: {
+    driveKey: "destinations.timing.phangNga.drive",
+    totalKey: "destinations.timing.phangNga.total",
+  },
+  oldTown: {
+    driveKey: "destinations.timing.oldTown.drive",
+    totalKey: "destinations.timing.oldTown.total",
+  },
+  kataBeach: {
+    driveKey: "destinations.timing.kataBeach.drive",
+    totalKey: "destinations.timing.kataBeach.total",
+  },
+  karonBeach: {
+    driveKey: "destinations.timing.karonBeach.drive",
+    totalKey: "destinations.timing.karonBeach.total",
+  },
+  rawai: {
+    driveKey: "destinations.timing.rawai.drive",
+    totalKey: "destinations.timing.rawai.total",
+  },
+  naiHarn: {
+    driveKey: "destinations.timing.naiHarn.drive",
+    totalKey: "destinations.timing.naiHarn.total",
+  },
 };
 
+export function getDestinationTimingKeys(
+  slug: string,
+  i18nBase: string | null,
+): { driveKey: string; totalKey: string } | null {
+  if (i18nBase && TIMING_BY_I18N_BASE[i18nBase]) {
+    return TIMING_BY_I18N_BASE[i18nBase];
+  }
+  return null;
+}
+
+/** @deprecated use useDestinationLabel().driveTime / totalTime */
 export function getDestinationTiming(slug: string, legacyDuration: string) {
-  const known = DESTINATION_TIMING[slug];
-  if (known) return known;
   return {
     driveTime: legacyDuration,
-    totalTime: `${legacyDuration} + ziyaret (yaklaşık 1–2 saat)`,
+    totalTime: `${legacyDuration} + visit`,
   };
 }

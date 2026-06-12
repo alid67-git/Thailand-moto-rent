@@ -11,7 +11,7 @@ import { hasIslandAccess } from "@/lib/island-access";
 
 function DestinationCard({ spot }: { spot: (typeof DESTINATION_SPOTS)[number] }) {
   const { t } = useLocale();
-  const { name, description } = useDestinationLabel(spot);
+  const { name, description, distance, duration } = useDestinationLabel(spot);
   const appeal = getAppealScore(spot.slug);
 
   return (
@@ -45,13 +45,13 @@ function DestinationCard({ spot }: { spot: (typeof DESTINATION_SPOTS)[number] })
             <p className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">
               {t("destinations.distance")}
             </p>
-            <p className="mt-0.5 text-xs font-bold text-ink-950 dark:text-neutral-100">{spot.distance}</p>
+            <p className="mt-0.5 text-xs font-bold text-ink-950 dark:text-neutral-100">{distance}</p>
           </div>
           <div className="px-3 py-3">
             <p className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">
               {t("destinations.duration")}
             </p>
-            <p className="mt-0.5 text-xs font-bold text-ink-950 dark:text-neutral-100">{spot.duration}</p>
+            <p className="mt-0.5 text-xs font-bold text-ink-950 dark:text-neutral-100">{duration}</p>
           </div>
           <div className="px-3 py-3">
             <p className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">

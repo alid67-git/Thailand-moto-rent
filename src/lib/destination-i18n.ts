@@ -4,15 +4,17 @@ import type { TranslationKey } from "@/i18n/translate";
 export const DESTINATION_I18N_KEYS: Record<string, string> = {
   "big-buddha": "bigBuddha",
   "promthep-cape": "promthep",
+  "phrom-thep-cape-lighthouse": "promthep",
   "windmill-viewpoint": "windmillViewpoint",
   "karon-viewpoint": "karonViewpoint",
-  "nai-harn-beach": "naiHarn",
+  "karon-beach": "karonBeach",
   "kata-beach": "kataBeach",
   "kamala-beach": "kamalaBeach",
   "patong-beach": "patongSign",
   "bang-tao-beach": "bangTao",
   "surin-beach": "surinBeach",
   "rawai-beach": "rawai",
+  "nai-harn-beach": "naiHarn",
   "old-phuket-town": "oldTown",
   "wat-chalong": "chalong",
   "monkey-hill": "monkeyHill",
@@ -22,18 +24,33 @@ export const DESTINATION_I18N_KEYS: Record<string, string> = {
   "samet-nangshe": "sametNangshe",
   "phang-nga-bay": "phangNga",
   "james-bond-island": "phangNga",
-  "ao-nang": "aoNang",
-  "railay-beach": "aoNang",
+  "khao-sok-national-park": "phangNga",
+  "radar-hill-viewpoint": "nakkerdView",
+  "khao-yai-viewpoint": "blackRock",
+  "thalang-viewpoint": "nakkerdView",
 };
 
+export function destinationI18nBase(slug: string): string | null {
+  return DESTINATION_I18N_KEYS[slug] ?? null;
+}
+
 export function destinationNameKey(slug: string): TranslationKey | null {
-  const base = DESTINATION_I18N_KEYS[slug];
+  const base = destinationI18nBase(slug);
   if (!base) return null;
   return `destinations.${base}.name` as TranslationKey;
 }
 
 export function destinationDescKey(slug: string): TranslationKey | null {
-  const base = DESTINATION_I18N_KEYS[slug];
+  const base = destinationI18nBase(slug);
   if (!base) return null;
   return `destinations.${base}.description` as TranslationKey;
+}
+
+export function destinationFieldKey(
+  slug: string,
+  field: "distance" | "duration" | "bestFor",
+): TranslationKey | null {
+  const base = destinationI18nBase(slug);
+  if (!base) return null;
+  return `destinations.${base}.${field}` as TranslationKey;
 }

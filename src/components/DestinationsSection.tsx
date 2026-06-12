@@ -3,7 +3,49 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "@/context/LocaleContext";
+import { useDestinationLabel } from "@/hooks/useDestinationLabel";
 import { DESTINATION_SPOTS } from "@/lib/destinations";
+
+function HomeDestinationCard({ spot }: { spot: (typeof DESTINATION_SPOTS)[number] }) {
+  const { t } = useLocale();
+  const { name, description, distance, duration, bestFor } = useDestinationLabel(spot);
+
+  return (
+    <Link href={`/destinations/${spot.slug}`} className="group">
+      <article className="relative overflow-hidden rounded-2xl shadow-lift transition-all duration-300 hover:-translate-y-1 hover:shadow-lift-lg">
+        <div className="relative h-48 overflow-hidden sm:h-56">
+          <Image
+            src={spot.image}
+            alt={name}
+            fill
+            className="object-cover transition-all duration-700 group-hover:scale-110"
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+          <div className={`absolute inset-0 bg-gradient-to-br ${spot.gradient} opacity-30 mix-blend-multiply`} />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink-950/95 via-ink-950/25 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
+            <h3 className="font-heading text-lg font-extrabold tracking-tight text-white sm:text-xl">{name}</h3>
+            <p className="mt-1 line-clamp-2 text-xs text-white/70 sm:text-sm">{description}</p>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 divide-y divide-neutral-100 bg-white dark:divide-ink-700 dark:bg-ink-800 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          <div className="px-4 py-3">
+            <p className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">{t("destinations.distance")}</p>
+            <p className="mt-0.5 text-sm font-bold text-ink-950 dark:text-neutral-100">{distance}</p>
+          </div>
+          <div className="px-4 py-3">
+            <p className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">{t("destinations.duration")}</p>
+            <p className="mt-0.5 text-sm font-bold text-ink-950 dark:text-neutral-100">{duration}</p>
+          </div>
+          <div className="px-4 py-3">
+            <p className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">{t("destinations.bestFor")}</p>
+            <p className="mt-0.5 text-xs font-semibold text-jungle-600 dark:text-jungle-400">{bestFor}</p>
+          </div>
+        </div>
+      </article>
+    </Link>
+  );
+}
 
 export function DestinationsSection() {
   const { t } = useLocale();
@@ -19,55 +61,7 @@ export function DestinationsSection() {
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {DESTINATION_SPOTS.slice(0, 6).map((spot) => (
-            <Link key={spot.id} href={`/destinations/${spot.slug}`} className="group">
-              <article className="relative overflow-hidden rounded-2xl shadow-lift transition-all duration-300 hover:-translate-y-1 hover:shadow-lift-lg">
-                <div className="relative h-48 overflow-hidden sm:h-56">
-                  <Image
-                    src={spot.image}
-                    alt={spot.name}
-                    fill
-                    className="object-cover transition-all duration-700 group-hover:scale-110"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-br ${spot.gradient} opacity-30 mix-blend-multiply`} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950/95 via-ink-950/25 to-transparent" />
-
-                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
-                    <h3 className="font-heading text-lg font-extrabold tracking-tight text-white sm:text-xl">
-                      {spot.name}
-                    </h3>
-                    <p className="mt-1 line-clamp-2 text-xs text-white/70 sm:text-sm">{spot.description}</p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 divide-y divide-neutral-100 bg-white dark:divide-ink-700 dark:bg-ink-800 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-                  <div className="px-4 py-3">
-                    <p className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">
-                      {t("destinations.distance")}
-                    </p>
-                    <p className="mt-0.5 text-sm font-bold text-ink-950 dark:text-neutral-100">
-                      {spot.distance}
-                    </p>
-                  </div>
-                  <div className="px-4 py-3">
-                    <p className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">
-                      {t("destinations.duration")}
-                    </p>
-                    <p className="mt-0.5 text-sm font-bold text-ink-950 dark:text-neutral-100">
-                      {spot.duration}
-                    </p>
-                  </div>
-                  <div className="px-4 py-3">
-                    <p className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">
-                      {t("destinations.bestFor")}
-                    </p>
-                    <p className="mt-0.5 text-xs font-semibold text-jungle-600 dark:text-jungle-400">
-                      {spot.bestFor}
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </Link>
+            <HomeDestinationCard key={spot.id} spot={spot} />
           ))}
         </div>
         <Link
