@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, Noto_Sans_SC, Noto_Sans_Thai } from "next/font/google";
 import { Providers } from "@/components/Providers";
+import { isSitePreview } from "@/lib/site-mode";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -42,7 +43,10 @@ const heading = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Thailand Moto Rent — Phuket",
   description:
-    "Phuket genelinde çok noktalı motosiklet kiralama. Kurumsal standartlarda hizmet.",
+    "Corporate motorcycle rental across Phuket. Insurance, top case and flexible booking.",
+  ...(isSitePreview()
+    ? { robots: { index: false, follow: false, googleBot: { index: false, follow: false } } }
+    : {}),
 };
 
 export default function RootLayout({
@@ -51,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Theme Script */}
         <script

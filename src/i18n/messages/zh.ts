@@ -369,6 +369,12 @@ const zh: Messages = {
     subtitle: "运营、车队和预订管理门户即将上线。",
     tryBooking: "前往预订",
   },
+  preview: {
+    eyebrow: "开发中",
+    title: "我们正在打造精彩内容",
+    subtitle: "Thailand Moto Rent 正在积极开发中。",
+    note: "网站尚未公开。请稍后再来 — 普吉岛摩托车租赁。",
+  },
   footer: {
     tagline: "普吉岛企业级摩托车租赁",
     copyright: "© 2026 Thailand Moto Rent",

@@ -370,6 +370,12 @@ const ar: Messages = {
     subtitle: "بوابة العمليات وإدارة الأسطول والحجوزات ستُفعَّل قريباً.",
     tryBooking: "انتقل إلى الحجز",
   },
+  preview: {
+    eyebrow: "قيد التطوير",
+    title: "نحن نبني شيئًا رائعًا",
+    subtitle: "Thailand Moto Rent قيد التطوير النشط حاليًا.",
+    note: "الموقع غير متاح للعامة بعد. عد قريبًا — تأجير دراجات نارية في فوكيت.",
+  },
   footer: {
     tagline: "تأجير دراجات مؤسسي في بوكيت",
     copyright: "© 2026 Thailand Moto Rent",

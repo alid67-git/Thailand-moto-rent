@@ -409,6 +409,12 @@ const tr = {
       "Operasyon, filo ve rezervasyon yönetim paneli yakında aktif olacak.",
     tryBooking: "Rezervasyon sayfasına git",
   },
+  preview: {
+    eyebrow: "Geliştiriliyor",
+    title: "Yakında sizlerle",
+    subtitle: "Thailand Moto Rent şu anda aktif olarak geliştiriliyor.",
+    note: "Site henüz herkese açık değil. Yakında tekrar bekleriz — Phuket genelinde motosiklet kiralama.",
+  },
   footer: {
     tagline: "Phuket genelinde kurumsal motosiklet kiralama",
     copyright: "© 2026 Thailand Moto Rent",

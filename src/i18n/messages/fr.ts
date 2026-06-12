@@ -370,6 +370,12 @@ const fr: Messages = {
     subtitle: "Portail opérations, flotte et réservations bientôt actif.",
     tryBooking: "Aller à la réservation",
   },
+  preview: {
+    eyebrow: "En développement",
+    title: "Nous préparons quelque chose d'exceptionnel",
+    subtitle: "Thailand Moto Rent est en cours de développement actif.",
+    note: "Ce site n'est pas encore public. Revenez bientôt — location de motos à Phuket.",
+  },
   footer: {
     tagline: "Location moto corporate à Phuket",
     copyright: "© 2026 Thailand Moto Rent",

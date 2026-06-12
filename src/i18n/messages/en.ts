@@ -369,6 +369,12 @@ const en: Messages = {
     subtitle: "Operations, fleet and reservation management portal launching soon.",
     tryBooking: "Go to booking",
   },
+  preview: {
+    eyebrow: "Under development",
+    title: "We're building something great",
+    subtitle: "Thailand Moto Rent is under active development.",
+    note: "This site is not public yet. Please check back soon — motorcycle rental across Phuket.",
+  },
   footer: {
     tagline: "Corporate motorcycle rental across Phuket",
     copyright: "© 2026 Thailand Moto Rent",
