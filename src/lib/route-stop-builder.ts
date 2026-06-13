@@ -2,6 +2,7 @@ import { getDestinationCoordinates } from "@/lib/destination-coordinates";
 import { getDestinationImageSet } from "@/lib/destination-images";
 import { DESTINATION_SPOTS } from "@/lib/destinations";
 import type { RouteStop } from "@/lib/routes-types";
+import { formatDurationFromMinRounded } from "@/lib/time-format";
 
 type StopInput = {
   order: number;
@@ -49,9 +50,5 @@ export function sumStops(stops: RouteStop[]) {
 }
 
 export function formatDurationFromMin(totalMin: number): string {
-  const h = Math.floor(totalMin / 60);
-  const m = totalMin % 60;
-  if (h === 0) return `${m} dk`;
-  if (m === 0) return `${h} saat`;
-  return `${h} saat ${m} dk`;
+  return formatDurationFromMinRounded(totalMin);
 }

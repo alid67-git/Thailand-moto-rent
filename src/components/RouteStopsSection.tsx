@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale } from "@/context/LocaleContext";
+import { formatRoundedDuration } from "@/lib/time-format";
 import type { TranslationKey } from "@/i18n/translate";
 import type { MotorcycleRoute } from "@/lib/routes-types";
 import type { RouteTourMeta } from "@/lib/route-tours";
@@ -11,11 +12,7 @@ function formatMin(
   totalMin: number,
   t: (key: TranslationKey, params?: Record<string, string | number>) => string,
 ): string {
-  const h = Math.floor(totalMin / 60);
-  const m = totalMin % 60;
-  if (h === 0) return t("routeDetail.minOnly", { min: m });
-  if (m === 0) return t("routeDetail.hoursOnly", { hours: h });
-  return t("routeDetail.hoursAndMin", { hours: h, min: m });
+  return formatRoundedDuration(totalMin, t);
 }
 
 export function RouteStopsSection({

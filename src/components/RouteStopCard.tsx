@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "@/context/LocaleContext";
 import { useIslandAccessGuide } from "@/hooks/useIslandAccessGuide";
+import { roundToHalfHour } from "@/lib/time-format";
 import type { RouteStop } from "@/lib/routes-types";
 import { buildGoogleMapsStopUrl } from "@/lib/navigation-links";
 import { getDestinationImageSet } from "@/lib/destination-images";
@@ -65,12 +66,12 @@ export function RouteStopCard({ stop }: { stop: RouteStop }) {
                 )}
                 {stop.driveMin > 0 && (
                   <span className="rounded-full bg-brand-50 px-2.5 py-1 text-brand-800 dark:bg-brand-900/40 dark:text-brand-200">
-                    ⏱️ {t("routeDetail.driveMin", { min: stop.driveMin })}
+                    ⏱️ {t("routeDetail.driveMin", { min: roundToHalfHour(stop.driveMin) })}
                   </span>
                 )}
                 {stop.visitMin > 0 && (
                   <span className="rounded-full bg-jungle-50 px-2.5 py-1 text-jungle-800 dark:bg-jungle-900/30 dark:text-jungle-200">
-                    📍 {t("routeDetail.visitMin", { min: stop.visitMin })}
+                    📍 {t("routeDetail.visitMin", { min: roundToHalfHour(stop.visitMin) })}
                   </span>
                 )}
               </div>

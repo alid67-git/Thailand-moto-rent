@@ -3,9 +3,11 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { useLocale } from "@/context/LocaleContext";
+import { isNavLinkActive, navLinkClass, navLinkMobileClass } from "@/lib/nav-active";
 
 const AuthModal = dynamic(
   () => import("@/components/AuthModal").then((m) => ({ default: m.AuthModal })),
@@ -14,6 +16,7 @@ const AuthModal = dynamic(
 
 export function Header() {
   const { t } = useLocale();
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -67,15 +70,14 @@ export function Header() {
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-neutral-700 transition hover:text-brand-600 dark:text-neutral-300 dark:hover:text-brand-400"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = isNavLinkActive(pathname, link.href);
+              return (
+                <Link key={link.href} href={link.href} className={navLinkClass(active)}>
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-1.5 sm:gap-2">
@@ -84,7 +86,11 @@ export function Header() {
 
             <Link
               href="/book"
-              className="hidden min-h-[44px] items-center rounded-lg bg-thai-gradient px-3 py-2 text-sm font-semibold text-white transition hover:opacity-95 active:scale-[0.98] sm:inline-flex sm:px-4"
+              className={`hidden min-h-[44px] items-center rounded-lg px-3 py-2 text-sm font-semibold transition active:scale-[0.98] sm:inline-flex sm:px-4 ${
+                isNavLinkActive(pathname, "/book")
+                  ? "ring-2 ring-brand-400 ring-offset-2 dark:ring-offset-ink-950 bg-thai-gradient text-white"
+                  : "bg-thai-gradient text-white hover:opacity-95"
+              }`}
             >
               {t("nav.book")}
             </Link>
@@ -117,17 +123,20 @@ export function Header() {
             />
             <nav className="fixed inset-x-0 top-[calc(3.5rem+env(safe-area-inset-top))] z-50 max-h-[calc(100dvh-3.5rem-env(safe-area-inset-top))] overflow-y-auto border-t border-neutral-200 bg-white px-4 py-4 pb-safe dark:border-ink-700 dark:bg-ink-900 sm:top-[calc(4rem+env(safe-area-inset-top))] lg:hidden">
               <ul className="space-y-1">
-                {navLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      onClick={() => setMobileOpen(false)}
-                      className="flex min-h-[48px] items-center rounded-xl px-4 text-base font-medium text-neutral-800 active:bg-neutral-100 dark:text-neutral-100 dark:active:bg-ink-800"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
+                {navLinks.map((link) => {
+                  const active = isNavLinkActive(pathname, link.href);
+                  return (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        onClick={() => setMobileOpen(false)}
+                        className={navLinkMobileClass(active)}
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  );
+                })}
                 <li className="border-t border-neutral-200 pt-3 dark:border-ink-700">
                   <Link
                     href="/book"

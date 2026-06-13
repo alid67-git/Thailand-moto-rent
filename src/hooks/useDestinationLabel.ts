@@ -6,6 +6,7 @@ import {
   destinationFieldKey,
   destinationI18nBase,
   destinationNameKey,
+  destinationTipsKey,
 } from "@/lib/destination-i18n";
 import {
   formatDestinationDistance,
@@ -23,6 +24,7 @@ export function useDestinationLabel(spot: DestinationSpot) {
   const distanceKey = destinationFieldKey(spot.slug, "distance");
   const durationKey = destinationFieldKey(spot.slug, "duration");
   const bestForKey = destinationFieldKey(spot.slug, "bestFor");
+  const tipsKey = destinationTipsKey(spot.slug);
 
   const distance = distanceKey
     ? t(distanceKey)
@@ -48,5 +50,9 @@ export function useDestinationLabel(spot: DestinationSpot) {
     driveTime,
     totalTime,
     bestFor: bestForKey ? t(bestForKey) : spot.bestFor,
+    tips:
+      tipsKey && !String(t(tipsKey)).startsWith("destinations.")
+        ? t(tipsKey)
+        : null,
   };
 }

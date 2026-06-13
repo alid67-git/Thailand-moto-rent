@@ -8,68 +8,105 @@ import { getRouteGroupStyle } from "@/lib/route-day-colors";
 import { useLocale } from "@/context/LocaleContext";
 import { useLocalizedRoutes } from "@/hooks/useLocalizedRoute";
 import type { MotorcycleRoute } from "@/lib/routes-types";
+import { getRouteWaypoints } from "@/lib/route-maps";
+import { buildGoogleMapsRouteUrl } from "@/lib/navigation-links";
+import { RouteCardMapPreview } from "@/components/RouteCardMapPreview";
 
 function RouteCard({ route, tourDays }: { route: MotorcycleRoute; tourDays: TourDays }) {
   const { t } = useLocale();
   const meta = getRouteTourMeta(route.id);
   const style = getRouteGroupStyle(tourDays);
+  const waypoints = getRouteWaypoints(route.id);
+  const mapsUrl = buildGoogleMapsRouteUrl(waypoints);
+
+  const statTile = (
+    label: string,
+    value: string,
+    accent?: boolean,
+    href?: string | null,
+    external?: boolean,
+  ) => {
+    const inner = (
+      <>
+        <p className="text-[10px] font-bold uppercase text-neutral-500 dark:text-neutral-400">{label}</p>
+        <p
+          className={`mt-1 font-bold ${accent ? style.heading : "text-ink-950 dark:text-white"}`}
+        >
+          {value}
+        </p>
+      </>
+    );
+    const className =
+      "rounded-xl border border-neutral-200 bg-neutral-50/80 p-3 text-left transition hover:border-brand-400 hover:bg-brand-50/50 dark:border-ink-600 dark:bg-ink-700/40 dark:hover:border-brand-500";
+    if (href) {
+      return (
+        <a
+          href={href}
+          target={external ? "_blank" : undefined}
+          rel={external ? "noopener noreferrer" : undefined}
+          onClick={(e) => e.stopPropagation()}
+          className={className}
+        >
+          {inner}
+        </a>
+      );
+    }
+    return <div className={className}>{inner}</div>;
+  };
 
   return (
-    <Link
-      href={`/routes/${route.id}`}
+    <article
       className={`group overflow-hidden rounded-2xl border bg-white shadow-lift transition-all duration-300 hover:-translate-y-1 hover:shadow-lift-lg dark:bg-ink-800 ${style.border}`}
     >
-      <div className={`bg-gradient-to-r ${style.gradient} p-6 text-white`}>
-        <div className="mb-2 flex flex-wrap items-center gap-2">
-          <span className="rounded-full bg-white/20 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide">
-            {t("routesPage.tourDayBadge", { days: meta.tourDays })}
-          </span>
-          {meta.featured && (
-            <span className="rounded-full bg-white/30 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide">
-              ⭐ {t("routesPage.featured")}
+      <Link href={`/routes/${route.id}`} className="block">
+        <div className={`bg-gradient-to-r ${style.gradient} p-6 text-white`}>
+          <div className="mb-2 flex flex-wrap items-center gap-2">
+            <span className="rounded-full bg-white/20 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide">
+              {t("routesPage.tourDayBadge", { days: meta.tourDays })}
             </span>
-          )}
+            {meta.featured && (
+              <span className="rounded-full bg-white/30 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide">
+                ⭐ {t("routesPage.featured")}
+              </span>
+            )}
+          </div>
+          <h3 className="font-heading text-2xl font-bold">{route.name}</h3>
+          <p className="mt-2 line-clamp-3 text-sm text-white/90">{route.tagline}</p>
         </div>
-        <h3 className="font-heading text-2xl font-bold">{route.name}</h3>
-        <p className="mt-2 line-clamp-3 text-sm text-white/90">{route.tagline}</p>
-      </div>
+      </Link>
+
+      <RouteCardMapPreview routeName={route.name} waypoints={waypoints} />
 
       <div className="p-6">
-        <div className="mb-6 grid grid-cols-3 gap-4">
-          <div>
-            <p className="text-[10px] font-bold uppercase text-neutral-500 dark:text-neutral-100">
-              {t("routesPage.distance")}
-            </p>
-            <p className="mt-1 font-bold text-ink-950 dark:text-white">{route.distance}</p>
-          </div>
-          <div>
-            <p className="text-[10px] font-bold uppercase text-neutral-500 dark:text-neutral-100">
-              {t("routesPage.duration")}
-            </p>
-            <p className="mt-1 font-bold text-ink-950 dark:text-white">{route.duration}</p>
-          </div>
-          <div>
-            <p className="text-[10px] font-bold uppercase text-neutral-500 dark:text-neutral-100">
-              {t("routesPage.difficulty")}
-            </p>
-            <p className={`mt-1 font-bold ${style.heading}`}>{route.difficulty}</p>
-          </div>
+        <div className="mb-6 grid grid-cols-3 gap-3">
+          {statTile(t("routesPage.distance"), route.distance, false, `/routes/${route.id}`)}
+          {statTile(t("routesPage.duration"), route.duration, false, `/routes/${route.id}`)}
+          {statTile(
+            t("routesPage.mapNav"),
+            t("routesPage.mapNavHint"),
+            true,
+            mapsUrl,
+            true,
+          )}
         </div>
 
         <div className="border-t border-neutral-200 pt-4 dark:border-ink-700">
           <p className="text-xs font-bold uppercase text-neutral-500 dark:text-neutral-100">
             {t("routesPage.highlights")}
           </p>
-          <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-100">{route.highlights}</p>
+          <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-100">
+            {route.highlights}
+          </p>
         </div>
 
-        <span
-          className={`mt-6 block w-full rounded-xl bg-gradient-to-r ${style.gradient} px-4 py-3 text-center text-sm font-bold text-white transition group-hover:opacity-95`}
+        <Link
+          href={`/routes/${route.id}`}
+          className={`mt-6 block w-full rounded-xl bg-gradient-to-r ${style.gradient} px-4 py-3 text-center text-sm font-bold text-white transition hover:opacity-95`}
         >
           {t("routesPage.viewRoute")}
-        </span>
+        </Link>
       </div>
-    </Link>
+    </article>
   );
 }
 

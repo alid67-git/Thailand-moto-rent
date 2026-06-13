@@ -54,6 +54,12 @@ export function destinationDescKey(slug: string): TranslationKey | null {
   return `destinations.${base}.description` as TranslationKey;
 }
 
+export function destinationTipsKey(slug: string): TranslationKey | null {
+  const base = destinationI18nBase(slug);
+  if (!base) return null;
+  return `destinations.${base}.tips` as TranslationKey;
+}
+
 export function destinationFieldKey(
   slug: string,
   field: "distance" | "duration" | "bestFor",
