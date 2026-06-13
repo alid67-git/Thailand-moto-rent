@@ -2,7 +2,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { TRAVEL_GUIDE_ARTICLES } from "@/lib/articles";
 import { getAllArticleIds } from "@/lib/travel-guide-content";
-import { guideArticlesEn } from "@/i18n/messages/guide-articles.en.i18n";
+import { getLocalizedArticle } from "@/lib/article-i18n";
+import { defaultLocale } from "@/i18n/config";
 import { TravelGuideArticleView } from "@/components/TravelGuideArticleView";
 
 export function generateStaticParams() {
@@ -15,14 +16,11 @@ export async function generateMetadata({
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
-  const article = TRAVEL_GUIDE_ARTICLES.find((a) => a.id === id);
-  const en = guideArticlesEn[id];
+  const article = getLocalizedArticle(id, defaultLocale);
   if (!article) return { title: "Article not found" };
-  const title = en?.title ?? article.title;
-  const description = en?.excerpt ?? article.excerpt;
   return {
-    title: `${title} | Travel Guide`,
-    description,
+    title: `${article.title} | Travel Guide`,
+    description: article.excerpt,
   };
 }
 

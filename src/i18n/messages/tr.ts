@@ -262,6 +262,8 @@ const tr = {
     hoursOnly: "{hours} saat",
     hoursHalf: "{hours},5 saat",
     hoursAndMin: "{hours} saat {min} dk",
+    durationApprox: "~{duration}",
+    durationMultiDay: "{days} gün · ~{drive} toplam sürüş",
     overnight: "Geceleme",
     allStopsTitle: "Tüm duraklar (gün gün)",
     rentalDays: "Kiralama süresi",

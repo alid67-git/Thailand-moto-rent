@@ -260,6 +260,8 @@ const fr: Messages = {
     hoursOnly: "{hours} h",
     hoursHalf: "{hours},5 h",
     hoursAndMin: "{hours} h {min} min",
+    durationApprox: "~{duration}",
+    durationMultiDay: "{days} jours · ~{drive} de conduite totale",
     overnight: "Nuitée",
     allStopsTitle: "Tous les arrêts (jour par jour)",
     rentalDays: "Durée de location",

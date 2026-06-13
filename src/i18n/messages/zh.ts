@@ -259,6 +259,8 @@ const zh: Messages = {
     hoursOnly: "{hours} 小时",
     hoursHalf: "{hours}.5 小时",
     hoursAndMin: "{hours} 小时 {min} 分钟",
+    durationApprox: "~{duration}",
+    durationMultiDay: "{days} 天 · ~{drive} 总骑行",
     overnight: "过夜",
     allStopsTitle: "全部站点（按天）",
     rentalDays: "租期",

@@ -260,6 +260,8 @@ const ar: Messages = {
     hoursOnly: "{hours} ساعة",
     hoursHalf: "{hours}.5 ساعة",
     hoursAndMin: "{hours} ساعة {min} دقيقة",
+    durationApprox: "~{duration}",
+    durationMultiDay: "{days} أيام · ~{drive} إجمالي القيادة",
     overnight: "مبيت",
     allStopsTitle: "جميع المحطات (يومًا بيوم)",
     rentalDays: "مدة الإيجار",

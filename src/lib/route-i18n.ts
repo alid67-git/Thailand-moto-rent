@@ -1,11 +1,16 @@
 import type { MotorcycleRoute } from "@/lib/routes-types";
 import type { MultiDayLeg } from "@/lib/route-tours";
+import { getRouteTourMeta } from "@/lib/route-tours";
 import type { RouteCatalogEntry } from "@/i18n/messages/routes-catalog.types";
+import type { Locale } from "@/i18n/config";
+import { localizeSafetyTips } from "@/lib/safety-tips-i18n";
+import { applyDurationTemplate, formatMinutesLocalized, type DurationMessages } from "@/lib/time-format";
 
 export type { RouteCatalogEntry };
 
 type CatalogMessages = {
   routeCatalog?: Record<string, RouteCatalogEntry>;
+  routeDetail?: DurationMessages;
 };
 
 function field(
@@ -18,9 +23,22 @@ function field(
   return v && v.length > 0 ? v : fallback;
 }
 
-export function localizeRoute(route: MotorcycleRoute, messages: CatalogMessages): MotorcycleRoute {
+function formatRouteDuration(route: MotorcycleRoute, m: DurationMessages): string {
+  const { tourDays } = getRouteTourMeta(route.id);
+  if (tourDays > 1) {
+    return applyDurationTemplate(m.durationMultiDay, {
+      days: tourDays,
+      drive: formatMinutesLocalized(route.totalDriveMin, m),
+    });
+  }
+  return applyDurationTemplate(m.durationApprox, {
+    duration: formatMinutesLocalized(route.totalDayMin, m),
+  });
+}
+
+export function localizeRoute(route: MotorcycleRoute, messages: CatalogMessages, locale?: Locale): MotorcycleRoute {
   const id = route.id;
-  return {
+  const localized: MotorcycleRoute = {
     ...route,
     name: field(messages, id, "name", route.name),
     tagline: field(messages, id, "tagline", route.tagline),
@@ -35,6 +53,13 @@ export function localizeRoute(route: MotorcycleRoute, messages: CatalogMessages)
     difficulty: (field(messages, id, "difficulty", route.difficulty) ||
       route.difficulty) as MotorcycleRoute["difficulty"],
   };
+  if (locale) {
+    localized.safetyTips = localizeSafetyTips(route.safetyTips, locale);
+    if (messages.routeDetail?.durationApprox) {
+      localized.duration = formatRouteDuration(route, messages.routeDetail);
+    }
+  }
+  return localized;
 }
 
 export function localizeItineraryLegs(

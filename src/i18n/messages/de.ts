@@ -260,6 +260,8 @@ const de: Messages = {
     hoursOnly: "{hours} Std.",
     hoursHalf: "{hours},5 Std.",
     hoursAndMin: "{hours} Std. {min} Min.",
+    durationApprox: "~{duration}",
+    durationMultiDay: "{days} Tage · ~{drive} Gesamtfahrzeit",
     overnight: "Übernachtung",
     allStopsTitle: "Alle Stopps (Tag für Tag)",
     rentalDays: "Mietdauer",

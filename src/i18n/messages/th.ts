@@ -259,6 +259,8 @@ const th: Messages = {
     hoursOnly: "{hours} ชม.",
     hoursHalf: "{hours}.5 ชม.",
     hoursAndMin: "{hours} ชม. {min} นาที",
+    durationApprox: "~{duration}",
+    durationMultiDay: "{days} วัน · ~{drive} ขับรวม",
     overnight: "ที่พักค้างคืน",
     allStopsTitle: "จุดแวะทั้งหมด (รายวัน)",
     rentalDays: "ระยะเวลาเช่า",

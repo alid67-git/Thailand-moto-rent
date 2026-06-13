@@ -23,7 +23,7 @@ function withLocalizedDifficulty(route: MotorcycleRoute, locale: keyof typeof di
 export function useLocalizedRoute(route: MotorcycleRoute): MotorcycleRoute {
   const { locale } = useLocale();
   return useMemo(
-    () => withLocalizedDifficulty(localizeRoute(route, dictionaries[locale]), locale),
+    () => withLocalizedDifficulty(localizeRoute(route, dictionaries[locale], locale), locale),
     [route, locale],
   );
 }
@@ -31,7 +31,7 @@ export function useLocalizedRoute(route: MotorcycleRoute): MotorcycleRoute {
 export function useLocalizedRoutes(): MotorcycleRoute[] {
   const { locale } = useLocale();
   return useMemo(
-    () => MOTORCYCLE_ROUTES.map((r) => withLocalizedDifficulty(localizeRoute(r, dictionaries[locale]), locale)),
+    () => MOTORCYCLE_ROUTES.map((r) => withLocalizedDifficulty(localizeRoute(r, dictionaries[locale], locale), locale)),
     [locale],
   );
 }
