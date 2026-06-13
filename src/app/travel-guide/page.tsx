@@ -1,28 +1,28 @@
 "use client";
 
 import Link from "next/link";
-import { TRAVEL_GUIDE_ARTICLES, getAllCategories } from "@/lib/articles";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useLocale } from "@/context/LocaleContext";
+import { getLocalizedArticles, getLocalizedCategories } from "@/lib/article-i18n";
 
 export default function TravelGuidePage() {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const categories = getAllCategories();
+
+  const articles = useMemo(() => getLocalizedArticles(locale), [locale]);
+  const categories = useMemo(() => getLocalizedCategories(locale), [locale]);
 
   const filteredArticles = selectedCategory
-    ? TRAVEL_GUIDE_ARTICLES.filter((article) => article.category === selectedCategory)
-    : TRAVEL_GUIDE_ARTICLES;
+    ? articles.filter((article) => article.categoryKey === selectedCategory)
+    : articles;
 
   return (
     <main>
       <section className="relative overflow-hidden bg-gradient-to-br from-brand-700 to-jungle-800 px-4 py-20 text-white lg:px-6">
         <div className="mx-auto max-w-6xl">
-          <h1 className="font-heading text-4xl font-extrabold md:text-5xl">
-            {t("guidePage.title")}
-          </h1>
+          <h1 className="font-heading text-4xl font-extrabold md:text-5xl">{t("guidePage.title")}</h1>
           <p className="mt-4 max-w-2xl text-lg text-white/80">
-            {t("guidePage.subtitle", { count: TRAVEL_GUIDE_ARTICLES.length })}
+            {t("guidePage.subtitle", { count: articles.length })}
           </p>
         </div>
       </section>
@@ -46,10 +46,10 @@ export default function TravelGuidePage() {
               </button>
               {categories.map((cat) => (
                 <button
-                  key={cat.name}
-                  onClick={() => setSelectedCategory(cat.name)}
+                  key={cat.key}
+                  onClick={() => setSelectedCategory(cat.key)}
                   className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
-                    selectedCategory === cat.name
+                    selectedCategory === cat.key
                       ? "bg-brand-500 text-white"
                       : "border border-neutral-300 text-ink-950 hover:border-brand-500 dark:border-ink-700 dark:text-white"
                   }`}
@@ -71,16 +71,12 @@ export default function TravelGuidePage() {
                   <span className="inline-flex items-center rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold text-brand-600 dark:bg-brand-950 dark:text-brand-400">
                     {article.category}
                   </span>
-                  <span className="text-xs text-neutral-500 dark:text-neutral-100">
-                    {article.readTime}
-                  </span>
+                  <span className="text-xs text-neutral-500 dark:text-neutral-100">{article.readTime}</span>
                 </div>
                 <h3 className="line-clamp-2 font-heading text-lg font-bold text-ink-950 group-hover:text-brand-600 dark:text-white dark:group-hover:text-brand-400">
                   {article.title}
                 </h3>
-                <p className="mt-3 line-clamp-2 text-sm text-neutral-600 dark:text-neutral-100">
-                  {article.excerpt}
-                </p>
+                <p className="mt-3 line-clamp-2 text-sm text-neutral-600 dark:text-neutral-100">{article.excerpt}</p>
                 <div className="mt-4 flex items-center gap-2 text-brand-600 transition-all group-hover:gap-3 dark:text-brand-400">
                   <span className="text-sm font-semibold">{t("guidePage.read")}</span>
                   <svg viewBox="0 0 16 16" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
@@ -104,10 +100,16 @@ export default function TravelGuidePage() {
           <h2 className="font-heading text-3xl font-bold">{t("guidePage.ctaTitle")}</h2>
           <p className="mt-3 text-white/90">{t("guidePage.ctaSubtitle")}</p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-            <Link href="/book" className="inline-flex justify-center rounded-lg bg-white px-6 py-3 font-bold text-brand-600 hover:bg-neutral-100">
+            <Link
+              href="/book"
+              className="inline-flex justify-center rounded-lg bg-white px-6 py-3 font-bold text-brand-600 hover:bg-neutral-100"
+            >
               {t("guidePage.ctaBook")}
             </Link>
-            <Link href="/" className="inline-flex justify-center rounded-lg border border-white px-6 py-3 font-bold text-white hover:bg-white/10">
+            <Link
+              href="/"
+              className="inline-flex justify-center rounded-lg border border-white px-6 py-3 font-bold text-white hover:bg-white/10"
+            >
               {t("guidePage.ctaHome")}
             </Link>
           </div>

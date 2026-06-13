@@ -1,5 +1,7 @@
 /** Destinasyon metinleri — tr.ts / en.ts tarafından import edilir */
 
+import { destinationExtraEn, destinationExtraTr } from "./destinations-extra.i18n";
+
 export const destinationMessagesTr = {
   eyebrow: "Keşif",
   title: "Motosikletle gidilebilecek yerler",
@@ -376,6 +378,7 @@ export const destinationMessagesTr = {
     bestFor: "Click 160",
     tips: "Gün batımı en iyi ışık. Dar yol — korna kullanın.",
   },
+  ...destinationExtraTr,
 };
 
 export const destinationMessagesEn: typeof destinationMessagesTr = {
@@ -739,4 +742,5 @@ export const destinationMessagesEn: typeof destinationMessagesTr = {
     bestFor: "Click 160",
     tips: "Best at sunset. Narrow road — ride carefully.",
   },
+  ...destinationExtraEn,
 };

@@ -1,4 +1,5 @@
 ﻿import type { destinationMessagesTr } from "./destinations.i18n";
+import { destinationExtraEn } from "./destinations-extra.i18n";
 
 export const destinationMessagesZh: typeof destinationMessagesTr = {
   eyebrow: "探索",
@@ -374,4 +375,5 @@ export const destinationMessagesZh: typeof destinationMessagesTr = {
     bestFor: "Click 160",
     tips: "日落光线最佳；上山路较窄，建议鸣笛并控制车速。",
   },
+  ...destinationExtraEn,
 };

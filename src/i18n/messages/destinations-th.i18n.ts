@@ -1,4 +1,5 @@
 import type { destinationMessagesTr } from "./destinations.i18n";
+import { destinationExtraEn } from "./destinations-extra.i18n";
 
 export const destinationMessagesTh: typeof destinationMessagesTr = {
   eyebrow: "สำรวจ",
@@ -376,4 +377,5 @@ export const destinationMessagesTh: typeof destinationMessagesTr = {
     bestFor: "Click 160",
     tips: "พระอาทิตย์ตกแสงดีที่สุด ถนนแคบ ใช้แตรและขับระวัง",
   },
+  ...destinationExtraEn,
 };

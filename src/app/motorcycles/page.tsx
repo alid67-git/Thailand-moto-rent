@@ -3,20 +3,30 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MOTORCYCLE_MODELS } from "@/lib/catalog";
+import { useLocale } from "@/context/LocaleContext";
+import type { TranslationKey } from "@/i18n/translate";
+
+const CATEGORY_KEYS: Record<string, TranslationKey> = {
+  scooter: "categories.scooter",
+  adventure: "categories.adventure",
+  maxi: "categories.maxi",
+};
 
 export default function MotorcyclesPage() {
+  const { t } = useLocale();
+
   return (
     <main>
       <section className="relative overflow-hidden bg-gradient-to-br from-ink-950 to-ink-900 px-4 py-20 text-white lg:px-6">
         <div className="mx-auto max-w-6xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 backdrop-blur-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-brand-400" />
-            <span className="text-xs font-semibold uppercase tracking-[0.15em]">Kiralık filo</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.15em]">
+              {t("motorcyclesPage.eyebrow")}
+            </span>
           </div>
-          <h1 className="font-heading text-4xl font-extrabold md:text-5xl">Phuket motosiklet filosu</h1>
-          <p className="mt-4 max-w-2xl text-lg text-white/70">
-            Click 160, ADV 160, ADV 350, Forza 350 ve XMAX 300 — şehir ve ada turları için optimize edilmiş scooter/maxi modeller.
-          </p>
+          <h1 className="font-heading text-4xl font-extrabold md:text-5xl">{t("motorcyclesPage.title")}</h1>
+          <p className="mt-4 max-w-2xl text-lg text-white/70">{t("motorcyclesPage.subtitle")}</p>
         </div>
       </section>
 
@@ -39,14 +49,18 @@ export default function MotorcyclesPage() {
                 </div>
                 <div className="p-6">
                   <h3 className="font-heading text-xl font-bold text-ink-950 dark:text-neutral-50">{moto.fullName}</h3>
-                  <p className="mt-1 text-sm capitalize text-muted">{moto.category}</p>
+                  <p className="mt-1 text-sm capitalize text-muted">
+                    {t(CATEGORY_KEYS[moto.category] ?? "categories.scooter")}
+                  </p>
                   <div className="mt-6 border-t border-neutral-200 pt-4 dark:border-ink-600">
-                    <p className="text-label">Günlük</p>
+                    <p className="text-label">{t("motorcyclesPage.daily")}</p>
                     <p className="text-2xl font-bold text-brand-600 dark:text-brand-400">฿{moto.dailyPriceThb}</p>
-                    <p className="mt-1 text-xs text-muted">Depozito: ฿{moto.depositThb.toLocaleString()} (kart bloke)</p>
+                    <p className="mt-1 text-xs text-muted">
+                      {t("motorcyclesPage.depositNote", { amount: moto.depositThb.toLocaleString() })}
+                    </p>
                   </div>
                   <Link href="/book" className="btn-primary mt-6 w-full text-center">
-                    Hemen kirala
+                    {t("fleet.bookNow")}
                   </Link>
                 </div>
               </div>
@@ -57,12 +71,12 @@ export default function MotorcyclesPage() {
 
       <section className="panel-section bg-surface">
         <div className="mx-auto max-w-3xl">
-          <h2 className="section-title">Kiralama koşulları</h2>
+          <h2 className="section-title">{t("motorcyclesPage.termsTitle")}</h2>
           <ul className="mt-6 space-y-3 text-body">
-            <li>✓ IDP (motosiklet sınıfı) zorunlu — Tayland polisinin kabul ettiği tek yabancı belge</li>
-            <li>✓ Kiralama gün bazlı; geç teslimde WhatsApp ile haber verin</li>
-            <li>✓ Test sürüşü yoktur</li>
-            <li>✓ Pasaport bırakmıyoruz — kredi kartı bloke, teslimde çözülür</li>
+            <li>✓ {t("motorcyclesPage.term1")}</li>
+            <li>✓ {t("motorcyclesPage.term2")}</li>
+            <li>✓ {t("motorcyclesPage.term3")}</li>
+            <li>✓ {t("motorcyclesPage.term4")}</li>
           </ul>
         </div>
       </section>
