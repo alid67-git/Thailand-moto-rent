@@ -4,11 +4,17 @@ import Link from "next/link";
 import { useMemo } from "react";
 import { useLocale } from "@/context/LocaleContext";
 import {
+  formatArticleReadTime,
   getLocalizedArticle,
   getLocalizedArticleBody,
   getLocalizedArticles,
 } from "@/lib/article-i18n";
+import type { TranslationKey } from "@/i18n/translate";
 import { ArticleContent } from "@/components/ArticleContent";
+
+function categoryLabel(t: (key: TranslationKey, params?: Record<string, string | number>) => string, key: string) {
+  return t(`guidePage.categoryLabels.${key}` as TranslationKey);
+}
 
 export function TravelGuideArticleView({ articleId }: { articleId: string }) {
   const { t, locale } = useLocale();
@@ -28,6 +34,9 @@ export function TravelGuideArticleView({ articleId }: { articleId: string }) {
 
   if (!article || !content) return null;
 
+  const formatReadTime = (readTime: string) =>
+    formatArticleReadTime(readTime, (n) => t("guidePage.readMinutes", { n }));
+
   return (
     <main>
       <section className="relative overflow-hidden bg-gradient-to-br from-ink-900 to-ink-950 px-4 py-20 text-white lg:px-6">
@@ -42,11 +51,11 @@ export function TravelGuideArticleView({ articleId }: { articleId: string }) {
             {t("guidePage.articleBack")}
           </Link>
           <span className="inline-flex items-center rounded-full bg-white/15 px-3 py-1 text-sm font-semibold">
-            {article.category}
+            {categoryLabel(t, article.categoryKey)}
           </span>
           <h1 className="mt-4 font-heading text-4xl font-extrabold md:text-5xl">{article.title}</h1>
           <div className="mt-6 flex items-center gap-4 text-white/70">
-            <span>{article.readTime}</span>
+            <span>{formatReadTime(article.readTime)}</span>
             <span>·</span>
             <span>{article.publishDate}</span>
           </div>
@@ -97,7 +106,7 @@ export function TravelGuideArticleView({ articleId }: { articleId: string }) {
                     className="panel p-4 transition hover:border-brand-500"
                   >
                     <h4 className="line-clamp-2 font-bold text-ink-950 dark:text-neutral-100">{art.title}</h4>
-                    <p className="mt-2 text-sm text-muted">{art.readTime}</p>
+                    <p className="mt-2 text-sm text-muted">{formatReadTime(art.readTime)}</p>
                   </Link>
                 ))}
               </div>

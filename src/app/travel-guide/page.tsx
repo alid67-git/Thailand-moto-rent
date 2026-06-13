@@ -3,7 +3,16 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useLocale } from "@/context/LocaleContext";
-import { getLocalizedArticles, getLocalizedCategories } from "@/lib/article-i18n";
+import {
+  formatArticleReadTime,
+  getLocalizedArticles,
+  getLocalizedCategories,
+} from "@/lib/article-i18n";
+import type { TranslationKey } from "@/i18n/translate";
+
+function categoryLabel(t: (key: TranslationKey, params?: Record<string, string | number>) => string, key: string) {
+  return t(`guidePage.categoryLabels.${key}` as TranslationKey);
+}
 
 export default function TravelGuidePage() {
   const { t, locale } = useLocale();
@@ -15,6 +24,9 @@ export default function TravelGuidePage() {
   const filteredArticles = selectedCategory
     ? articles.filter((article) => article.categoryKey === selectedCategory)
     : articles;
+
+  const formatReadTime = (readTime: string) =>
+    formatArticleReadTime(readTime, (n) => t("guidePage.readMinutes", { n }));
 
   return (
     <main>
@@ -54,7 +66,7 @@ export default function TravelGuidePage() {
                       : "border border-neutral-300 text-ink-950 hover:border-brand-500 dark:border-ink-700 dark:text-white"
                   }`}
                 >
-                  {cat.name} ({cat.count})
+                  {categoryLabel(t, cat.key)} ({cat.count})
                 </button>
               ))}
             </div>
@@ -69,9 +81,11 @@ export default function TravelGuidePage() {
               >
                 <div className="mb-3 flex items-start justify-between gap-3">
                   <span className="inline-flex items-center rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold text-brand-600 dark:bg-brand-950 dark:text-brand-400">
-                    {article.category}
+                    {categoryLabel(t, article.categoryKey)}
                   </span>
-                  <span className="text-xs text-neutral-500 dark:text-neutral-100">{article.readTime}</span>
+                  <span className="text-xs text-neutral-500 dark:text-neutral-100">
+                    {formatReadTime(article.readTime)}
+                  </span>
                 </div>
                 <h3 className="line-clamp-2 font-heading text-lg font-bold text-ink-950 group-hover:text-brand-600 dark:text-white dark:group-hover:text-brand-400">
                   {article.title}
