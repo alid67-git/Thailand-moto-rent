@@ -4,8 +4,13 @@ type TFn = (key: TranslationKey, params?: Record<string, string | number>) => st
 
 /** Ham İngilizce mesafe/süre metinlerini seçili dile çevirir */
 export function formatDestinationDistance(raw: string, t: TFn): string {
-  if (/in patong|0\s*km/i.test(raw)) {
+  if (/in patong|0\s*km|patong merkez|patong'dan\s*~?\s*0/i.test(raw)) {
     return t("destinations.distanceInPatong");
+  }
+
+  const kmFromPatongTr = raw.match(/patong'?dan\s*~?\s*(\d+)\s*km/i);
+  if (kmFromPatongTr) {
+    return t("destinations.distanceFromPatongKm", { km: kmFromPatongTr[1] });
   }
 
   const km = raw.match(/~?\s*(\d+)\s*km/i);
@@ -17,8 +22,42 @@ export function formatDestinationDistance(raw: string, t: TFn): string {
 }
 
 export function formatDestinationDuration(raw: string, t: TFn): string {
-  if (/immediate/i.test(raw)) {
+  if (/immediate|hemen|anında/i.test(raw)) {
     return t("destinations.durationImmediate");
+  }
+
+  // Turkish: "8 dk", "25–35 dk", "1,5 saat", "2–3 saat", "2+ saat"
+  const trRangeMin = raw.match(/(\d+)\s*[–-]\s*(\d+)\s*dk/i);
+  if (trRangeMin) {
+    return t("destinations.durationMinutesRange", { from: trRangeMin[1], to: trRangeMin[2] });
+  }
+
+  const trSingleMin = raw.match(/^(\d+)\s*dk$/i);
+  if (trSingleMin) {
+    return t("destinations.durationMinutes", { min: trSingleMin[1] });
+  }
+
+  const trDecimalHour = raw.match(/^(\d+(?:[.,]\d+)?)\s*saat(?:\s*\+|\s*\+?\s*tekne|\s*\([^)]*\))?/i);
+  if (trDecimalHour) {
+    return t("destinations.durationHoursDecimal", { h: trDecimalHour[1].replace(",", ".") });
+  }
+
+  const trRangeHour = raw.match(/(\d+(?:[.,]\d+)?)\s*[–-]\s*(\d+(?:[.,]\d+)?)\s*saat/i);
+  if (trRangeHour) {
+    return t("destinations.durationHoursRange", {
+      from: trRangeHour[1].replace(",", "."),
+      to: trRangeHour[2].replace(",", "."),
+    });
+  }
+
+  const trSingleHour = raw.match(/^(\d+)\s*saat/i);
+  if (trSingleHour) {
+    return t("destinations.durationHours", { h: trSingleHour[1] });
+  }
+
+  const trPlusHour = raw.match(/(\d+)\+\s*saat/i);
+  if (trPlusHour) {
+    return t("destinations.durationHoursPlus", { h: trPlusHour[1] });
   }
 
   const hoursShort = raw.match(/^(\d+)\s*h(?:ours?)?$/i);

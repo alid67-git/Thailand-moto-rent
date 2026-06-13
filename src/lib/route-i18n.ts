@@ -10,7 +10,7 @@ export type { RouteCatalogEntry };
 
 type CatalogMessages = {
   routeCatalog?: Record<string, RouteCatalogEntry>;
-  routeDetail?: DurationMessages;
+  routeDetail?: DurationMessages & { defaultStartPoint?: string };
 };
 
 function field(
@@ -48,7 +48,9 @@ export function localizeRoute(route: MotorcycleRoute, messages: CatalogMessages,
     parkingInfo: field(messages, id, "parkingInfo", route.parkingInfo),
     fuelEstimate: field(messages, id, "fuelEstimate", route.fuelEstimate ?? "") || route.fuelEstimate,
     recommendedBike: field(messages, id, "recommendedBike", route.recommendedBike),
-    startPoint: field(messages, id, "startPoint", route.startPoint),
+    startPoint: field(messages, id, "startPoint", route.startPoint) ||
+      messages.routeDetail?.defaultStartPoint ||
+      route.startPoint,
     elevation: field(messages, id, "elevation", route.elevation),
     difficulty: (field(messages, id, "difficulty", route.difficulty) ||
       route.difficulty) as MotorcycleRoute["difficulty"],
@@ -66,7 +68,7 @@ export function localizeItineraryLegs(
   routeId: string,
   legs: MultiDayLeg[],
   messages: CatalogMessages & {
-    routeLegs?: Record<string, Record<string, { title?: string; description?: string; places?: string[]; stay?: string }>>;
+    routeLegs?: Record<string, Record<string, { title?: string; description?: string; places?: string[]; stayOptions?: string[] }>>;
   },
 ): MultiDayLeg[] {
   return legs.map((leg) => {
@@ -77,7 +79,7 @@ export function localizeItineraryLegs(
       title: loc.title ?? leg.title,
       description: loc.description ?? leg.description,
       places: loc.places ?? leg.places,
-      stayOptions: loc.stay ? [loc.stay] : leg.stayOptions,
+      stayOptions: loc.stayOptions ?? leg.stayOptions,
     };
   });
 }

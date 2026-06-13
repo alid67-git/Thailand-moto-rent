@@ -2,6 +2,8 @@ import type { Messages } from "./tr";
 import { destinationMessagesZh } from "./destinations-zh.i18n";
 import { routeCatalogZh } from "./routes-catalog.zh.i18n";
 import { islandAccessGuidesZh } from "./island-access-guides.zh.i18n";
+import { routeLegsZh } from "./route-legs.zh.i18n";
+import { routeStopsZh } from "./route-stops.zh.i18n";
 
 const zh: Messages = {
   meta: {
@@ -69,6 +71,8 @@ const zh: Messages = {
   },
   destinations: destinationMessagesZh,
   routeCatalog: routeCatalogZh,
+  routeLegs: routeLegsZh,
+  routeStops: routeStopsZh,
   islandAccessGuides: islandAccessGuidesZh,
   islandAccess: {
     title: "如何骑摩托车+乘船到达",
@@ -174,10 +178,10 @@ const zh: Messages = {
       xmax300: { category: "Yamaha 大型踏板", highlights: "运动 · 舒适", price: "฿750/天" },
     },
     routes: {
-      south: { name: "普吉岛南部环线", highlights: "大佛 · 蓬贴海角 · 风车观景台" },
-      krabi: { name: "甲米一日游", highlights: "虎窟寺 · 翡翠池 · 温泉" },
-      khaoSok: { name: "考索探险", highlights: "秀兰湖 · 丛林 · 国家公园" },
-      phangNga: { name: "攀牙海岸", highlights: "詹姆斯邦德岛 · 攀牙湾" },
+      south: { name: "普吉岛南部环线", highlights: "大佛 · 蓬贴海角 · 风车观景台", duration: "4 小时" },
+      krabi: { name: "甲米一日游", highlights: "虎窟寺 · 翡翠池 · 温泉", duration: "6 小时" },
+      khaoSok: { name: "考索探险", highlights: "秀兰湖 · 丛林 · 国家公园", duration: "6–7 小时" },
+      phangNga: { name: "攀牙海岸", highlights: "詹姆斯邦德岛 · 攀牙湾", duration: "5 小时" },
     },
     reviews: {
       r1: { text: "服务极佳，非常可靠。在普吉岛留下了美好回忆。" },
@@ -281,6 +285,12 @@ const zh: Messages = {
     travelGuide: "骑行指南",
     elevation: "海拔",
     bestTime: "最佳时间",
+    dayBadgeShort: "第{day}天",
+    stopPatongStart: "芭东 — 出发",
+    stopPatongReturn: "芭东 — 返回",
+    stopPatongStartDesc: "从 Beach Roundabout 出发开始行程。",
+    stopPatongReturnDesc: "行程结束于 Beach Roundabout。",
+    defaultStartPoint: "Patong Beach Roundabout",
   },
   routesPage: {
     eyebrow: "骑行路线",

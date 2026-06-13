@@ -2,6 +2,8 @@ import type { Messages } from "./tr";
 import { destinationMessagesTh } from "./destinations-th.i18n";
 import { routeCatalogTh } from "./routes-catalog.th.i18n";
 import { islandAccessGuidesTh } from "./island-access-guides.th.i18n";
+import { routeLegsTh } from "./route-legs.th.i18n";
+import { routeStopsTh } from "./route-stops.th.i18n";
 
 const th: Messages = {
   meta: {
@@ -69,6 +71,8 @@ const th: Messages = {
   },
   destinations: destinationMessagesTh,
   routeCatalog: routeCatalogTh,
+  routeLegs: routeLegsTh,
+  routeStops: routeStopsTh,
   islandAccessGuides: islandAccessGuidesTh,
   islandAccess: {
     title: "ไปด้วยมอเตอร์ไซค์ + เรืออย่างไร",
@@ -174,10 +178,10 @@ const th: Messages = {
       xmax300: { category: "Yamaha maxi", highlights: "สปอร์ต · สบาย", price: "฿750/วัน" },
     },
     routes: {
-      south: { name: "ลูปภูเก็ตใต้", highlights: "พระใหญ่ · แหลมพรหมเทพ · กังหันลม" },
-      krabi: { name: "ทริปกระบี่", highlights: "ถ้ำเสือ · สระมรกต · น้ำพุร้อน" },
-      khaoSok: { name: "ผจญภัยเขาสก", highlights: "อ่างเชิงหลาน · ป่า · อุทยานแห่งชาติ" },
-      phangNga: { name: "ชายฝั่งพังงา", highlights: "เกาะเจมส์บอนด์ · อ่าวพังงา" },
+      south: { name: "ลูปภูเก็ตใต้", highlights: "พระใหญ่ · แหลมพรหมเทพ · กังหันลม", duration: "4 ชม." },
+      krabi: { name: "ทริปกระบี่", highlights: "ถ้ำเสือ · สระมรกต · น้ำพุร้อน", duration: "6 ชม." },
+      khaoSok: { name: "ผจญภัยเขาสก", highlights: "อ่างเชิงหลาน · ป่า · อุทยานแห่งชาติ", duration: "6–7 ชม." },
+      phangNga: { name: "ชายฝั่งพังงา", highlights: "เกาะเจมส์บอนด์ · อ่าวพังงา", duration: "5 ชม." },
     },
     reviews: {
       r1: { text: "บริการยอดเยี่ยม น่าเชื่อถือมาก สร้างความทรงจำดีในภูเก็ต" },
@@ -281,6 +285,12 @@ const th: Messages = {
     travelGuide: "คู่มือการขับขี่",
     elevation: "ความสูง",
     bestTime: "ช่วงเวลาที่ดีที่สุด",
+    dayBadgeShort: "ว{day}",
+    stopPatongStart: "ป่าตอง — ออกเดินทาง",
+    stopPatongReturn: "ป่าตอง — กลับ",
+    stopPatongStartDesc: "เริ่มทัวร์จาก Beach Roundabout",
+    stopPatongReturnDesc: "จบทัวร์ที่ Beach Roundabout",
+    defaultStartPoint: "Patong Beach Roundabout",
   },
   routesPage: {
     eyebrow: "เส้นทางขี่",

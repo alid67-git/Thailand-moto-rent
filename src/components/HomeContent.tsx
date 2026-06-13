@@ -53,10 +53,10 @@ export function HomeContent() {
   ] as const;
 
   const featuredRoutes = [
-    { key: "south" as const, distance: "85 km", duration: "4h" },
-    { key: "krabi" as const, distance: "120 km", duration: "6h" },
-    { key: "khaoSok" as const, distance: "130 km", duration: "6-7h" },
-    { key: "phangNga" as const, distance: "95 km", duration: "5h" },
+    { key: "south" as const, distance: "85 km" },
+    { key: "krabi" as const, distance: "120 km" },
+    { key: "khaoSok" as const, distance: "130 km" },
+    { key: "phangNga" as const, distance: "95 km" },
   ];
 
   const reviews = [
@@ -159,7 +159,7 @@ export function HomeContent() {
                   </div>
                   <div>
                     <p className="text-xs font-bold uppercase text-neutral-400">{t("home.duration")}</p>
-                    <p className="mt-1 font-bold text-ink-950 dark:text-white">{route.duration}</p>
+                    <p className="mt-1 font-bold text-ink-950 dark:text-white">{t(`home.routes.${route.key}.duration`)}</p>
                   </div>
                 </div>
               </Link>

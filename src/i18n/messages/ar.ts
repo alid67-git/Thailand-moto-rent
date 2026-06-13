@@ -2,6 +2,8 @@ import type { Messages } from "./tr";
 import { destinationMessagesEn } from "./destinations.i18n";
 import { routeCatalogAr } from "./routes-catalog.ar.i18n";
 import { islandAccessGuidesAr } from "./island-access-guides.ar.i18n";
+import { routeLegsAr } from "./route-legs.ar.i18n";
+import { routeStopsAr } from "./route-stops.ar.i18n";
 
 const ar: Messages = {
   meta: {
@@ -69,6 +71,8 @@ const ar: Messages = {
   },
   destinations: destinationMessagesEn,
   routeCatalog: routeCatalogAr,
+  routeLegs: routeLegsAr,
+  routeStops: routeStopsAr,
   islandAccessGuides: islandAccessGuidesAr,
   islandAccess: {
     title: "كيفية الوصول بالدراجة النارية + القارب",
@@ -175,10 +179,10 @@ const ar: Messages = {
       xmax300: { category: "Yamaha maxi", highlights: "رياضي · مريح", price: "฿750/يوم" },
     },
     routes: {
-      south: { name: "جولة جنوب بوكيت", highlights: "البوذا الكبير · كيب برومثيب · طاحونة" },
-      krabi: { name: "رحلة كرابي", highlights: "كهف النمر · البركة الزمردية · الينابيع" },
-      khaoSok: { name: "مغامرة خاو سوك", highlights: "بحيرة تشيو لان · غابة · منتزه وطني" },
-      phangNga: { name: "ساحل فانغ نغا", highlights: "جزيرة جيمس بوند · خليج فانغ نغا" },
+      south: { name: "جولة جنوب بوكيت", highlights: "البوذا الكبير · كيب برومثيب · طاحونة", duration: "4 س" },
+      krabi: { name: "رحلة كرابي", highlights: "كهف النمر · البركة الزمردية · الينابيع", duration: "6 س" },
+      khaoSok: { name: "مغامرة خاو سوك", highlights: "بحيرة تشيو لان · غابة · منتزه وطني", duration: "6–7 س" },
+      phangNga: { name: "ساحل فانغ نغا", highlights: "جزيرة جيمس بوند · خليج فانغ نغا", duration: "5 س" },
     },
     reviews: {
       r1: { text: "خدمة ممتازة وموثوقة جداً. ذكريات رائعة في بوكيت." },
@@ -282,6 +286,12 @@ const ar: Messages = {
     travelGuide: "دليل القيادة",
     elevation: "الارتفاع",
     bestTime: "أفضل وقت",
+    dayBadgeShort: "ي{day}",
+    stopPatongStart: "باتونغ — الانطلاق",
+    stopPatongReturn: "باتونغ — العودة",
+    stopPatongStartDesc: "بداية الجولة من Beach Roundabout.",
+    stopPatongReturnDesc: "نهاية الجولة عند Beach Roundabout.",
+    defaultStartPoint: "Patong Beach Roundabout",
   },
   routesPage: {
     eyebrow: "مسارات القيادة",

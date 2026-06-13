@@ -1,6 +1,8 @@
 import { destinationMessagesTr } from "./destinations.i18n";
 import { routeCatalogTr } from "./routes-catalog.tr.i18n";
 import { islandAccessGuidesTr } from "./island-access-guides.tr.i18n";
+import { routeLegsTr } from "./route-legs.tr.i18n";
+import { routeStopsTr } from "./route-stops.tr.i18n";
 
 const tr = {
   meta: {
@@ -68,6 +70,8 @@ const tr = {
   },
   destinations: destinationMessagesTr,
   routeCatalog: routeCatalogTr,
+  routeLegs: routeLegsTr,
+  routeStops: routeStopsTr,
   islandAccessGuides: islandAccessGuidesTr,
   islandAccess: {
     title: "Motosiklet + tekne ile nasıl gidilir?",
@@ -177,10 +181,10 @@ const tr = {
       xmax300: { category: "Yamaha maxi", highlights: "Sport · Konfor", price: "฿750/gün" },
     },
     routes: {
-      south: { name: "Güney Phuket loop", highlights: "Big Buddha · Promthep Cape · Windmill" },
-      krabi: { name: "Krabi günü", highlights: "Tiger Cave · Emerald Pool · Hot Springs" },
-      khaoSok: { name: "Khao Sok macerası", highlights: "Cheow Lan Lake · Jungle · National Park" },
-      phangNga: { name: "Phang Nga sahili", highlights: "James Bond Island · Phang Nga Bay" },
+      south: { name: "Güney Phuket loop", highlights: "Big Buddha · Promthep Cape · Windmill", duration: "4 saat" },
+      krabi: { name: "Krabi günü", highlights: "Tiger Cave · Emerald Pool · Hot Springs", duration: "6 saat" },
+      khaoSok: { name: "Khao Sok macerası", highlights: "Cheow Lan Lake · Jungle · National Park", duration: "6–7 saat" },
+      phangNga: { name: "Phang Nga sahili", highlights: "James Bond Island · Phang Nga Bay", duration: "5 saat" },
     },
     reviews: {
       r1: { text: "Mükemmel hizmet, çok güvenilir. Phuket'te harika anılar yarattık." },
@@ -284,6 +288,12 @@ const tr = {
     travelGuide: "Sürüş Rehberi",
     elevation: "Yükseklik",
     bestTime: "En iyi zaman",
+    dayBadgeShort: "G{day}",
+    stopPatongStart: "Patong — Çıkış",
+    stopPatongReturn: "Patong — Dönüş",
+    stopPatongStartDesc: "Beach Roundabout'tan tur başlangıcı.",
+    stopPatongReturnDesc: "Tur sonu Beach Roundabout'a varış.",
+    defaultStartPoint: "Patong Beach Roundabout",
   },
   routesPage: {
     eyebrow: "Sürüş rotaları",

@@ -5,7 +5,7 @@ import { RouteMapHero } from "@/components/RouteMapHero";
 import { RouteStopsSection } from "@/components/RouteStopsSection";
 import { useLocalizedRouteById } from "@/hooks/useLocalizedRoute";
 import { getRouteWaypoints } from "@/lib/route-maps";
-import { getRouteTourMeta } from "@/lib/route-tours";
+import { useLocalizedTourMeta } from "@/hooks/useLocalizedTourMeta";
 import { useLocale } from "@/context/LocaleContext";
 
 export function RouteDetailView({ routeId }: { routeId: string }) {
@@ -14,7 +14,7 @@ export function RouteDetailView({ routeId }: { routeId: string }) {
 
   if (!route) return null;
 
-  const tourMeta = getRouteTourMeta(routeId);
+  const tourMeta = useLocalizedTourMeta(routeId);
   const waypoints = getRouteWaypoints(routeId);
 
   return (

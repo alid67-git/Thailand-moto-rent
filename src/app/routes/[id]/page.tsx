@@ -2,6 +2,9 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { MOTORCYCLE_ROUTES } from "@/lib/routes";
 import { RouteDetailView } from "@/components/RouteDetailView";
+import { dictionaries } from "@/i18n";
+import { defaultLocale } from "@/i18n/config";
+import { localizeRoute } from "@/lib/route-i18n";
 
 export function generateStaticParams() {
   return MOTORCYCLE_ROUTES.map((route) => ({ id: route.id }));
@@ -15,9 +18,10 @@ export async function generateMetadata({
   const { id } = await params;
   const route = MOTORCYCLE_ROUTES.find((r) => r.id === id);
   if (!route) return { title: "Route not found" };
+  const localized = localizeRoute(route, dictionaries[defaultLocale], defaultLocale);
   return {
-    title: `${route.name} | Phuket Motorcycle Route`,
-    description: route.description.slice(0, 160),
+    title: `${localized.name} | Phuket Motorcycle Route`,
+    description: localized.description.slice(0, 160),
   };
 }
 

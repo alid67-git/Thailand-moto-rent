@@ -62,7 +62,7 @@ export function RouteStopsSection({
                     <div className={`bg-gradient-to-r ${legStyle.gradient} px-5 py-3`}>
                       <div className="flex items-center gap-3">
                         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/20 text-sm font-bold text-white">
-                          G{leg.day}
+                          {t("routeDetail.dayBadgeShort", { day: leg.day })}
                         </span>
                         <h3 className="font-heading text-lg font-bold text-white">{leg.title}</h3>
                       </div>
@@ -173,13 +173,13 @@ export function RouteStopsSection({
                       </div>
                       <div className="space-y-4">
                         {stopsByDay[day].map((stop) => (
-                          <RouteStopCard key={stop.order} stop={stop} />
+                          <RouteStopCard key={stop.order} routeId={route.id} stop={stop} />
                         ))}
                       </div>
                     </div>
                   );
                 })
-              : route.stops.map((stop) => <RouteStopCard key={stop.order} stop={stop} />)}
+              : route.stops.map((stop) => <RouteStopCard key={stop.order} routeId={route.id} stop={stop} />)}
           </div>
         </div>
       </section>

@@ -11,6 +11,7 @@ import { getDestinationImageSet } from "@/lib/destination-images";
 import { DESTINATION_SPOTS } from "@/lib/destinations";
 import { shouldShowIslandAccess } from "@/lib/island-access-i18n";
 import { IslandAccessCompact } from "@/components/IslandAccessSection";
+import { useRouteStopLabel } from "@/hooks/useRouteStopLabel";
 
 function stopImage(stop: RouteStop): string | null {
   if (!stop.destinationSlug) return null;
@@ -19,8 +20,9 @@ function stopImage(stop: RouteStop): string | null {
   return getDestinationImageSet(stop.destinationSlug, spot.image, spot.images).hero;
 }
 
-export function RouteStopCard({ stop }: { stop: RouteStop }) {
+export function RouteStopCard({ routeId, stop }: { routeId: string; stop: RouteStop }) {
   const { t } = useLocale();
+  const { name, description, tips } = useRouteStopLabel(routeId, stop);
   const slug = stop.destinationSlug;
   const image = stopImage(stop);
   const islandGuide = useIslandAccessGuide(
@@ -36,7 +38,7 @@ export function RouteStopCard({ stop }: { stop: RouteStop }) {
       <div className="flex flex-col sm:flex-row">
         {image && (
           <div className="relative h-44 w-full shrink-0 sm:h-auto sm:w-44 md:w-52">
-            <Image src={image} alt={stop.name} fill className="object-cover" sizes="(max-width:640px) 100vw, 208px" />
+            <Image src={image} alt={name} fill className="object-cover" sizes="(max-width:640px) 100vw, 208px" />
             {stop.access === "boat" && (
               <span className="absolute left-2 top-2 rounded-full bg-orange-500 px-2 py-0.5 text-[10px] font-bold uppercase text-white">
                 ⛵ {t("routeDetail.boatStop")}
@@ -53,7 +55,7 @@ export function RouteStopCard({ stop }: { stop: RouteStop }) {
               <h3
                 className={`font-heading text-lg font-bold ${slug ? "text-brand-700 group-hover:underline dark:text-brand-300" : "text-ink-950 dark:text-neutral-50"}`}
               >
-                {stop.name}
+                {name}
                 {slug && (
                   <span className="ml-2 text-sm font-normal text-muted">{t("routeDetail.viewPlace")}</span>
                 )}
@@ -77,10 +79,10 @@ export function RouteStopCard({ stop }: { stop: RouteStop }) {
               </div>
             </div>
           </div>
-          <p className="mt-4 text-sm leading-relaxed text-body">{stop.description}</p>
-          {stop.tips && (
+          <p className="mt-4 text-sm leading-relaxed text-body">{description}</p>
+          {tips && (
             <p className="mt-3 rounded-lg border border-amber-200 bg-amber-50/80 px-3 py-2 text-xs text-amber-900 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-100">
-              💡 {stop.tips}
+              💡 {tips}
             </p>
           )}
           {islandGuide && (

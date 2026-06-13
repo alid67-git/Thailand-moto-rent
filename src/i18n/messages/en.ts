@@ -2,6 +2,8 @@ import type { Messages } from "./tr";
 import { destinationMessagesEn } from "./destinations.i18n";
 import { routeCatalogEn } from "./routes-catalog.en.i18n";
 import { islandAccessGuidesEn } from "./island-access-guides.en.i18n";
+import { routeLegsEn } from "./route-legs.en.i18n";
+import { routeStopsEn } from "./route-stops.en.i18n";
 
 const en: Messages = {
   meta: {
@@ -69,6 +71,8 @@ const en: Messages = {
   },
   destinations: destinationMessagesEn,
   routeCatalog: routeCatalogEn,
+  routeLegs: routeLegsEn,
+  routeStops: routeStopsEn,
   islandAccessGuides: islandAccessGuidesEn,
   islandAccess: {
     title: "How to get there by motorcycle + boat",
@@ -174,10 +178,10 @@ const en: Messages = {
       xmax300: { category: "Yamaha maxi", highlights: "Sport · Comfort", price: "฿750/day" },
     },
     routes: {
-      south: { name: "South Phuket loop", highlights: "Big Buddha · Promthep Cape · Windmill" },
-      krabi: { name: "Krabi day trip", highlights: "Tiger Cave · Emerald Pool · Hot Springs" },
-      khaoSok: { name: "Khao Sok adventure", highlights: "Cheow Lan Lake · Jungle · National Park" },
-      phangNga: { name: "Phang Nga coast", highlights: "James Bond Island · Phang Nga Bay" },
+      south: { name: "South Phuket loop", highlights: "Big Buddha · Promthep Cape · Windmill", duration: "4 h" },
+      krabi: { name: "Krabi day trip", highlights: "Tiger Cave · Emerald Pool · Hot Springs", duration: "6 h" },
+      khaoSok: { name: "Khao Sok adventure", highlights: "Cheow Lan Lake · Jungle · National Park", duration: "6–7 h" },
+      phangNga: { name: "Phang Nga coast", highlights: "James Bond Island · Phang Nga Bay", duration: "5 h" },
     },
     reviews: {
       r1: { text: "Excellent service, very reliable. We made amazing memories in Phuket." },
@@ -281,6 +285,12 @@ const en: Messages = {
     travelGuide: "Riding guide",
     elevation: "Elevation",
     bestTime: "Best time",
+    dayBadgeShort: "D{day}",
+    stopPatongStart: "Patong — Departure",
+    stopPatongReturn: "Patong — Return",
+    stopPatongStartDesc: "Tour starts from Beach Roundabout.",
+    stopPatongReturnDesc: "Tour ends at Beach Roundabout.",
+    defaultStartPoint: "Patong Beach Roundabout",
   },
   routesPage: {
     eyebrow: "Riding routes",
