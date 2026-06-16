@@ -9,6 +9,7 @@ const flagSrc: Record<Locale, string> = {
   fr: "/flags/fr.svg",
   ar: "/flags/sa.svg",
   zh: "/flags/zh.svg",
+  ru: "/flags/ru.svg",
 };
 
 interface FlagIconProps {

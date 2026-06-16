@@ -7,6 +7,7 @@ import { guideArticlesFr } from "@/i18n/messages/guide-articles.fr.i18n";
 import { guideArticlesAr } from "@/i18n/messages/guide-articles.ar.i18n";
 import { guideArticlesZh } from "@/i18n/messages/guide-articles.zh.i18n";
 import { guideArticlesTh } from "@/i18n/messages/guide-articles.th.i18n";
+import { guideArticlesRu } from "@/i18n/messages/guide-articles.ru.i18n";
 import { GUIDE_BODIES_EN } from "./bodies/en";
 import { GUIDE_BODIES_TR } from "./bodies/tr";
 import { GUIDE_BODIES_DE } from "./bodies/de";
@@ -14,6 +15,7 @@ import { GUIDE_BODIES_FR } from "./bodies/fr";
 import { GUIDE_BODIES_AR } from "./bodies/ar";
 import { GUIDE_BODIES_ZH } from "./bodies/zh";
 import { GUIDE_BODIES_TH } from "./bodies/th";
+import { GUIDE_BODIES_RU } from "./bodies/ru";
 
 const GUIDE_META: Record<Locale, Record<string, GuideArticleEntry>> = {
   tr: guideArticlesTr,
@@ -23,6 +25,7 @@ const GUIDE_META: Record<Locale, Record<string, GuideArticleEntry>> = {
   fr: guideArticlesFr,
   ar: guideArticlesAr,
   zh: guideArticlesZh,
+  ru: guideArticlesRu,
 };
 
 const GUIDE_BODIES: Record<Locale, Record<string, string>> = {
@@ -33,6 +36,7 @@ const GUIDE_BODIES: Record<Locale, Record<string, string>> = {
   fr: GUIDE_BODIES_FR,
   ar: GUIDE_BODIES_AR,
   zh: GUIDE_BODIES_ZH,
+  ru: GUIDE_BODIES_RU,
 };
 
 export function getGuideMeta(id: string, locale: Locale): GuideArticleEntry | null {

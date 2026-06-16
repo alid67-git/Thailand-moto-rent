@@ -6,6 +6,7 @@ import en from "./messages/en";
 import fr from "./messages/fr";
 import tr from "./messages/tr";
 import zh from "./messages/zh";
+import ru from "./messages/ru";
 import type { Messages } from "./messages/tr";
 
 export const dictionaries: Record<Locale, Messages> = {
@@ -16,6 +17,7 @@ export const dictionaries: Record<Locale, Messages> = {
   fr,
   ar,
   zh,
+  ru,
 };
 
 export type { Messages };
