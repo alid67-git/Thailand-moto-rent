@@ -60,13 +60,14 @@ export function LanguageSwitcher({
       {open && (
         <div
           role="listbox"
-          className={`absolute right-0 top-full z-[60] mt-2 max-h-[min(70dvh,320px)] min-w-[180px] overflow-y-auto rounded-xl border shadow-lift-lg ${
+          aria-label="Language"
+          className={`absolute right-0 top-full z-[60] mt-2 w-[min(calc(100vw-1.5rem),18.5rem)] rounded-xl border p-1.5 shadow-lift-lg sm:w-72 ${
             isLight
               ? "border-neutral-200 bg-white"
               : "border-white/10 bg-ink-900/95 backdrop-blur-md"
           }`}
         >
-          <div className={`divide-y py-1 ${isLight ? "divide-neutral-100" : "divide-white/10"}`}>
+          <div className="grid grid-cols-2 gap-1">
             {locales.map((loc) => (
               <button
                 key={loc}
@@ -78,7 +79,7 @@ export function LanguageSwitcher({
                   pickLocale(loc);
                 }}
                 onClick={() => pickLocale(loc)}
-                className={`flex min-h-[44px] w-full items-center gap-2.5 px-3 py-2.5 text-left text-sm transition touch-manipulation ${
+                className={`flex min-h-[42px] items-center gap-2 rounded-lg px-2.5 py-2 text-left text-sm transition touch-manipulation sm:min-h-[44px] sm:px-3 ${
                   locale === loc
                     ? isLight
                       ? "bg-brand-50 font-semibold text-brand-600"
@@ -88,8 +89,8 @@ export function LanguageSwitcher({
                       : "text-white/80 hover:bg-white/5 active:bg-white/10"
                 }`}
               >
-                <FlagIcon locale={loc} />
-                <span>{localeLabels[loc]}</span>
+                <FlagIcon locale={loc} className="shrink-0" />
+                <span className="truncate leading-tight">{localeLabels[loc]}</span>
               </button>
             ))}
           </div>

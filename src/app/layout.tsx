@@ -73,7 +73,7 @@ export default async function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var langs=["tr","en","th","de","fr","ar","zh","ru"];var chosen=localStorage.getItem("tmr-locale-chosen");var loc=localStorage.getItem("tmr-locale");var m=document.cookie.match(/(?:^|;\\s*)tmr-locale=([^;]+)/);if(m)loc=m[1];if(chosen!=="1"||!loc||langs.indexOf(loc)<0)loc="en";document.documentElement.lang=loc;document.documentElement.dir=loc==="ar"?"rtl":"ltr";}catch(e){}})();`,
+            __html: `(function(){try{var langs=["tr","en","ru","de","fr","th","ar","zh"];var chosen=localStorage.getItem("tmr-locale-chosen");var loc=localStorage.getItem("tmr-locale");var m=document.cookie.match(/(?:^|;\\s*)tmr-locale=([^;]+)/);if(m)loc=m[1];if(chosen!=="1"||!loc||langs.indexOf(loc)<0)loc="en";document.documentElement.lang=loc;document.documentElement.dir=loc==="ar"?"rtl":"ltr";}catch(e){}})();`,
           }}
         />
         {/* Theme Script */}
